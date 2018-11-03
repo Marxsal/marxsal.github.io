@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>TiddlyWiki Jumpstart Tutorial</title>
+<!-- 2018-11-03 Sat 10:37 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="MAS (C) 2018" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">TiddlyWiki Jumpstart Tutorial</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. TiddlyWiki Power User Tutorial</a>
+<ul>
+<li><a href="#sec-1-1">1.1. What you should know before you boldly go</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1. Audience</a></li>
+<li><a href="#sec-1-1-2">1.1.2. Goals</a></li>
+<li><a href="#sec-1-1-3">1.1.3. Expectations Reset</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2. Key Features of TiddlyWiki - an overview</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1. Tag - you're it! </a></li>
+<li><a href="#sec-1-2-2">1.2.2. We're off to see the WikiText  </a></li>
+<li><a href="#sec-1-2-3">1.2.3. Field of schemes </a></li>
+<li><a href="#sec-1-2-4">1.2.4. Making a list </a></li>
+<li><a href="#sec-1-2-5">1.2.5. Widget Spinner </a></li>
+<li><a href="#sec-1-2-6">1.2.6. Variable Vun. Fun too. </a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3. Key Concepts of TiddlyWiki</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1. Old Man Story River</a></li>
+<li><a href="#sec-1-3-2">1.3.2. Importing &#x2013; what a drag</a></li>
+<li><a href="#sec-1-3-3">1.3.3. Shadows, Plugins, and System Tiddlers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Variables &amp; Friends: Your mileage may be variable </a>
+<ul>
+<li><a href="#sec-2-1">2.1. Macros are variables</a></li>
+<li><a href="#sec-2-2">2.2. Variables vs. Parameters</a></li>
+<li><a href="#sec-2-3">2.3. Creating variables</a>
+<ul>
+<li><a href="#sec-2-3-1">2.3.1. Ready, SET, go</a></li>
+<li><a href="#sec-2-3-2">2.3.2. Using variables for concatenation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-3">3. The  transforming power of TRANSclusion </a>
+<ul>
+<li><a href="#sec-3-1">3.1. Brace yourself</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Become a power TiddlyWiki5 user with one Widget</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Filters </a>
+<ul>
+<li><a href="#sec-4-1-1">4.1.1. Spacing in filters.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Widget Wonderland </a>
+<ul>
+<li><a href="#sec-5-1">5.1. The View from Here (the View widget) </a></li>
+<li><a href="#sec-5-2">5.2. Presto! Reveal! </a></li>
+<li><a href="#sec-5-3">5.3. Many are called (the Macrocall widget)</a></li>
+<li><a href="#sec-5-4">5.4. Texting, 1,2,3 (the Text widget) </a></li>
+<li><a href="#sec-5-5">5.5. Something Wikify this way comes (the Wikify widget) </a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Topics in progress</a>
+<ul>
+<li><a href="#sec-6-1">6.1. How do I pass a the output of a macro to another macro?</a></li>
+<li><a href="#sec-6-2">6.2. Making count down lists</a></li>
+<li><a href="#sec-6-3">6.3. External Files </a></li>
+<li><a href="#sec-6-4">6.4. Template tiddlers (Knights Template)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> TiddlyWiki Power User Tutorial</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> What you should know before you boldly go</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Audience</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+First, this tutorial is about <b>TiddlyWiki5</b>, not the earlier, <b>classic</b> TiddlyWiki. From an automation standpoint, these two products are very different and can't share code, plugins, widgets, etc.
+</p>
+
+<p>
+The assumption here is that you've already learned the basics, and are ready to up your game. You've figured out how to use or at least create tags and fields, and maybe have cast a covetous glance at lists. You've also figured out which of 20+ techniques you will be using to save your work. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Goals</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+In this tutorial, we're going to be learning about macros, variables, transclusions, the almighty list widget, a couple other widgets, and how to put them together in ways that will emulate the functionality you might expect from a full-blown database platform. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Expectations Reset</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+It's not your grandfather's programming language . In fact, it's questionable if the tools in TiddlyWiki5 qualify as a language at all. Instead, what you have in TiddlyWiki5 is an assortment of macros, variables, and widgets that allow you to weave together functionality that you would have to program if you were using a platform like MS Access®. 
+</p>
+
+<p>
+Some features look like traditional programming languages, but usage is different 
+</p>
+
+<p>
+When you see something like: 
+</p>
+
+<pre class="example">
+\define mymacro(stuff) 
+My great $stuff$ goes here. &lt;&lt;variable&gt;&gt;
+\end
+</pre>
+
+<p>
+You could be forgiven for thinking, "Hey! I know what that is &#x2013; it's a function or method just like in java/c++/c/python/fortran/&lt;insert programming language here&gt; !!" 
+</p>
+
+<p>
+But, it's not quite true &#x2013; it's not a function, or a method. It's a <code>macro</code> which in turn is a type of <code>pragma</code> which is a special instruction to the TiddlyWiki core.  The point here is to set aside any expectations that your previous experience with other programming environments may have created, and just keep an open mind. You'll need it. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Key Features of TiddlyWiki - an overview</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Many of the topics we'l be covering require you to have an understanding of other topics, which we'll also be covering. This puts us in a classic chicken-and-egg situation? Which comes first? Colonel Sanders (tm) of course! But I digress. So we'll briefly give a high-level overview of key TiddlyWiki features before moving on to a more in-depth exploration.
+</p>
+</div>
+<div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Tag - you're it! <a id="basic-tagging" name="basic-tagging"></a></h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+<i>Tags</i> are features of TiddlyWiki that allow you to add <i>semantic</i> and <i>structural</i> meaning to your tiddlers. <i>Tags</i> appear in the upper right corner of your tiddler in view mode as little button pills. Clicking on one of the pills reveals a drop-down list of all the items that that tag is used for tagging:
+</p>
+
+
+<div class="figure">
+<p><img src="./twpu-tag-pill-list.png" alt="twpu-tag-pill-list.png" />
+</p>
+</div>
+
+<p>
+If you click, hold, and drag on one of the items in the pill's drop-down list, you can re-arrange the items. This will cause all other standard lists that use tags (the <code>Table of Contents</code> macros, for instance) to also rearrange. When this rearrangement happens, the order of the tagged tiddlers is stored in the <a href="#basic-lists">list</a> field of a tag pill's tiddler. That is, for instance, in the case shown, in the <i>list</i> field of the "HelloThere" tiddler.
+</p>
+
+<p>
+Under the hood, each tiddler that is tagged has a hidden  <i>list</i> field called "tags" that holds a list of the tags used by that tiddler. 
+</p>
+
+<p>
+Although tags are really just another kind of <i>list</i> field, the special visibility and abilities that are provided to them in the basic TiddlyWiki configuration gives them a special place of honor.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> We're off to see the WikiText  <a id="basic-WikiText" name="basic-WikiText"></a></h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+<code>WikiText</code> is TiddlyWiki's own mark-up language. It's similar to the mark-up language of other Wiki-like systems (e.g. Wikipedia) and <i>Mark-down</i>, but has it's own syntax and some additional elements that give it additional powers. Some of the WikiText resembles modified HTML tags as well. So there's a mixture of things you'll see.
+</p>
+
+<p>
+The downside is that you're going to need to learn yet another Wiki-like language (is it just me, or is there a new one every month?). The upside is that it's very similar to existing mark-up languages, provides additional powers, and there is an editor toolbar built into TiddlyWiki that can help in some cases when you're having trouble remembering the exact syntax.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Field of schemes <a id="basic-fields" name="basic-fields"></a></h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+<code>Fields</code> are an important concept in TiddlyWiki. Most everything you see on screen is actually a field. The <code>title</code> is actually a field. <code>Tags</code> are kept in a type of <a href="#basic-lists">list</a> field. The contents of a tiddler are kept in a <code>text</code> field. There's also fields that you don't usually see like the <code>created</code> and <code>modified</code> fields.
+</p>
+
+<p>
+If you scroll to a bottom of a typical tiddler opened for editing, you'll see something like this:
+</p>
+
+<p>
+<img src="./twpu-field-list.png" alt="twpu-field-list.png" /> 
+At the very bottom is a place where you can create your own fields and input your own values. TiddlyWiki is pretty forgiving about what it takes to form a name, but for your own sanity you should restrict the names of fields you create to the standard lower-case alphabetic characters (a-z), the counting digits (0-9), and the special characters "_" (underscore) and "-" (hyphen).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> Making a list <a id="basic-lists" name="basic-lists"></a></h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+In the last example, you probably noticed the <code>list</code> field. The <code>list</code> field is actually just another field, but in certain contexts TiddlyWiki will deal with it in a special manner. In particular, if the title of a particular tiddler is also the name of a <a href="tw-power-user-tutorial.html">tag</a> used in the TiddlyWiki file, then the contents of the <code>list</code> field will be used to store the order in which tiddlers will be displayed when you click on a <code>tag</code> button. 
+</p>
+
+<p>
+By default, operations in TiddlyWiki that require a <code>list</code> will expect the field name <code>list</code>, but there are multiple Widgets that can be given a different field name to use for <code>list</code> functions.
+</p>
+
+<p>
+When you are making your own list fields each item in the field should be formed from contiguous characters with no spaces. Each item should be separated by any other items by a space. If your item requires spaces, then the entire item's contents should be enclosed in double square brackets. Like this:
+</p>
+
+<pre class="example">
+[[A Gentle Guide to TiddlyWiki]]
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Widget Spinner <a id="basic-widgets" name="basic-widgets"></a></h4>
+<div class="outline-text-4" id="text-1-2-5">
+<p>
+<code>Widgets</code> are small bits of <a href="tw-power-user-tutorial.html">WikiText</a> that resemble HTML mark-up tags, only they are always prefaced with a dollar sign ($) in their tag names. For example:
+</p>
+
+<pre class="example">
+&lt;$view ...&gt;
+</pre>
+<p>
+or
+</p>
+<pre class="example">
+&lt;$list ...&gt;
+  &lt;&lt;currentTiddler&gt;&gt;, 
+&lt;/$list&gt;
+</pre>
+
+<p>
+When you use Widgets, you're likely going to need to refer to TiddlyWiki.com for additional documentation. A helpful hint is that the documentation for most Widgets can be found as the name of the tag (without the dollar sign) plus the word <i>Widget</i>. So if you were looking for the documentation for the "list" Widget, you would type "ListWidget" into the TiddlyWiki.com search box.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2-6" class="outline-4">
+<h4 id="sec-1-2-6"><span class="section-number-4">1.2.6</span> Variable Vun. Fun too. <a id="basic-variables" name="basic-variables"></a></h4>
+<div class="outline-text-4" id="text-1-2-6">
+<p>
+<i>Variables</i> are special <a href="tw-power-user-tutorial.html">WikiText</a> that can substitute text. In use, they take the form of a variable name inside of double angle brackets. Like:
+</p>
+<pre class="example">
+&lt;&lt;myvariable&gt;&gt;
+</pre>
+<p>
+Variables and macros are actually the same thing under the hood, but usually created in different ways. But macros can accept parameters so might look like:
+</p>
+<pre class="example">
+&lt;&lt;lookup "John"&gt;&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Key Concepts of TiddlyWiki</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+There are certain concepts that pop up in the TiddlyWiki forum and the documentation at TiddlyWiki.com, but may not be explained conveniently.
+</p>
+</div>
+<div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Old Man Story River</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+You'll sometimes see references to the  <code>Story River</code>. The <code>Story River</code> is the set of tiddlers that appear on the left side of your browser tab or the entire tab if you've collapsed the side bars. The contents of the <code>Story River</code> appear in the <a href="tw-power-user-tutorial.html">list</a> field of the <i>$:/StoryList</i> tiddler. Later you will discover techniques for manipulating lists, including the  <i>$:/StoryList</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Importing &#x2013; what a drag</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+There are multiple ways of importing tiddlers and other content into your working TiddlyWiki file. But for the moment we'll look at drag &amp; drop approach, which is generally the most intuitive.
+</p>
+
+<p>
+You can drag all sorts of things into a TiddlyWiki file: Images, Tiddlers from other TiddlyWiki files, JSON files, or even entire TiddlyWiki files. 
+</p>
+
+<p>
+To import a tiddler from one TiddlyWiki to another, open both TiddlyWikis in separate browser tabs. Lets call them "Tom" and "Ray". Open the tiddler you want to import in "Ray". From the "Open" menu in the sidebar, find the tiddler you want to import. Click and hold on the link. Still holding, drag it over the tab of the "Tom" TiddlyWiki file so that it opens and assumes focus. Drag the link to the top of the "Tom" TiddlyWiki file and a green bar will appear:
+</p>
+
+
+<div class="figure">
+<p><img src="./twpu-drag-drop-tiddler.png" alt="twpu-drag-drop-tiddler.png" />
+</p>
+</div>
+
+<p>
+Release the mouse button and an import dialog will appear:
+</p>
+
+
+<div class="figure">
+<p><img src="./twpu-import-tiddler.png" alt="twpu-import-tiddler.png" />
+</p>
+</div>
+
+<p>
+Click the <code>Import</code> button to import your tiddler or <code>Cancel</code> if you've changed your mind. 
+</p>
+
+<p>
+The same technique works for dragging and dropping <i>files</i> into your tiddler. How TiddlyWiki handles this will depend on the nature of the file that you drop.  You can, for instance drag and drop images and they will be embedded into your TiddlyWiki file. The danger with images, or other file objects such as <b>PDF</b> documents, is that they will take up as much, or more space, as the original file. This can quickly make your TiddlyWiki file become unstable. When you have large documents that you want to associate with TiddlyWiki, it's generally best to embed them as <a href="#externalfiles">external files</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Shadows, Plugins, and System Tiddlers</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+In the <a href="https://groups.google.com/forum/#!forum/tiddlywiki">TiddlyWiki forum</a> and at TiddlyWiki.com you will often seen references to <code>plugins</code>, <code>shadow tiddlers</code>, and <code>system tiddlers</code>. These terms may seem confusing at times.
+</p>
+
+<p>
+A <code>plugin</code> is a special tiddler that typically contains other tiddlers that allow it to add features and abilities to your current TiddlyWiki file. You can see the list of plugins currently installed in your TiddlyWiki instance by clicking on the "cog" icon to open the control panel. Then select the <i>Plugins</i> tab. If you go to TiddlyWiki.com and navigate to its <i>Plugins</i> tab, you can then click on the "Get more plugins" button and see a list of more than 50 plugins available to load. After you have installed one of the tiddlers on the instance at TiddlyWiki.com, you can then drag and drop it into your own TiddlyWiki instance following the drag/drop importing instructions mentioned previously. Note that you have to save and reload your TiddlyWiki file before the new plugin takes effect.
+</p>
+
+<p>
+You can also drag and drop plugins that you've found on other TiddlyWiki sites or in the TiddlyWiki forum.
+</p>
+
+<p>
+<code>Plugins</code> typically contain other tiddlers. These are typically manifested as <i>Shadow</i> tiddlers. If you go to TiddlyWiki.com, click on the cog (control panel), the plugin tab, and then click on the <i>TiddlyWiki5 core</i>, a tiddler with the title <i>$:/core</i> will open. Click on the <i>Contents</i> tab and you will see a list of tiddlers. Note that all the tiddlers are highlighted in bold. What does that mean? Links to tiddlers that presented in bold text mean that the tiddler is a <i>Shadow</i> tiddler. The <i>Shadow</i> tiddler doesn't really exist as an independent tiddler &#x2013; it's embedded in the plugin tiddler. But if you click on one of these Shadow tiddler links, say <i>$:/config/EditTemplateFields/Visibility/created</i>, it will open up the tiddler just as if it were an ordinary tiddler. Except that if you attempt to edit the tiddler you will get a warning that you are about to edit a Shadow tiddler.
+</p>
+
+
+<div class="figure">
+<p><img src="./twpu-shadow-warning.png" alt="twpu-shadow-warning.png" /> 
+</p>
+</div>
+
+<p>
+Note that the warning is about how editing Shadow tiddlers can make <i>future</i> upgrades difficult. This does not mean that editing a Shadow tiddler is dangerous in and of itself. In fact, it's very reversible. 
+</p>
+
+<p>
+For instance, try editing <i>$:/config/EditTemplateFields/Visibility/created</i>, changing the value from "hide" to show. Close the tiddler. Now when you edit any tiddler the value of the <code>created</code> date will appear at the bottom along with the other fields. Now go back to the <code>contents</code> tab and scan for the <i>$:/config/EditTemplateFields/Visibility/created</i> tiddler. Notice that its link is no longer in bold:
+</p>
+
+
+<div class="figure">
+<p><img src="./twpu-edited-shadow-tiddler.png" alt="twpu-edited-shadow-tiddler.png" />
+</p>
+</div>
+
+<p>
+Internally what has happened is that the "shadow" tiddler has been replaced by a "real" tiddler, and now the link to the tiddler will display in normal font darkness.
+</p>
+
+<p>
+But what if you want to go back to the way things were? 
+</p>
+
+<p>
+Go back to the edited <i>$:/config/EditTemplateFields/Visibility/created</i> tiddler. Delete it. Now go back to the <code>contents</code> tab of the <i>$:/core/</i> plugin tiddler and scroll down to view the <i>$:/config/EditTemplateFields/Visibility/created</i> tiddler link.  It will be restored to <b>bold</b> font.
+</p>
+
+<p>
+<code>System</code> tiddlers are tiddlers whose title starts with "$". Really, that's all. But wait! There's more! The TiddlyWiki system treats <code>system</code> tiddlers in special ways. In particular, they are hidden from the "recent" tab in the right-hand sidebar. There are also additional TiddlyWiki <a href="tw-power-user-tutorial.html">filter</a> operators for processing <code>system</code> tiddlers.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Variables &amp; Friends: Your mileage may be variable <a id="variables-top" name="variables-top"></a></h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Macros are variables</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>
+The first topic to understand in your voyage to the world of TiddlyWiki power computing, is that of macros. And the first thing to understand about macros is that they are actually the same as TiddlyWiki variables.
+</p>
+
+<p>
+You might think that variables and macros are the same thing, but actually in TiddlyWiki5 Macros are just variables that take a parameter. Hey they, even look alike: 
+</p>
+
+<p>
+Internally, macros and variables are the same thing. Macros can take a parameter, and then use it inside it's definition to put pieces of text together. And that's it! Macro's aren't like functions or methods &#x2013; they can't actually invoke something else (though they may create the illusion that they do). In fact, the two main thing's that macro's do is provide a way to bundle WikiText together and allow pieces of text to be put together (called concatenation). 
+</p>
+
+<pre class="example">
+&lt;&lt;mymacro "call me sometime"&gt;&gt; 
+&lt;&lt;Variable&gt;&gt;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Variables vs. Parameters</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+In some languages, there's a thin line between variables and parameters. In TiddlyWiki5, the difference Is a bit more conspicuous. 
+</p>
+
+<p>
+Your typical macro definition (see <a href="https://tiddlywiki.com/#Macro%C3%9Efinitions%20in%20WikiText">Definitions in WikiText</a> for a detailed explanation of macro definitions) will look something like:
+</p>
+
+<pre class="example">
+\define pressrelease(johndoe) $johndoe$ is a wonderful guy
+</pre>
+
+
+<p>
+In this brief, but important example, <code>johndoe</code> is a placeholder carrying the name of someone about whom we are reporting (pretend you're a publicity agent).  When invoked, the term <code>$johndoe$</code> will be substituted for text passed in the <code>johndoe</code> parameter. So, for instance, if we invoked it like:
+</p>
+
+<pre class="example">
+&lt;&lt;pressrelease 'Tony'&gt;&gt;
+</pre>
+
+<p>
+then the macro would be rendered as:
+</p>
+
+<pre class="example">
+Tony is a wonderful guy
+</pre>
+
+<p>
+The first thing to notice is that <b>all</b> this code did was to substitute <code>Tony</code> for <code>$johndoe$</code>.  In fact, the <b>only</b>  superpower that macros give you is text substitution. 
+</p>
+
+<p>
+This example was a bit too easy. Often you don't know the value of a parameter in advance. In fact, more times than not, it's easier to pass information into a macro in the form of a <code>variable</code>. So let's detour to talk a bit about variables.  Let's say that we want to pass the value 'Tony' to our macro as a variable instead of as a parameter. This time our macro definition might look like:
+</p>
+
+<pre class="example">
+\define pressrelease() $(johndoe)$ is a wonderful guy.
+</pre>
+
+<p>
+Notice that there is now no parameter, and the the variable has two parentheses inside of the dollar signs. It's still doing text substitution, but now the text is coming from a variable defined outside of the macro. Which leaves the question, "How was the variable defined?" So let's now look a little more at variables.
+</p>
+
+
+<pre class="example">
+\define mymacro(myparam)
+I have this to say about $param$
+\end
+</pre>
+
+<p>
+There's also two very different ways that external variables are used inside of macros. 
+</p>
+
+<p>
+The first is the standard way that you can call a variable (or a macro) anywhere:
+</p>
+
+<pre class="example">
+&lt;&lt;myvariable&gt;&gt;
+</pre>
+
+<p>
+But inside a macro definition you also have available another way to reference a variable:
+</p>
+
+<pre class="example">
+$(myvariable)$
+</pre>
+
+<p>
+So, why would you want to use this second form? The second form inserts the variable as a string wherever its equivalent <i>placeholder</i> appears. A <i>placeholder</i> is the name of the variable enclosed within  dollar symbols and parentheses (e.g. \((variable)\)). This allows you to insert it as though it was typed right into the text. We'll see how this can be useful in the next couple of sections. But let's first look at how variables are created.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Creating variables</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+We said that macros are just a type of variable. But that might leave you wondering when and how to use variables. There are many ways that variables can be defined, but most (all?) of them involve using TiddlyWiki <code>*widgets*</code>.
+</p>
+
+<p>
+We have a lot to say about widgets, especially the `&lt;$list&gt;` widget, but for now let's look at one of the most direct means of setting variables &#x2013; the `&lt;$set&gt;` widget.        
+</p>
+</div>
+
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> Ready, SET, go</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+The <code>&lt;$set&gt;</code> widget can be used to set a variable for a certain lexicographical space. That just means that it sets a variable that is only in effect for a certain part of your code. Like this:
+</p>
+<pre class="example">
+&lt;$set name="johndoe" value="Tony"&gt;
+&lt;&lt;johndoe&gt;&gt;
+&lt;/$set&gt;
+</pre>
+<p>
+If you run this (type it into a tiddler) what you'll see is:
+</p>
+<pre class="example">
+Tony
+</pre>
+<p>
+So what's going on? The <code>&lt;$set&gt;</code> widget is setting a variable called <code>johndoe</code> to the value <code>Tony</code>. This variable will only be in effect between the <code>&lt;$set&gt;...&lt;/$set&gt;</code> widget tags &#x2013; including for any macros that are called between them. The WikiText syntax <code>&lt;&lt;variable&gt;&gt;</code> renders the value of the specified variable, so in this case <code>&lt;&lt;johndoe&gt;&gt;</code> displays <code>Tony</code>. That's pretty neat, but the real power comes when you derive the value of the variable from some other, non-static source. If you created a tiddler, "Person", and typed in "Jeremy Ruston" as the text, then you could create your <code>&lt;$set&gt;</code> widget environment like this:
+</p>
+<pre class="example">
+&lt;$set name="johndoe" value={{Person}}&gt;
+&lt;&lt;johndoe&gt;&gt;
+&lt;/$set&gt;
+</pre>
+<p>
+and the results would appear as:
+</p>
+<pre class="example">
+Jeremy Ruston
+</pre>
+<p>
+If the <code>{{Person}}</code> construction is new to you, don't worry. That's called <i>transclusion</i>, a powerful WikiText construction that allows you to fetch values from tiddlers and fields. We'll be learning about transclusion in the next <i>section</i>. In this case, the value for the variable is being set to the text field value of the <code>Person</code> tiddler. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2"><span class="section-number-4">2.3.2</span> Using variables for concatenation</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+As we mentioned previously (<a href="#sec-2-1">Macros are variables</a> ), the only thing that macros actually do is to combine variables or parameters with text. This means they are more limited than program functions that they may appear to emulate. But they are ideal for concatenating text.
+</p>
+
+<p>
+Here's a typical situation. Let's say you want to use the value of a tiddler in the current tiddler as the name for a link using the "pretty link" syntax. You might think you could combine the <code>transclusion</code> that we just met like this:
+</p>
+
+<pre class="example">
+[[{{Person}}]]
+</pre>
+
+
+<p>
+But if you try this, you'll just see the literal text {{Person}} displayed on screen as a link. If you click on it, it will take you to a (likely) non-existent tiddler "{{!!mylink}}".
+</p>
+
+<p>
+So how to fix this?
+</p>
+
+<p>
+What we want to do is to "glue" the result of the transclusion <code>{{Person}}</code> into the the link structure <code>[[Name-of-person]]</code>. This gluing process is also known as <i>concatenation</i>, which is what TiddlyWiki macros are good for. So we could make a macro like this:
+</p>
+
+<pre class="example">
+\define link-person() [[$(person-variable)$]]
+</pre>
+
+<p>
+and invoke it like this:
+</p>
+
+<pre class="example">
+&lt;$set name="person-variable" value={{Person}}&gt;
+&lt;&lt;link-person&gt;&gt;
+&lt;/$set&gt;
+</pre>
+
+<p>
+If the <code>Person</code> tiddler contains the name "Tony", then a link will be created to a tiddler "Tony". Of course, just because there is a link doesn't mean that the tiddler exists.
+</p>
+
+<p>
+So, how does this work? The value of the text field of tiddler "Person" is passed to a variable, "person-variable" created by the <code>&lt;$set&gt;</code> widget. Then, inside the <code>link-person</code> macro the value of the variable person-variable is swapped into it's  <i>placeholder</i>, <code>$(person-variable)$</code>  &#x2013; as text. This effectively stitches together (or (<i>concatenats</i>) ) the text to form a link to "Tony". 
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> The  transforming power of TRANSclusion <a id="transclusion" name="transclusion"></a></h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Brace yourself</h3>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Become a power TiddlyWiki5 user with one Widget</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+If you were stranded on a dessert island (say, the Chiffon isles), and could only take one Widget with you, which would it be? The answer is quite clear. Darryl Hanna. No, wait, wrong question, and I'm dating myself. It would be the <code>&lt;$list&gt;</code> widget, the Swiss army knife of TiddlyWiki5 functionality that even the Swiss are jealous of. 
+</p>
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Filters <a id="filters" name="filters"></a></h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+What gives the <code>&lt;$list&gt;</code> widget its superpowers is primarily the filter attribute. Learning how to use filters properly is the key to … well just about everything. 
+</p>
+
+<p>
+A typical use of filter inside the &lt;$list&gt; widget might look something like: 
+</p>
+
+<pre class="example">
+&lt;$list filter="[tag[HelloThere]]"/&gt;
+</pre>
+
+<p>
+This might give, if you ran it at TiddlyWiki.com, a list of tiddlers that are tagged "HelloThere".
+</p>
+</div>
+
+<div id="outline-container-sec-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> Spacing in filters.</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+But, if you try this example, you'll see that the list of tiddlers are all run together, making them difficult to read. So you might want to set up the format with the full double-tag method:
+</p>
+
+<pre class="example">
+&lt;$list filter="[tag[HelloThere]]"/&gt;
+&lt;/$list&gt;
+</pre>
+
+<p>
+But if you try this, you will be surprised to see that there is no content output at all!
+</p>
+
+<p>
+Let's slow down and take a look at the standard List Widget deployment, because there's a few "gotchas" to pay attention to.   
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Widget Wonderland <a id="widgets" name="widgets"></a></h2>
+<div class="outline-text-2" id="text-5">
+<p>
+A run-down on other frequently used widgets and when they might be useful
+</p>
+</div>
+
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> The View from Here (the View widget) <a id="viewwidget" name="viewwidget"></a></h3>
+</div>
+
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Presto! Reveal! <a id="revealwidget" name="revealwidget"></a></h3>
+</div>
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Many are called (the Macrocall widget)<a id="macrocall" name="macrocall"></a></h3>
+</div>
+
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Texting, 1,2,3 (the Text widget) <a id="textwidget" name="textwidget"></a></h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+When you first encounter this widget, you might wonder what exactly it does, and why you wouldn't just use the View widget.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-5" class="outline-3">
+<h3 id="sec-5-5"><span class="section-number-3">5.5</span> Something Wikify this way comes (the Wikify widget) <a id="wikifywidget" name="wikifywidget"></a></h3>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Topics in progress</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+You won't be working long in TiddlyWiki5 before you encounter certain problems. Here's some common ones and their workarounds. 
+</p>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> How do I pass a the output of a macro to another macro?</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+It's often the situation that you want the output of one macro to become the input of another macro. You might imagine that you could do something like: 
+</p>
+
+<p>
+&lt;&lt;mymacro1 <a id="mymacro2" name="mymacro2"></a>&gt;&gt;
+</p>
+
+<p>
+Sadly, this won't work. The "&lt;&lt;&gt;&gt;" encoding is interpreted by the TiddlyWiki5 parser, and it doesn't know what to do with all those embedded angle brackets. But, fortunately, there's another way to call macros. You can use the &lt;$macrocall&gt; widget. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Making count down lists</h3>
+<div class="outline-text-3" id="text-6-2">
+</div>
+</div>
+
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> External Files <a id="externalfiles" name="externalfiles"></a></h3>
+</div>
+
+
+<div id="outline-container-sec-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> Template tiddlers (Knights Template)</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+This is the whirlwind overview of using templates.
+</p>
+
+<p>
+Let's say you have a tiddler with some fields:
+</p>
+
+<pre class="example">
+image_url: simian.jpg
+terrain: any
+intelligence: 11
+matrix: 3x3
+</pre>
+
+<p>
+Then you might set up a template tiddler, TEMPLATE that uses these fields:
+</p>
+
+<pre class="example">
+&lt;image src={{!!image_url}} float="left"/&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;Terrain&lt;/td&gt;&lt;td&gt;{{!!terrain}}&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;Intelligence&lt;/td&gt;&lt;td&gt;{{!!intelligence}}&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;Matrix&lt;/td&gt;&lt;td&gt;{{!!matrix}}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<p>
+Then let's say that all these (avatar?) tiddlers have something to identify them, like tag "Avatar".
+</p>
+
+<p>
+Then you can make a tiddler, tag it with $:/tags/ViewTemplate, with contents:
+</p>
+
+<pre class="example">
+&lt;$list filter="[all[current]]"&gt;
+{{||TEMPLATE}}
+&lt;/$list&gt;
+</pre>
+<p>
+And each tiddler tagged with Avatar will present your formatted data.
+</p>
+
+<p>
+A general tip about database fields is that they should always only represent one thing. For instance, an intelligence field of 11-15 will be hard to parse and compare with other avatars because it has a range. So if you ever expect to want to compare intelligence values you should have intelligence<sub>low</sub> and intelligence<sub>high</sub>, or "intelligence" and "intelligence<sub>range</sub>".
+</p>
+
+<p>
+There's a lot more to say about templates and their use in TW5, but as I said, that's the whirlwind version.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-10-06 Sat&gt;</span></span></p>
+<p class="author">Author: MAS (C) 2018</p>
+<p class="date">Created: 2018-11-03 Sat 10:37</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
