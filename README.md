@@ -1,4 +1,4 @@
 ## Miscellaneous projects
 
 * Documentation - tutorial for beginners - in hiatus
-* [Quinoid](quinoid-releases)
+* [Quinoid](quinoid)
