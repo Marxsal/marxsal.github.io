@@ -37,6 +37,10 @@ In all cases, it is up to you to properly backup and secure your files.
 
 ## Usage Notes
 
+**Intallation note:** 
+On some versions of Android, you may need to go into the application manager and grant yourself storage permissions.
+
+**Finding and opening existing files:** 
 Note that there are two file selection mechanisms. "File Explorer" and "System Exlorer". "File Explorer" is now inside the overflow menu. 
 The "System Explorer" appears as a "+" icon on the action bar. __File Explorer__ will probably only work
 with files that Android considers "internal". This is due to changes in Android permissons starting with Android 4.4.
@@ -95,32 +99,3 @@ I don't use GDrive myself very much. I've only been testing it in emulators. The
 
 It also appears that you don't need to use your file in offline mode at all if you are continously connected to the internet. However, I haven't tested this and am not sure what happens when you "walk" out of internet range. In all cases, be careful. Don't commit any work that you really want to keep.# Quinoid
 
-
-## Earlier Documentation
-
----
-title: Quinoid Experimental Files
----
-## Quinoid Pre-Releezes
-
-__(The bad spelling is deliberate for obscure, technical reasons)__
-
-Quinoid is an attempt to use TiddlyWiki on Android. It should be able to save on your internal file system. Interested to know how it's working on external file systems.
-
-These are definitely alpha/beta, experimental and should not be used in a production environment. 
-
-For Android 4.4 thru 8 (?)
-
-Download and place somewhere on your device. Click and choose to install. Open the app.
-
-Add TiddlyWiki files to the list with the Find button. This version introduces an experimental file picker. Tentatively, you can pick more than one file at a time.
-
-Once you have your list, click on list to launch viewer. It takes a bit of time to load (possibly because it is loading as many TWs as you listed).
-
-But once you have them loaded, swipe left/right to change. This addresses a problem with AndTidWiki which made it difficult to run more than one TW at a time. Use back arrow to return to TW listing. Long press to remove entries.
-
-If you are loading a large TW file, then Android may reclaim memory when you swipe, losing your current settings. So be sure to save before swiping if you've done something important.
-Use at your own risk.
-
-
-quinoid-190114a quinoid-190114a.apk
