@@ -123,4 +123,4 @@ If you are loading a large TW file, then Android may reclaim memory when you swi
 Use at your own risk.
 
 
-* [quinoid-190114a](quinoid-190114a.apk)
+quinoid-190114a quinoid-190114a.apk
