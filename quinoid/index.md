@@ -67,7 +67,9 @@ Note really well: The text that is captured is *not* transferred to the target T
 
 Under the activity-bar 3-dot menu, you can select "Resources" which will allow you to download one or more pre-existing starter files. Click on "Resources" and then click on whatever items you are interested in. If you are connected to the internet the downloads should start immediately. The file(s) will be saved to a TwFiles sub-folder of your public documents folder. This subfolder may be on your physical internal drive or your external drive, depending on Android version and manufacturer. I targeted the external drive, but as far as I can tell, I (the developer) don't have full control.  I'll be interested in hearing reports back.
 
-Whatever location is chosen, any TW files (or html files) placed in that directory will be automatically added to Quinoid's file list upon start-up.  
+After making your selections, use the "back" button of your device to return to the main TW file browse list. The new files should appear within a few moments, if all goes well.
+
+Whatever location is chosen, any TW files (or html files) placed in the TwFiles sub-directory will be automatically added to Quinoid's file list upon start-up.  
 
 ### Configuring Downloadable File List
 
