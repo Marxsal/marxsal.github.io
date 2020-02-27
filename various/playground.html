@@ -143,8 +143,6 @@ Error message and password prompt
 
 <li>$:/core</li>
 
-<li>$:/DefaultTiddlers</li>
-
 <li>$:/GitHub/Filename</li>
 
 <li>$:/GitHub/Path</li>
@@ -176,6 +174,8 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
+
+<li>Date Conversion Macros</li>
 
 <li>Example Sets</li>
 
@@ -9390,9 +9390,6 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200224230041046" modified="20200224230044002" title="$:/DefaultTiddlers">
-<pre>[[My Modal Notes]]</pre>
-</div>
 <div created="20200224021952199" modified="20200224021955003" title="$:/GitHub/Filename">
 <pre>playground.html</pre>
 </div>
@@ -9408,9 +9405,7 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Popme]]
-# [[ModalEditTemplate]]
-# [[Notes for Today]]</pre>
+# [[Date Conversion Macros]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -9421,16 +9416,16 @@ Error message and password prompt
 <div created="20200224020911975" modified="20200224020923005" title="$:/SiteTitle">
 <pre>Code Playground</pre>
 </div>
-<div created="20200224021847786" modified="20200224230007877" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20200224021847786" modified="20200224021847786" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
-<div created="20200224021849942" modified="20200224230006492" title="$:/state/tab-2065006209">
-<pre>$:/core/ui/ControlPanel/Saving/General</pre>
+<div created="20200224021849942" modified="20200224021849942" title="$:/state/tab-2065006209">
+<pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20200224021640035" modified="20200224230053160" title="$:/state/tab/sidebar--595412856">
-<pre>Example Sets</pre>
+<div created="20200224021640035" modified="20200224225755746" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200224230002232" list="[[My Modal Notes]] $:/ControlPanel GettingStarted" modified="20200224230034555" title="$:/StoryList">
+<div list="$:/Import GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200224021806699" title="$:/temp/currentpop">
@@ -9602,6 +9597,62 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div bag="default" created="20191021022240198" creator="MASX" modified="20200224175903751" modifier="MAS" revision="0" tags="Tools SFGardenProject $:/tags/Macro" title="Date Conversion Macros" type="text/vnd.tiddlywiki">
+<pre>\define mas-g(y,m,d,offset:&quot;0&quot;)
+&lt;$set name=m value={{{ [&lt;__m__&gt;add[9]remainder[12]] }}}&gt;
+&lt;$set name=y value={{{ [&lt;m&gt;divide[10]floor[]negate[]add&lt;__y__&gt;] }}} &gt;
+&lt;$set name=y4 value={{{ [&lt;y&gt;divide[4]floor[]] }}}&gt;
+&lt;$set name=y100 value={{{ [&lt;y&gt;divide[100]floor[]] }}}&gt;
+&lt;$set name=y400 value={{{ [&lt;y&gt;divide[400]floor[]] }}}&gt;
+&lt;$set name=m306 value={{{ [&lt;m&gt;multiply[306]add[5]divide[10]floor[]] }}}&gt;
+&lt;$set name=result value={{{ [[365]multiply&lt;y&gt;add&lt;y4&gt;subtract&lt;y100&gt;add&lt;y400&gt;add&lt;m306&gt;add[$d$]add[$offset$]subtract[1]] }}} &gt;
+&lt;&lt;result&gt;&gt;
+&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;
+\end
+
+
+\define mas-d(g)
+&lt;$set name=daysperyear value=&quot;365.2425&quot;&gt;
+&lt;!-- y = (10000*g + 14780)/3652425 --&gt;
+&lt;$set name=y value={{{ [[10000]multiply&lt;__g__&gt;add[14780]divide[3652425]floor[]] }}}&gt;
+&lt;!-- ddd = g - (365*y + y/4 - y/100 + y/400) --&gt;
+&lt;$set name=y4 value={{{ [&lt;y&gt;divide[4]floor[]] }}}&gt;
+&lt;$set name=y100 value={{{ [&lt;y&gt;divide[100]floor[]] }}}&gt;
+&lt;$set name=y400 value={{{ [&lt;y&gt;divide[400]floor[]] }}}&gt;
+&lt;$set name=dddtest value={{{ [[365]multiply&lt;y&gt;add&lt;y4&gt;subtract&lt;y100&gt;add&lt;y400&gt;negate[]add&lt;__g__&gt;] }}} &gt;
+&lt;$set name=prioryear value={{{ [&lt;y&gt;subtract[1]] }}} &gt;
+&lt;$set name=y value={{{ [&lt;dddtest&gt;prefix[-]then&lt;prioryear&gt;] [&lt;dddtest&gt;!prefix[-]then&lt;y&gt;] }}} &gt;
+&lt;$set name=ddd value={{{ [[365]multiply&lt;y&gt;add&lt;y4&gt;subtract&lt;y100&gt;add&lt;y400&gt;negate[]add&lt;__g__&gt;] }}} &gt;
+&lt;!-- mi = (100*ddd + 52)/3060 --&gt;
+&lt;$set name=mi value={{{ [[100]multiply&lt;ddd&gt;add[52]divide[3060]floor[]] }}} &gt;
+&lt;!-- mm = (mi + 2)%12 + 1 --&gt;
+&lt;$set name=mm value={{{ [&lt;mi&gt;add[2]remainder[12]add[1]] }}} &gt;
+&lt;!-- y = y + (mi + 2)/12 --&gt;
+&lt;$set name=y value={{{ [&lt;mi&gt;add[2]divide[12]floor[]add&lt;y&gt;] }}} &gt;
+&lt;!-- dd= ddd - (mi*306 + 5)/10 + 1 --&gt;
+&lt;$set name=dd value={{{ [&lt;mi&gt;multiply[306]add[5]divide[10]floor[]negate[]add&lt;ddd&gt;add[1]] }}} &gt;
+&lt;&lt;y&gt;&gt;-&lt;&lt;mm&gt;&gt;-&lt;&lt;dd&gt;&gt;
+&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;
+\end
+
+\define daysfrom(y,m,d,o) 
+&lt;$wikify name=future text=&quot;&lt;&lt;mas-g $y$ $m$ $d$ $o$&gt;&gt;&quot;&gt;
+&lt;$macrocall $name=&quot;mas-d&quot; g=&lt;&lt;future&gt;&gt;/&gt;
+&lt;/$wikify&gt;
+\end
+
+\define date-from-field(fld,o)
+&lt;$wikify name=&quot;yr&quot; text=&quot;&lt;$view field='$fld$' format=date template=YYYY/&gt;&quot; &gt;
+&lt;$wikify name=&quot;mo&quot; text=&quot;&lt;$view field='$fld$' format=date template=MM/&gt;&quot; &gt;
+&lt;$wikify name=&quot;day&quot; text=&quot;&lt;$view field='$fld$' format=date template=DD/&gt;&quot; &gt;
+&lt;$macrocall $name=daysfrom y=&lt;&lt;yr&gt;&gt; m=&lt;&lt;mo&gt;&gt; d=&lt;&lt;day&gt;&gt; o=$o$ /&gt;
+&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;
+\end
+
+11 Days from modified date: &lt;&lt;date-from-field modified -1&gt;&gt; &lt;br/&gt;
+40 days from 1860-12-1 : &lt;&lt;daysfrom 1860 12 1 40&gt;&gt;
+</pre>
 </div>
 <div caption="Example Sets" created="20200224021206985" modified="20200224021651898" tags="$:/tags/SideBar" title="Example Sets">
 <pre>&lt;$button&gt;Modal Notes 
