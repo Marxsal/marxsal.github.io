@@ -9757,7 +9757,7 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 &lt;/$tiddler&gt;
 </pre>
 </div>
-<div created="20200228004305793" modified="20200228021241945" tags="[[Project Radio Tag]]" title="Use checkboxes like radio buttons for tagging">
+<div created="20200228004305793" modified="20200228021254346" tags="[[Project Radio Tag]]" title="Use checkboxes like radio buttons for tagging">
 <pre>\define tagreset() 
 &lt;$list filter=&quot;[tag[refs]] -[[$(currentTiddler)$]]&quot; variable=&quot;removeme&quot;&gt;
 &lt;$action-listops $field=&quot;tags&quot; $subfilter=&quot;+[remove[TagMe]]&quot;/&gt;
@@ -9769,7 +9769,7 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 &lt;$checkbox field=dummy checked=&quot;yes&quot; unchecked=&quot;yes&quot; default=&quot;yes&quot; uncheckactions=&lt;&lt;tagreset&gt;&gt;/&gt; &lt;$link&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;br/&gt; 
 &lt;/$list&gt;
 &lt;$list filter=&quot;[all[current]!tag[TagMe]]&quot;&gt;
-&lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;$/link&gt;&lt;br/&gt; 
+&lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;br/&gt; 
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
