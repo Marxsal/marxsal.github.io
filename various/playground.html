@@ -189,6 +189,8 @@ Error message and password prompt
 
 <li>Date Conversion Macros</li>
 
+<li>Draft of 'New Tiddler'</li>
+
 <li>Example Sets</li>
 
 <li>ModalEditTemplate</li>
@@ -9421,7 +9423,7 @@ Error message and password prompt
 <div created="20200224021923939" modified="20200224021936630" title="$:/GitHub/Repo">
 <pre>Marxsal/marxsal.github.io</pre>
 </div>
-<div created="20200224021855162" modified="20200224021856935" title="$:/GitHub/Username">
+<div created="20200224021855162" modified="20200228033651718" title="$:/GitHub/Username">
 <pre>marxsal</pre>
 </div>
 <div status="complete" title="$:/Import">
@@ -9438,8 +9440,8 @@ Error message and password prompt
 <div created="20200224020911975" modified="20200224020923005" title="$:/SiteTitle">
 <pre>Code Playground</pre>
 </div>
-<div created="20200224021847786" modified="20200227185604976" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20200224021847786" modified="20200228032210903" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
 <div created="20200224021849942" modified="20200224021849942" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -9447,7 +9449,7 @@ Error message and password prompt
 <div created="20200224021640035" modified="20200227185701159" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="$:/Import [[My Modal Notes]] [[Date Conversion Macros]] [[Use checkboxes like radio buttons for tagging]]" title="$:/StoryList">
+<div created="20200228032208504" list="$:/ControlPanel C [[Draft of 'New Tiddler']] A $:/Import [[My Modal Notes]] [[Use checkboxes like radio buttons for tagging]] B" modified="20200228033646220" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -9626,13 +9628,13 @@ jharesbeitrag_kasko
 
 &lt;$macrocall $name=&quot;eval&quot; cell=&quot;(=!!g2*12/!!f2)&quot; format=&quot;2&quot;&gt;</pre>
 </div>
-<div created="20200228004242151" list="" modified="20200228032010267" tags="[[Project Radio Tag]] refs" title="A">
+<div created="20200228004242151" dummy="yes" list="" modified="20200228033640901" tags="[[Project Radio Tag]] refs" title="A">
 <pre></pre>
 </div>
-<div created="20200228004254787" modified="20200228032017699" tags="[[Project Radio Tag]] refs TagMe" title="B">
+<div created="20200228004254787" modified="20200228033640902" tags="[[Project Radio Tag]] refs TagMe" title="B">
 <pre></pre>
 </div>
-<div created="20200228004301342" modified="20200228032018254" tags="[[Project Radio Tag]] refs TagMe" title="C">
+<div created="20200228004301342" modified="20200228033632241" tags="[[Project Radio Tag]] refs" title="C">
 <pre></pre>
 </div>
 <div bag="default" created="20191021022240198" creator="MASX" modified="20200224175903751" modifier="MAS" revision="0" tags="Tools SFGardenProject $:/tags/Macro" title="Date Conversion Macros" type="text/vnd.tiddlywiki">
@@ -9690,6 +9692,12 @@ jharesbeitrag_kasko
 11 Days from modified date: &lt;&lt;date-from-field modified -1&gt;&gt; &lt;br/&gt;
 40 days from 1860-12-1 : &lt;&lt;daysfrom 1860 12 1 40&gt;&gt;
 </pre>
+</div>
+<div created="20200228033107314" draft.of="New Tiddler" draft.title="New Tiddler" modified="20200228033108820" tags="" title="Draft of 'New Tiddler'">
+<pre>&lt;$list filter=&quot;[all[current]!tag[TagMe]]&quot;&gt;
+&lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot; checkactions=&lt;&lt;tagreset&gt;&gt;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt; &lt;&lt;tagreset&gt;&gt;&lt;br/&gt; 
+&lt;/$list&gt;
+&lt;/$list&gt;</pre>
 </div>
 <div caption="Example Sets" created="20200224021206985" modified="20200224021651898" tags="$:/tags/SideBar" title="Example Sets">
 <pre>&lt;$button&gt;Modal Notes 
@@ -9754,19 +9762,20 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 &lt;/$tiddler&gt;
 </pre>
 </div>
-<div created="20200228004305793" modified="20200228032113982" tags="[[Project Radio Tag]]" title="Use checkboxes like radio buttons for tagging">
+<div created="20200228004305793" modified="20200228033629630" tags="[[Project Radio Tag]]" title="Use checkboxes like radio buttons for tagging">
 <pre>\define tagreset() 
-&lt;$list filter=&quot;[tag[refs]] -[[$(currentTiddler)$]]&quot; variable=&quot;removeme&quot;&gt;&lt;&lt;removeme&gt;&gt;
-&lt;$action-listops $field=&quot;tags&quot; $subfilter=&quot;+[remove[TagMe]]&quot;/&gt;
-&lt;$action-deletefield dummy/&gt;
+&lt;$list filter=&quot;[tag[refs]] -[[$(currentTiddler)$]]&quot; variable=&quot;removeme&quot;&gt;
+&lt;$action-listops  $tiddler=&lt;&lt;removeme&gt;&gt; $tags=&quot;+[remove[TagMe]]&quot;/&gt;
 &lt;/$list&gt;
+&lt;$action-deletefield dummy/&gt;
 \end
 &lt;$list filter=&quot;[tag[refs]]&quot;&gt;
 &lt;$list filter=&quot;[all[current]tag[TagMe]]&quot;&gt;
-&lt;$checkbox field=dummy checked=&quot;yes&quot; unchecked=&quot;yes&quot; default=&quot;yes&quot; uncheckactions=&lt;&lt;tagreset&gt;&gt;/&gt; &lt;$link&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;br/&gt; 
+&lt;$checkbox field=dummy checked=&quot;yes&quot; unchecked=&quot;yes&quot; default=&quot;yes&quot;/&gt;
+&lt;$link&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;br/&gt; 
 &lt;/$list&gt;
 &lt;$list filter=&quot;[all[current]!tag[TagMe]]&quot;&gt;
-&lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;br/&gt; 
+&lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot; checkactions=&lt;&lt;tagreset&gt;&gt;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;br/&gt; 
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
