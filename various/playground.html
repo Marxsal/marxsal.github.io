@@ -181,6 +181,12 @@ Error message and password prompt
 
 <li>2020-02-27 Scratch</li>
 
+<li>A</li>
+
+<li>B</li>
+
+<li>C</li>
+
 <li>Date Conversion Macros</li>
 
 <li>Example Sets</li>
@@ -192,6 +198,8 @@ Error message and password prompt
 <li>Notes for Today</li>
 
 <li>Popme</li>
+
+<li>Use checkboxes like radio buttons for tagging</li>
 
 </ul>
 </p>
@@ -9418,7 +9426,10 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Date Conversion Macros]]</pre>
+# [[A]]
+# [[B]]
+# [[C]]
+# [[Use checkboxes like radio buttons for tagging]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -9435,10 +9446,10 @@ Error message and password prompt
 <div created="20200224021849942" modified="20200224021849942" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20200224021640035" modified="20200227185630373" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Tools</pre>
+<div created="20200224021640035" modified="20200227185701159" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[My Modal Notes]] [[Date Conversion Macros]]" title="$:/StoryList">
+<div list="$:/Import [[My Modal Notes]] [[Date Conversion Macros]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -9617,6 +9628,15 @@ jharesbeitrag_kasko
 
 &lt;$macrocall $name=&quot;eval&quot; cell=&quot;(=!!g2*12/!!f2)&quot; format=&quot;2&quot;&gt;</pre>
 </div>
+<div created="20200228004242151" list="" modified="20200228021008733" tags="[[Project Radio Tag]] refs TagMe" title="A">
+<pre></pre>
+</div>
+<div created="20200228004254787" modified="20200228021021730" tags="[[Project Radio Tag]] refs" title="B">
+<pre></pre>
+</div>
+<div created="20200228004301342" modified="20200228021019359" tags="[[Project Radio Tag]] refs TagMe" title="C">
+<pre></pre>
+</div>
 <div bag="default" created="20191021022240198" creator="MASX" modified="20200224175903751" modifier="MAS" revision="0" tags="Tools SFGardenProject $:/tags/Macro" title="Date Conversion Macros" type="text/vnd.tiddlywiki">
 <pre>\define mas-g(y,m,d,offset:&quot;0&quot;)
 &lt;$set name=m value={{{ [&lt;__m__&gt;add[9]remainder[12]] }}}&gt;
@@ -9735,6 +9755,22 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 &lt;$transclude tiddler=ModalEditTemplate/&gt;
 &lt;/$tiddler&gt;
 </pre>
+</div>
+<div created="20200228004305793" modified="20200228021014345" tags="[[Project Radio Tag]]" title="Use checkboxes like radio buttons for tagging">
+<pre>\define tagreset() 
+&lt;$list filter=&quot;[tag[refs]] -[[$(currentTiddler)$]]&quot; variable=&quot;removeme&quot;&gt;
+&lt;$action-listops $field=&quot;tags&quot; $subfilter=&quot;+[remove[TagMe]]&quot;/&gt;
+&lt;$action-deletefield dummy/&gt;
+&lt;/$list&gt;
+\end
+&lt;$list filter=&quot;[tag[refs]]&quot;&gt;
+&lt;$list filter=&quot;[all[current]tag[TagMe]]&quot;&gt;
+&lt;$checkbox field=dummy checked=&quot;yes&quot; unchecked=&quot;yes&quot; default=&quot;yes&quot; uncheckactions=&lt;&lt;tagreset&gt;&gt;/&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;br/&gt; 
+&lt;/$list&gt;
+&lt;$list filter=&quot;[all[current]!tag[TagMe]]&quot;&gt;
+&lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot;/&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;br/&gt; 
+&lt;/$list&gt;
+&lt;/$list&gt;</pre>
 </div>
 
 </div>
