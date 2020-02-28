@@ -9407,9 +9407,10 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200224044803061" modified="20200227185617631" title="$:/DefaultTiddlers">
+<div created="20200224044803061" modified="20200228021143143" title="$:/DefaultTiddlers">
 <pre>[[My Modal Notes]]
-[[Date Conversion Macros]]</pre>
+[[Date Conversion Macros]]
+[[Use checkboxes like radio buttons for tagging]]</pre>
 </div>
 <div created="20200224021952199" modified="20200224021955003" title="$:/GitHub/Filename">
 <pre>playground.html</pre>
@@ -9449,7 +9450,7 @@ Error message and password prompt
 <div created="20200224021640035" modified="20200227185701159" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="$:/Import [[My Modal Notes]] [[Date Conversion Macros]]" title="$:/StoryList">
+<div list="[[My Modal Notes]] [[Date Conversion Macros]] [[Use checkboxes like radio buttons for tagging]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -9756,7 +9757,7 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 &lt;/$tiddler&gt;
 </pre>
 </div>
-<div created="20200228004305793" modified="20200228021014345" tags="[[Project Radio Tag]]" title="Use checkboxes like radio buttons for tagging">
+<div created="20200228004305793" modified="20200228021241945" tags="[[Project Radio Tag]]" title="Use checkboxes like radio buttons for tagging">
 <pre>\define tagreset() 
 &lt;$list filter=&quot;[tag[refs]] -[[$(currentTiddler)$]]&quot; variable=&quot;removeme&quot;&gt;
 &lt;$action-listops $field=&quot;tags&quot; $subfilter=&quot;+[remove[TagMe]]&quot;/&gt;
@@ -9765,10 +9766,10 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 \end
 &lt;$list filter=&quot;[tag[refs]]&quot;&gt;
 &lt;$list filter=&quot;[all[current]tag[TagMe]]&quot;&gt;
-&lt;$checkbox field=dummy checked=&quot;yes&quot; unchecked=&quot;yes&quot; default=&quot;yes&quot; uncheckactions=&lt;&lt;tagreset&gt;&gt;/&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;br/&gt; 
+&lt;$checkbox field=dummy checked=&quot;yes&quot; unchecked=&quot;yes&quot; default=&quot;yes&quot; uncheckactions=&lt;&lt;tagreset&gt;&gt;/&gt; &lt;$link&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;br/&gt; 
 &lt;/$list&gt;
 &lt;$list filter=&quot;[all[current]!tag[TagMe]]&quot;&gt;
-&lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot;/&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;br/&gt; 
+&lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;$/link&gt;&lt;br/&gt; 
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
