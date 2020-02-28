@@ -9626,13 +9626,13 @@ jharesbeitrag_kasko
 
 &lt;$macrocall $name=&quot;eval&quot; cell=&quot;(=!!g2*12/!!f2)&quot; format=&quot;2&quot;&gt;</pre>
 </div>
-<div created="20200228004242151" list="" modified="20200228021008733" tags="[[Project Radio Tag]] refs TagMe" title="A">
+<div created="20200228004242151" list="" modified="20200228032010267" tags="[[Project Radio Tag]] refs" title="A">
 <pre></pre>
 </div>
-<div created="20200228004254787" modified="20200228021021730" tags="[[Project Radio Tag]] refs" title="B">
+<div created="20200228004254787" modified="20200228032017699" tags="[[Project Radio Tag]] refs TagMe" title="B">
 <pre></pre>
 </div>
-<div created="20200228004301342" modified="20200228021019359" tags="[[Project Radio Tag]] refs TagMe" title="C">
+<div created="20200228004301342" modified="20200228032018254" tags="[[Project Radio Tag]] refs TagMe" title="C">
 <pre></pre>
 </div>
 <div bag="default" created="20191021022240198" creator="MASX" modified="20200224175903751" modifier="MAS" revision="0" tags="Tools SFGardenProject $:/tags/Macro" title="Date Conversion Macros" type="text/vnd.tiddlywiki">
@@ -9754,9 +9754,9 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 &lt;/$tiddler&gt;
 </pre>
 </div>
-<div created="20200228004305793" modified="20200228021254346" tags="[[Project Radio Tag]]" title="Use checkboxes like radio buttons for tagging">
+<div created="20200228004305793" modified="20200228032113982" tags="[[Project Radio Tag]]" title="Use checkboxes like radio buttons for tagging">
 <pre>\define tagreset() 
-&lt;$list filter=&quot;[tag[refs]] -[[$(currentTiddler)$]]&quot; variable=&quot;removeme&quot;&gt;
+&lt;$list filter=&quot;[tag[refs]] -[[$(currentTiddler)$]]&quot; variable=&quot;removeme&quot;&gt;&lt;&lt;removeme&gt;&gt;
 &lt;$action-listops $field=&quot;tags&quot; $subfilter=&quot;+[remove[TagMe]]&quot;/&gt;
 &lt;$action-deletefield dummy/&gt;
 &lt;/$list&gt;
