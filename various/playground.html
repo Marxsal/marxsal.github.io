@@ -205,6 +205,8 @@ Error message and password prompt
 
 <li>Popme</li>
 
+<li>Shift margin</li>
+
 <li>Table of Contents</li>
 
 <li>Use checkboxes like radio buttons for tagging</li>
@@ -9415,7 +9417,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200224044803061" modified="20200301041255102" title="$:/DefaultTiddlers">
+<div created="20200224044803061" modified="20200301041412565" title="$:/DefaultTiddlers">
 <pre>[[Table of Contents]]</pre>
 </div>
 <div created="20200224021952199" modified="20200224021955003" title="$:/GitHub/Filename">
@@ -9433,7 +9435,7 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/jd/fullscreen-editor]]</pre>
+# [[Shift margin]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -9495,8 +9497,8 @@ Error message and password prompt
 <div created="20200224020911975" modified="20200224020923005" title="$:/SiteTitle">
 <pre>Code Playground</pre>
 </div>
-<div created="20200224021847786" modified="20200301041320085" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20200224021847786" modified="20200301040918106" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20200224021849942" modified="20200224021849942" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -9504,7 +9506,7 @@ Error message and password prompt
 <div created="20200224021640035" modified="20200227185701159" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200301041247778" list="$:/Import $:/ControlPanel [[My Modal Notes]] [[Date Conversion Macros]] [[Use checkboxes like radio buttons for tagging]] [[How to create external images en masse?]]" modified="20200301041317386" title="$:/StoryList">
+<div list="$:/Import [[Table of Contents]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -9858,6 +9860,38 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 &lt;$transclude tiddler=ModalEditTemplate/&gt;
 &lt;/$tiddler&gt;
 </pre>
+</div>
+<div caption="Shift margin" created="20190927200509572" creator="MAS" modified="20191016172311985" modifier="MAS" tags="$:/tags/SideBar" title="Shift margin">
+<pre>\define myactions()
+&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/storywidth&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]addsuffix[px]] }}} /&gt;
+&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/storyright&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]addsuffix[px]] }}} /&gt;
+&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]subtract[86]addsuffix[px]] }}} /&gt;
+&lt;$action-setfield $tiddler=&quot;$:/MAS/story/width/default&quot; $field=&quot;text&quot; $value={{$:/MAS/storywidth}} /&gt;
+\end
+
+\define myfontactions()
+&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/fontsize]get[text]addsuffix[px]] }}} /&gt;
+&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/bodylineheight&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/fontsize]get[text]add[7]addsuffix[px]] }}} /&gt;
+&lt;$action-setfield $tiddler=&quot;$:/MAS/fontsize/default&quot; $field=&quot;text&quot; $value={{$:/MAS/fontsize}} /&gt;
+\end
+
+
+&lt;$range tiddler=&quot;$:/MAS/storywidth&quot; min=&quot;600&quot; max=&quot;1000&quot; default={{$:/MAS/story/width/default}} increment=&quot;1&quot; /&gt;
+
+&lt;$button actions=&lt;&lt;myactions&gt;&gt;&gt;Set width&lt;/$button&gt;
+
+{{$:/MAS/storywidth}}
+
+&lt;$range tiddler=&quot;$:/MAS/fontsize&quot; min=&quot;15&quot; max=&quot;40&quot; default={{$:/MAS/fontsize/default}}
+ increment=&quot;1&quot; /&gt;
+
+&lt;$button actions=&lt;&lt;myfontactions&gt;&gt;&gt;Set font&lt;/$button&gt;
+
+{{$:/MAS/fontsize}}
+
+----
+
+{{StyleSwapper}}</pre>
 </div>
 <div created="20200301040925985" modified="20200301041007951" tags="" title="Table of Contents">
 <pre>!! A few of my favorite things
