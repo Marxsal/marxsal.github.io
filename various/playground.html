@@ -177,6 +177,8 @@ Error message and password prompt
 
 <li>$:/temp/info-plugin</li>
 
+<li>$:/temp/search</li>
+
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
@@ -9503,10 +9505,10 @@ Error message and password prompt
 <div created="20200224021849942" modified="20200224021849942" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20200224021640035" modified="20200227185701159" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20200224021640035" modified="20200301043604200" title="$:/state/tab/sidebar--595412856">
+<pre>Example Sets</pre>
 </div>
-<div created="20200301041557958" list="$:/Import [[Table of Contents]] [[Date Conversion Macros]]" modified="20200301041557958" title="$:/StoryList">
+<div created="20200301041557958" list="[[Example Sets]] $:/Import [[Table of Contents]] [[Date Conversion Macros]]" modified="20200301043612878" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -9569,6 +9571,9 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20200301043609986" modified="20200301043610989" title="$:/temp/search">
+<pre>example</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.21">
 <pre>{
@@ -9756,9 +9761,15 @@ jharesbeitrag_kasko
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div caption="Example Sets" created="20200224021206985" modified="20200224021651898" tags="$:/tags/SideBar" title="Example Sets">
+<div caption="Example Sets" created="20200224021206985" modified="20200301043627569" tags="$:/tags/SideBar" title="Example Sets">
 <pre>&lt;$button&gt;Modal Notes 
 &lt;$action-listops $tiddler=&quot;$:/StoryList&quot; $filter=&quot;[[Popme]] [[ModalEditTemplate]] [[Notes for Today]]&quot; /&gt;
+&lt;/$button&gt;
+
+----
+&lt;$button class=&quot;tc-btn-big-green&quot;&gt;
+&lt;$action-sendmessage $message=&quot;tm-download-file&quot; $param=&quot;$:/core/save/all&quot; filename=&quot;index.html&quot;/&gt;
+&lt;&lt;lingo Full/Caption&gt;&gt; {{$:/core/images/save-button}}
 &lt;/$button&gt;
 </pre>
 </div>
