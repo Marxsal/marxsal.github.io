@@ -195,8 +195,6 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
-<li>$:/themes/tiddlywiki/vanilla/metrics/bodylineheight</li>
-
 <li>2020-02-27 Scratch</li>
 
 <li>A</li>
@@ -210,8 +208,6 @@ Error message and password prompt
 <li>Draft of 'Helpful Stuff'</li>
 
 <li>Draft of 'New Tiddler'</li>
-
-<li>Draft of 'Shift margin'</li>
 
 <li>Helpful Stuff</li>
 
@@ -9548,7 +9544,7 @@ Error message and password prompt
 <div created="20200224021640035" modified="20200301043814431" title="$:/state/tab/sidebar--595412856">
 <pre>Helpful Stuff</pre>
 </div>
-<div created="20200301041557958" list="$:/ControlPanel [[Draft of 'Shift margin']] [[Draft of 'Helpful Stuff']] $:/Import $:/MAS/storywidth [[Table of Contents]] [[Date Conversion Macros]]" modified="20200301044154181" title="$:/StoryList">
+<div created="20200301041557958" list="[[Shift margin]] $:/ControlPanel [[Draft of 'Helpful Stuff']] $:/Import $:/MAS/storywidth [[Table of Contents]] [[Date Conversion Macros]]" modified="20200301044332026" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -9724,9 +9720,6 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200301044123809" modified="20200301044123809" title="$:/themes/tiddlywiki/vanilla/metrics/bodylineheight">
-<pre>31px</pre>
-</div>
 <div created="20200227183803345" modified="20200227184140765" tags="MyNote" title="2020-02-27 Scratch">
 <pre>summe_beitrag_zahlweise
 jharesbeitrag_kasko
@@ -9818,38 +9811,6 @@ jharesbeitrag_kasko
 &lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot; checkactions=&lt;&lt;tagreset&gt;&gt;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt; &lt;&lt;tagreset&gt;&gt;&lt;br/&gt; 
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
-</div>
-<div caption="Shift margin" created="20190927200509572" creator="MAS" draft.of="Shift margin" draft.title="Shift margin" modified="20200301043857061" modifier="MAS" tags="$:/tags/SideBar" title="Draft of 'Shift margin'">
-<pre>\define myactions()
-&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/storywidth&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]addsuffix[px]] }}} /&gt;
-&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/storyright&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]addsuffix[px]] }}} /&gt;
-&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]subtract[86]addsuffix[px]] }}} /&gt;
-&lt;$action-setfield $tiddler=&quot;$:/MAS/story/width/default&quot; $field=&quot;text&quot; $value={{$:/MAS/storywidth}} /&gt;
-\end
-
-\define myfontactions()
-&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/fontsize]get[text]addsuffix[px]] }}} /&gt;
-&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/bodylineheight&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/fontsize]get[text]add[7]addsuffix[px]] }}} /&gt;
-&lt;$action-setfield $tiddler=&quot;$:/MAS/fontsize/default&quot; $field=&quot;text&quot; $value={{$:/MAS/fontsize}} /&gt;
-\end
-
-
-&lt;$range tiddler=&quot;$:/MAS/storywidth&quot; min=&quot;600&quot; max=&quot;1000&quot; default={{$:/MAS/story/width/default}} increment=&quot;1&quot; /&gt;
-
-&lt;$button actions=&lt;&lt;myactions&gt;&gt;&gt;Set width&lt;/$button&gt;
-
-{{$:/MAS/storywidth}}
-
-&lt;$range tiddler=&quot;$:/MAS/fontsize&quot; min=&quot;15&quot; max=&quot;40&quot; default={{$:/MAS/fontsize/default}}
- increment=&quot;1&quot; /&gt;
-
-&lt;$button actions=&lt;&lt;myfontactions&gt;&gt;&gt;Set font&lt;/$button&gt;
-
-{{$:/MAS/fontsize}}
-
-----
-
-{{StyleSwapper}}</pre>
 </div>
 <div caption="Tools, Etc." created="20200224021206985" modified="20200301043837828" tags="$:/tags/SideBar" title="Helpful Stuff">
 <pre>&lt;$button&gt;Modal Notes 
@@ -9965,7 +9926,7 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 &lt;/$tiddler&gt;
 </pre>
 </div>
-<div caption="Shift margin" created="20190927200509572" creator="MAS" modified="20191016172311985" modifier="MAS" tags="$:/tags/SideBar" title="Shift margin">
+<div caption="Shift margin" created="20190927200509572" creator="MAS" modified="20200301044337716" modifier="MAS" title="Shift margin">
 <pre>\define myactions()
 &lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/storywidth&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]addsuffix[px]] }}} /&gt;
 &lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/storyright&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]addsuffix[px]] }}} /&gt;
