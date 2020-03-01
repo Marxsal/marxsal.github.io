@@ -159,6 +159,16 @@ Error message and password prompt
 
 <li>$:/isEncrypted</li>
 
+<li>$:/MAS/fontsize</li>
+
+<li>$:/MAS/fontsize/default</li>
+
+<li>$:/MAS/story/fontsize/default</li>
+
+<li>$:/MAS/story/width/default</li>
+
+<li>$:/MAS/storywidth</li>
+
 <li>$:/plugins/jd/fullscreen-editor</li>
 
 <li>$:/SiteSubtitle</li>
@@ -193,7 +203,11 @@ Error message and password prompt
 
 <li>Date Conversion Macros</li>
 
+<li>Draft of 'Helpful Stuff'</li>
+
 <li>Draft of 'New Tiddler'</li>
+
+<li>Draft of 'Shift margin'</li>
 
 <li>Helpful Stuff</li>
 
@@ -9437,10 +9451,29 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Shift margin]]</pre>
+# [[$:/MAS/fontsize]]
+# [[$:/MAS/fontsize/default]]
+# [[$:/MAS/story/fontsize/default]]
+# [[$:/MAS/story/width/default]]
+# [[$:/MAS/storywidth]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
+</div>
+<div created="20191001035227212" creator="MAS" modified="20191109033140792" modifier="MAS" title="$:/MAS/fontsize">
+<pre>24</pre>
+</div>
+<div created="20191016172327117" creator="MAS" modified="20191109033142166" modifier="MAS" title="$:/MAS/fontsize/default">
+<pre>24</pre>
+</div>
+<div created="20191016171428283" creator="MAS" modified="20191016171829942" modifier="MAS" title="$:/MAS/story/fontsize/default">
+<pre>22</pre>
+</div>
+<div created="20191016171105311" creator="MAS" modified="20191102235630592" modifier="MAS" title="$:/MAS/story/width/default">
+<pre>857</pre>
+</div>
+<div created="20191001035222595" creator="MAS" modified="20191101015418087" modifier="MAS" title="$:/MAS/storywidth">
+<pre>857</pre>
 </div>
 <div author="jd" core-version="1.1.19" created="20190206061130276" creator="HC Haase" description="Fullscreen Editor" list="readme" modified="20200129234815294" modifier="HC Haase" plugin-type="plugin" title="$:/plugins/jd/fullscreen-editor" type="application/json" version="1.0.0">
 <pre>{
@@ -9505,10 +9538,10 @@ Error message and password prompt
 <div created="20200224021849942" modified="20200224021849942" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20200224021640035" modified="20200301043604200" title="$:/state/tab/sidebar--595412856">
-<pre>Example Sets</pre>
+<div created="20200224021640035" modified="20200301043814431" title="$:/state/tab/sidebar--595412856">
+<pre>Helpful Stuff</pre>
 </div>
-<div created="20200301041557958" list="[[Shift margin]] [[Helpful Stuff]] $:/Import [[Table of Contents]] [[Date Conversion Macros]]" modified="20200301043746214" title="$:/StoryList">
+<div created="20200301041557958" list="[[Draft of 'Shift margin']] [[Draft of 'Helpful Stuff']] $:/Import [[Table of Contents]] [[Date Conversion Macros]]" modified="20200301043746214" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -9755,13 +9788,7 @@ jharesbeitrag_kasko
 40 days from 1860-12-1 : &lt;&lt;daysfrom 1860 12 1 40&gt;&gt;
 </pre>
 </div>
-<div created="20200228033107314" draft.of="New Tiddler" draft.title="New Tiddler" modified="20200228033108820" tags="" title="Draft of 'New Tiddler'">
-<pre>&lt;$list filter=&quot;[all[current]!tag[TagMe]]&quot;&gt;
-&lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot; checkactions=&lt;&lt;tagreset&gt;&gt;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt; &lt;&lt;tagreset&gt;&gt;&lt;br/&gt; 
-&lt;/$list&gt;
-&lt;/$list&gt;</pre>
-</div>
-<div caption="Tools, Etc." created="20200224021206985" modified="20200301043811796" tags="$:/tags/SideBar" title="Helpful Stuff">
+<div caption="Tools, Etc." created="20200224021206985" draft.of="Helpful Stuff" draft.title="Helpful Stuff" modified="20200301043847300" tags="$:/tags/SideBar" title="Draft of 'Helpful Stuff'">
 <pre>&lt;$button&gt;Modal Notes 
 &lt;$action-listops $tiddler=&quot;$:/StoryList&quot; $filter=&quot;[[Popme]] [[ModalEditTemplate]] [[Notes for Today]]&quot; /&gt;
 &lt;/$button&gt;
@@ -9772,7 +9799,61 @@ jharesbeitrag_kasko
 &lt;&lt;lingo Full/Caption&gt;&gt; {{$:/core/images/save-button}}
 &lt;/$button&gt;
 
-___
+----
+
+{{Shift margin}}</pre>
+</div>
+<div created="20200228033107314" draft.of="New Tiddler" draft.title="New Tiddler" modified="20200228033108820" tags="" title="Draft of 'New Tiddler'">
+<pre>&lt;$list filter=&quot;[all[current]!tag[TagMe]]&quot;&gt;
+&lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot; checkactions=&lt;&lt;tagreset&gt;&gt;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt; &lt;&lt;tagreset&gt;&gt;&lt;br/&gt; 
+&lt;/$list&gt;
+&lt;/$list&gt;</pre>
+</div>
+<div caption="Shift margin" created="20190927200509572" creator="MAS" draft.of="Shift margin" draft.title="Shift margin" modified="20200301043857061" modifier="MAS" tags="$:/tags/SideBar" title="Draft of 'Shift margin'">
+<pre>\define myactions()
+&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/storywidth&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]addsuffix[px]] }}} /&gt;
+&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/storyright&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]addsuffix[px]] }}} /&gt;
+&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/storywidth]get[text]subtract[86]addsuffix[px]] }}} /&gt;
+&lt;$action-setfield $tiddler=&quot;$:/MAS/story/width/default&quot; $field=&quot;text&quot; $value={{$:/MAS/storywidth}} /&gt;
+\end
+
+\define myfontactions()
+&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/fontsize]get[text]addsuffix[px]] }}} /&gt;
+&lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/bodylineheight&quot; $field=&quot;text&quot; $value={{{ [[$:/MAS/fontsize]get[text]add[7]addsuffix[px]] }}} /&gt;
+&lt;$action-setfield $tiddler=&quot;$:/MAS/fontsize/default&quot; $field=&quot;text&quot; $value={{$:/MAS/fontsize}} /&gt;
+\end
+
+
+&lt;$range tiddler=&quot;$:/MAS/storywidth&quot; min=&quot;600&quot; max=&quot;1000&quot; default={{$:/MAS/story/width/default}} increment=&quot;1&quot; /&gt;
+
+&lt;$button actions=&lt;&lt;myactions&gt;&gt;&gt;Set width&lt;/$button&gt;
+
+{{$:/MAS/storywidth}}
+
+&lt;$range tiddler=&quot;$:/MAS/fontsize&quot; min=&quot;15&quot; max=&quot;40&quot; default={{$:/MAS/fontsize/default}}
+ increment=&quot;1&quot; /&gt;
+
+&lt;$button actions=&lt;&lt;myfontactions&gt;&gt;&gt;Set font&lt;/$button&gt;
+
+{{$:/MAS/fontsize}}
+
+----
+
+{{StyleSwapper}}</pre>
+</div>
+<div caption="Tools, Etc." created="20200224021206985" modified="20200301043837828" tags="$:/tags/SideBar" title="Helpful Stuff">
+<pre>&lt;$button&gt;Modal Notes 
+&lt;$action-listops $tiddler=&quot;$:/StoryList&quot; $filter=&quot;[[Popme]] [[ModalEditTemplate]] [[Notes for Today]]&quot; /&gt;
+&lt;/$button&gt;
+
+----
+&lt;$button class=&quot;tc-btn-big-green&quot;&gt;
+&lt;$action-sendmessage $message=&quot;tm-download-file&quot; $param=&quot;$:/core/save/all&quot; filename=&quot;index.html&quot;/&gt;
+&lt;&lt;lingo Full/Caption&gt;&gt; {{$:/core/images/save-button}}
+&lt;/$button&gt;
+
+----
+
 {{Shift margin}}</pre>
 </div>
 <div created="20180826015855485" modified="20200301040256057" tags="Images TiddlyWiki" title="How to create external images en masse?" type="text/vnd.tiddlywiki">
