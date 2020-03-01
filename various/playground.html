@@ -193,6 +193,8 @@ Error message and password prompt
 
 <li>Example Sets</li>
 
+<li>How to creating external images en masse?</li>
+
 <li>ModalEditTemplate</li>
 
 <li>My Modal Notes</li>
@@ -9429,7 +9431,7 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Use checkboxes like radio buttons for tagging]]</pre>
+# [[How to creating external images en masse?]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -9449,7 +9451,7 @@ Error message and password prompt
 <div created="20200224021640035" modified="20200227185701159" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200228032208504" list="$:/ControlPanel C [[Draft of 'New Tiddler']] A $:/Import [[My Modal Notes]] [[Use checkboxes like radio buttons for tagging]] B" modified="20200228033646220" title="$:/StoryList">
+<div list="$:/Import [[Use checkboxes like radio buttons for tagging]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -9468,19 +9470,19 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///C:/Users/Mark/Downloads/playground.html&quot;
+            &quot;text&quot;: &quot;https://marxsal.github.io/various/playground.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;marxsal.github.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;marxsal.github.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;file:&quot;
+            &quot;text&quot;: &quot;https:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -9488,7 +9490,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/C:/Users/Mark/Downloads/playground.html&quot;
+            &quot;text&quot;: &quot;/various/playground.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9496,7 +9498,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;null&quot;
+            &quot;text&quot;: &quot;https://marxsal.github.io&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
@@ -9704,6 +9706,48 @@ jharesbeitrag_kasko
 &lt;$action-listops $tiddler=&quot;$:/StoryList&quot; $filter=&quot;[[Popme]] [[ModalEditTemplate]] [[Notes for Today]]&quot; /&gt;
 &lt;/$button&gt;
 </pre>
+</div>
+<div created="20180826015855485" modified="20191125183801979" tags="Images TiddlyWiki" title="How to creating external images en masse?" type="text/vnd.tiddlywiki">
+<pre>[[Forum link|https://groups.google.com/forum/#!searchin/tiddlywiki/emacs%7Csort:date/tiddlywiki/1yTi65sc8D8/0ru-PhMJBAAJ]]
+
+Here's one approach.
+
+OF COURSE, ALWAYS START BY MAKING SURE YOU HAVE A BACKUP OF YOUR TW FILE!!
+
+Using an advanced text editor like Emacs, get a list of your images and put it into a format like this:
+
+
+```
+CIMG2199.JPG: x
+CIMG2200.JPG: x
+CIMG2201.JPG: x
+CIMG2202.JPG: x
+
+```
+
+Paste this into a tiddler called &quot;MyImages&quot; and change the type to data dictionary. Save the tiddler.
+
+Create another tiddler with the following contents:
+
+```
+\define gluepath() $(path)$$(image)$
+&lt;$set name=&quot;path&quot; value=&quot;file:///D:\data\graphics\file-us\&quot;&gt;
+
+&lt;$button&gt;Make Image Tiddlers
+&lt;$list filter=&quot;[[MyImages]indexes[]]&quot; variable=&quot;image&quot;&gt;
+&lt;$action-createtiddler $basetitle=&lt;&lt;image&gt;&gt; _canonical_uri=&lt;&lt;gluepath&gt;&gt; type=&quot;image/jpeg&quot;&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+
+&lt;/$set&gt;
+
+```
+
+Change the &quot;path&quot; variable to whatever address is needed for image directory and system (I used file:/// but you don't need that for images positioned relative to your system).
+
+Click on the &quot;Make Image Tiddlers&quot; button, and a &quot;Image Tiddler&quot; (_canonical_uri based) will be made for each image.
+
+You can of course play with this to use other image dictionaries, paths, etc. A similar technque could be used to generate image wikitext if you don't like Image Tiddlers. Note that if you are on windows that you can't use drive names like C: in the data dictionary (that's why I applied the path outside the dictionary).</pre>
 </div>
 <div created="20200223211552215" modified="20200223212401465" tags="" title="ModalEditTemplate">
 <pre>\define actions()
