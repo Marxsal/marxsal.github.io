@@ -159,6 +159,8 @@ Error message and password prompt
 
 <li>$:/isEncrypted</li>
 
+<li>$:/plugins/jd/fullscreen-editor</li>
+
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
@@ -9413,11 +9415,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200224044803061" modified="20200301040320487" title="$:/DefaultTiddlers">
-<pre>[[My Modal Notes]]
-[[Date Conversion Macros]]
-[[Use checkboxes like radio buttons for tagging]]
-[[How to create external images en masse?]]</pre>
+<div created="20200224044803061" modified="20200301041020876" title="$:/DefaultTiddlers">
+<pre>Table of Contents</pre>
 </div>
 <div created="20200224021952199" modified="20200224021955003" title="$:/GitHub/Filename">
 <pre>playground.html</pre>
@@ -9434,10 +9433,61 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[How to creating external images en masse?]]</pre>
+# [[$:/plugins/jd/fullscreen-editor]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
+</div>
+<div author="jd" core-version="1.1.19" created="20190206061130276" creator="HC Haase" description="Fullscreen Editor" list="readme" modified="20200129234815294" modifier="HC Haase" plugin-type="plugin" title="$:/plugins/jd/fullscreen-editor" type="application/json" version="1.0.0">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/jd/fullscreen-editor/EditButton&quot;: {
+            &quot;text&quot;: &quot;\\whitespace trim\n&lt;$navigator story=\&quot;$:/fullscreen-editor\&quot;&gt;\n&lt;$button message=\&quot;tm-edit-tiddler\&quot; tooltip=\&quot;Edit in full screen mode\&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/core/images/full-screen-button}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;\n&lt;$text text=\&quot; \&quot;/&gt;\n&lt;$text text=\&quot;edit in full screen\&quot;/&gt;\n&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/$navigator&gt;&quot;,
+            &quot;title&quot;: &quot;$:/jd/fullscreen-editor/EditButton&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewToolbar&quot;,
+            &quot;modifier&quot;: &quot;jd&quot;,
+            &quot;modified&quot;: &quot;20190204134418116&quot;,
+            &quot;description&quot;: &quot;Edit in full screen mode&quot;,
+            &quot;creator&quot;: &quot;jd&quot;,
+            &quot;created&quot;: &quot;20190204123121582&quot;,
+            &quot;caption&quot;: &quot;{{$:/core/images/full-screen-button}} edit in full screen&quot;
+        },
+        &quot;$:/jd/fullscreen-editor/EditTemplate&quot;: {
+            &quot;text&quot;: &quot;&lt;$navigator story=\&quot;$:/fullscreen-editor\&quot;&gt;\n&lt;$keyboard key=((cancel-edit-tiddler)) message=\&quot;tm-cancel-tiddler\&quot;&gt;\n&lt;$keyboard key=((save-tiddler)) actions=\&quot;\&quot;\&quot;&lt;$action-sendmessage $message=\&quot;tm-save-tiddler\&quot;/&gt;&lt;$action-sendmessage $message=\&quot;tm-close-tiddler\&quot;/&gt;\&quot;\&quot;\&quot; class=\&quot;fullscreen-story-river\&quot; tag=\&quot;div\&quot;&gt;\n{{||$:/core/ui/EditTemplate/controls}}\n{{||$:/core/ui/EditTemplate/body}}\n&lt;/$keyboard&gt;\n&lt;/$keyboard&gt;\n&lt;/$navigator&gt;&quot;,
+            &quot;title&quot;: &quot;$:/jd/fullscreen-editor/EditTemplate&quot;,
+            &quot;modifier&quot;: &quot;jd&quot;,
+            &quot;modified&quot;: &quot;20190204140310285&quot;,
+            &quot;creator&quot;: &quot;jd&quot;,
+            &quot;created&quot;: &quot;20190204123536452&quot;
+        },
+        &quot;$:/jd/fullscreen-editor/PageTemplate&quot;: {
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[list[$:/fullscreen-editor]]\&quot; template=\&quot;$:/jd/fullscreen-editor/ViewTemplate\&quot; editTemplate=\&quot;$:/jd/fullscreen-editor/EditTemplate\&quot;/&gt;\n&quot;,
+            &quot;title&quot;: &quot;$:/jd/fullscreen-editor/PageTemplate&quot;,
+            &quot;tags&quot;: &quot;$:/tags/PageTemplate&quot;,
+            &quot;modifier&quot;: &quot;jd&quot;,
+            &quot;modified&quot;: &quot;20190204135522488&quot;,
+            &quot;creator&quot;: &quot;jd&quot;,
+            &quot;created&quot;: &quot;20190204123350692&quot;
+        },
+        &quot;$:/jd/fullscreen-editor/Stylesheet&quot;: {
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[[$:/fullscreen-editor]has:field[list]!field:list[]]\&quot;&gt;\n&lt;$list filter=\&quot;[[$:/fullscreen-editor]search:list[draft of]]\&quot;&gt;\n\n.tc-story-river {display: none; }\n\n.fullscreen-story-river {\n    background-color: &lt;&lt;colour tiddler-editor-background&gt;&gt;;\n    position: fixed;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    display: block;\n    z-index: 2200;\n    overflow-y: auto;\n}\n\n.fullscreen-story-river .tc-tiddler-edit-title {\n    position: sticky;\n    top: 0;\n    background: &lt;&lt;colour page-background&gt;&gt;;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 0.5em 1em;\n}\n\n.fullscreen-story-river .tc-tiddler-edit-title &gt; div:nth-child(2) {\n    display: none;\n}\n\n.fullscreen-story-river .tc-tiddler-controls.tc-titlebar,\n.fullscreen-story-river .tc-tiddler-controls.tc-titlebar .tc-btn-invisible {\n    display: flex;\n    align-items: center;\n}\n\n.fullscreen-story-river .tc-editor-toolbar {\n    background: &lt;&lt;colour page-background&gt;&gt;;\n    padding: 0.25em 1em;\n    margin: 0;\n}\n\n.fullscreen-story-river  .tc-editor-toolbar button {\n    background: &lt;&lt;colour page-background&gt;&gt;;\n}\n\n.fullscreen-story-river textarea.tc-edit-texteditor {\n    border: none;\n    padding: 1em;\n    background-color: &lt;&lt;colour tiddler-editor-background&gt;&gt;;\n}\n\n&lt;$list filter=\&quot;[[$:/state/showeditpreview]text[yes]]\&quot;&gt;\n.fullscreen-story-river iframe.tc-edit-texteditor { width: 49%; }\n&lt;/$list&gt;\n\n&lt;$list filter=\&quot;[[$:/state/showeditpreview]!text[yes]]\&quot;&gt;\n.fullscreen-story-river iframe.tc-edit-texteditor { width: 100%; }\n&lt;/$list&gt;\n\n&lt;/$list&gt;\n&lt;/$list&gt;&quot;,
+            &quot;title&quot;: &quot;$:/jd/fullscreen-editor/Stylesheet&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;modifier&quot;: &quot;jd&quot;,
+            &quot;modified&quot;: &quot;20190204141756609&quot;,
+            &quot;creator&quot;: &quot;jd&quot;,
+            &quot;created&quot;: &quot;20190204124703056&quot;
+        },
+        &quot;$:/jd/fullscreen-editor/readme&quot;: {
+            &quot;created&quot;: &quot;20190206054820870&quot;,
+            &quot;creator&quot;: &quot;HC Haase&quot;,
+            &quot;text&quot;: &quot;With ''~FullscreenEditor'', you'll be able to edit the current tiddler distraction-free with this button, found at the usual tiddler controls: @@font-size:1.5em;{{||$:/jd/fullscreen-editor/EditButton}}@@\n\nAlso in this mode, &lt;kbd&gt;ctrl&lt;/kbd&gt;+&lt;kbd&gt;enter&lt;/kbd&gt; will save and close the tiddler, and &lt;kbd&gt;esc&lt;/kbd&gt; will cancel the edit (or whatever keyboard shortcut have been set for these two actions at $:/core/ui/ControlPanel/KeyboardShortcuts).&quot;,
+            &quot;title&quot;: &quot;$:/jd/fullscreen-editor/readme&quot;,
+            &quot;modifier&quot;: &quot;HC Haase&quot;,
+            &quot;modified&quot;: &quot;20190206054846709&quot;
+        }
+    }
+}</pre>
 </div>
 <div created="20200224020938711" modified="20200224020942876" title="$:/SiteSubtitle">
 <pre>Race you to the swings!</pre>
