@@ -203,6 +203,8 @@ Error message and password prompt
 
 <li>C</li>
 
+<li>Create a range of dates</li>
+
 <li>Date Conversion Macros</li>
 
 <li>Draft of 'New Tiddler'</li>
@@ -9449,8 +9451,7 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Date Conversion Macros]]
-# [[Table of Contents]]</pre>
+# [[Create a range of dates]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -9539,7 +9540,7 @@ Error message and password prompt
 <div created="20200224021640035" modified="20200304051446931" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200304051355510" list="[[Date Conversion Macros]] $:/Import [[Table of Contents]]" modified="20200304051448619" title="$:/StoryList">
+<div created="20200304051734864" list="$:/Import [[Table of Contents]] [[Date Conversion Macros]]" modified="20200304051734864" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -9603,8 +9604,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200301043609986" modified="20200301043743955" title="$:/temp/search">
-<pre>shift</pre>
+<div created="20200301043609986" modified="20200304051731526" title="$:/temp/search">
+<pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.21">
 <pre>{
@@ -9729,6 +9730,14 @@ jharesbeitrag_kasko
 </div>
 <div created="20200228004301342" modified="20200228033632241" tags="[[Project Radio Tag]] refs" title="C">
 <pre></pre>
+</div>
+<div created="20200304052003328" modified="20200304053304210" tags="" title="Create a range of dates">
+<pre>!!! Range of 10 days from modification date:
+&lt;$list filter=&quot;[range[1,10]]&quot; variable=&quot;o&quot;&gt;
+&lt;$wikify name=&quot;date&quot; text=&quot;&quot;&quot;&lt;$macrocall $name=date-from-field fld=modified o=&lt;&lt;o&gt;&gt;/&gt;&quot;&quot;&quot;&gt;
+&lt;$link to=&lt;&lt;date&gt;&gt;&gt;&lt;&lt;date&gt;&gt;&lt;/$link&gt;&lt;br/&gt;
+&lt;/$wikify&gt;
+&lt;/$list&gt;</pre>
 </div>
 <div bag="default" created="20191021022240198" creator="MASX" modified="20200304050536498" modifier="MAS" revision="0" tags="Tools SFGardenProject $:/tags/Macro" title="Date Conversion Macros" type="text/vnd.tiddlywiki">
 <pre>\define mas-g(y,m,d,offset:&quot;0&quot;)
