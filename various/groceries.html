@@ -221,7 +221,11 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/config/AutoSave</li>
+
 <li>$:/config/BrowserStorage/SaveFilter</li>
+
+<li>$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/browser-storage</li>
 
 <li>$:/core</li>
 
@@ -453,6 +457,8 @@ Error message and password prompt
 
 <li>$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary</li>
 
+<li>$:/temp/search</li>
+
 <li>$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
@@ -473,11 +479,15 @@ Error message and password prompt
 
 <li>Milk, 6%</li>
 
+<li>Razor Wire</li>
+
 <li>Retailers</li>
 
 <li>Sections</li>
 
 <li>White Bread</li>
+
+<li>Yogurt</li>
 
 </ul>
 </p>
@@ -489,8 +499,14 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20200319202009253" modified="20200319202009253" title="$:/config/AutoSave">
+<pre>no</pre>
+</div>
 <div created="20200319200601453" modified="20200319200605586" title="$:/config/BrowserStorage/SaveFilter">
 <pre>[all[]]</pre>
+</div>
+<div created="20200319200326480" modified="20200319200328251" title="$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/browser-storage">
+<pre>no</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.21">
 <pre>{
@@ -9697,7 +9713,7 @@ Error message and password prompt
 <div created="20200319195600548" modified="20200319195600548" title="$:/GitHub/Repo">
 <pre>Marxsal/marxsal.github.io</pre>
 </div>
-<div created="20200319195547934" modified="20200319195549810" title="$:/GitHub/Username">
+<div created="20200319195547934" modified="20200319202045904" title="$:/GitHub/Username">
 <pre>marxsal</pre>
 </div>
 <div title="$:/isEncrypted">
@@ -9755,23 +9771,23 @@ Error message and password prompt
 <div created="20200319165925125" modified="20200319165925125" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
-<div created="20200319194646660" modified="20200319200620357" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20200319194646660" modified="20200319201820960" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
-<div created="20200319195540848" modified="20200319195540848" title="$:/state/tab-2065006209">
+<div created="20200319195540848" modified="20200319202011650" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
 <div created="20200319200516993" modified="20200319200516993" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200319200732565" list="[[Milk, 0.01%]] [[Grocery Lister]]" modified="20200319200732565" title="$:/StoryList">
+<div created="20200319202244207" list="Sections [[Grocery Lister]] [[Milk, 6%]]" modified="20200319202640205" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200319165926977" modified="20200319170922418" title="$:/temp/advancedsearch">
 <pre>[tag[export]]</pre>
 </div>
 <div title="$:/temp/BrowserStorage/Log">
-<pre>[[Milk, 0.10%]] $:/StoryList $:/HistoryList</pre>
+<pre>$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/browser-storage $:/state/tab-2065006209 $:/state/tab-1749438307 $:/config/AutoSave $:/GitHub/Username $:/StoryList [[Green Bread]] $:/HistoryList</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -10590,6 +10606,9 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200319194829199" modified="20200319194830669" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>browser</pre>
 </div>
+<div created="20200319202553679" modified="20200319202753119" title="$:/temp/search">
+<pre></pre>
+</div>
 <div created="20200319194820962" modified="20200319194820962" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
 </div>
@@ -10711,7 +10730,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;/$list&gt;
 </pre>
 </div>
-<div created="20200319163411584" modified="20200319174706444" retailers="[[Sam's Club]] Lidl" section="Bakery" tags="export Item Recurring" title="Green Bread">
+<div created="20200319163411584" modified="20200319202428419" retailers="Lidl" section="Bakery" tags="export Item Recurring" title="Green Bread">
 <pre></pre>
 </div>
 <div created="20200319170616677" modified="20200319174654230" tags="$:/tags/ViewTemplate export Tool" title="Grocery Item ViewTemplate">
@@ -10737,13 +10756,13 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;/$list&gt;
 </pre>
 </div>
-<div created="20200319163429623" modified="20200319170522008" tags="export Tool" title="Grocery Lister">
+<div created="20200319163429623" modified="20200319202348352" tags="export Tool" title="Grocery Lister">
 <pre>!! List by retailer
 &lt;$list filter=&quot;[list[Retailers]]&quot; variable=&quot;retailer&quot;&gt;
 
 !!! &lt;&lt;retailer&gt;&gt;
 &lt;$list filter=&quot;[&lt;retailer&gt;listed[retailers]tag[Item]]&quot; variable=&quot;item&quot;&gt;
-&lt;$checkbox tiddler=&lt;&lt;item&gt;&gt; tag=&quot;Selected&quot;/&gt; &lt;&lt;item&gt;&gt;&lt;br/&gt;
+&lt;$checkbox tiddler=&lt;&lt;item&gt;&gt; tag=&quot;Selected&quot;/&gt; &lt;$link to=&lt;&lt;item&gt;&gt;&gt;&lt;&lt;item&gt;&gt;&lt;/$link&gt;&lt;br/&gt;
 &lt;/$list&gt;
 &lt;/$list&gt;
 
@@ -10771,13 +10790,19 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200319162848244" modified="20200319165856475" retailers="[[Sam's Club]] Lidl" section="Dairy" tags="export Item Recurring Selected" title="Milk, 6%">
 <pre></pre>
 </div>
-<div created="20200319163918448" list="[[Sam's Club]] Lidl" modified="20200319165800049" tags="export Tool" title="Retailers">
+<div created="20200319202617154" modified="20200319202705085" retailers="[[Home Despot]]" section="Hardware" tags="Item" title="Razor Wire">
+<pre></pre>
+</div>
+<div created="20200319163918448" list="[[Sam's Club]] Lidl [[Home Despot]]" modified="20200319202606057" tags="export Tool" title="Retailers">
 <pre></pre>
 </div>
 <div created="20200319165914780" list="Dairy Bakery Hardware" modified="20200319170037801" tags="export Tool" title="Sections">
 <pre></pre>
 </div>
 <div created="20200319163358577" modified="20200319174517904" retailers="Lidl [[Sam's Club]]" section="Bakery" tags="export Item Recurring" title="White Bread">
+<pre></pre>
+</div>
+<div created="20200319202501553" modified="20200319202509631" retailers="[[Sam's Club]] Lidl" section="Dairy" tags="export Item Recurring Selected" title="Yogurt">
 <pre></pre>
 </div>
 
