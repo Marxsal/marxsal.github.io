@@ -225,6 +225,8 @@ Error message and password prompt
 
 <li>$:/config/BrowserStorage/SaveFilter</li>
 
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
+
 <li>$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/browser-storage</li>
 
 <li>$:/core</li>
@@ -241,6 +243,8 @@ Error message and password prompt
 
 <li>$:/isEncrypted</li>
 
+<li>$:/MAS/state/displaytype</li>
+
 <li>$:/MAS/state/show-empty-sections</li>
 
 <li>$:/plugins/tiddlywiki/browser-storage</li>
@@ -248,6 +252,8 @@ Error message and password prompt
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
+
+<li>$:/state/Excise/--1505046520/type</li>
 
 <li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/browser-storage</li>
 
@@ -479,6 +485,12 @@ Error message and password prompt
 
 <li>Grocery Lister</li>
 
+<li>List by Retailer</li>
+
+<li>List by Section</li>
+
+<li>List Recurring Items</li>
+
 <li>Milk, 0.01%</li>
 
 <li>Milk, 6%</li>
@@ -510,6 +522,9 @@ Error message and password prompt
 </div>
 <div created="20200319200601453" modified="20200319200605586" title="$:/config/BrowserStorage/SaveFilter">
 <pre>[all[]]</pre>
+</div>
+<div created="20200324030611209" modified="20200324030611209" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
+<pre>show</pre>
 </div>
 <div created="20200319200326480" modified="20200319200328251" title="$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/browser-storage">
 <pre>no</pre>
@@ -9720,13 +9735,16 @@ Error message and password prompt
 <div created="20200319195600548" modified="20200319195600548" title="$:/GitHub/Repo">
 <pre>Marxsal/marxsal.github.io</pre>
 </div>
-<div created="20200319195547934" modified="20200324002726675" title="$:/GitHub/Username">
+<div created="20200319195547934" modified="20200324030632633" title="$:/GitHub/Username">
 <pre>marxsal</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20200324001749559" modified="20200324002427245" title="$:/MAS/state/show-empty-sections">
+<div created="20200324030000883" modified="20200324030209968" title="$:/MAS/state/displaytype">
+<pre>[tag[Recurring]]</pre>
+</div>
+<div created="20200324001749559" modified="20200324030220717" title="$:/MAS/state/show-empty-sections">
 <pre>Item</pre>
 </div>
 <div author="Jeremy Ruston " core-version="&gt;=5.0.0" dependents="" description="Browser-based local storage" list="readme settings" plugin-type="plugin" title="$:/plugins/tiddlywiki/browser-storage" type="application/json" version="5.1.21">
@@ -9775,6 +9793,9 @@ Error message and password prompt
 <div created="20200319164408260" modified="20200324002631243" title="$:/SiteTitle">
 <pre>Tiddly Groceries</pre>
 </div>
+<div created="20200324025012536" modified="20200324025012536" title="$:/state/Excise/--1505046520/type">
+<pre>link</pre>
+</div>
 <div created="20200319200540937" modified="20200319200540937" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/browser-storage">
 <pre>yes</pre>
 </div>
@@ -9790,10 +9811,10 @@ Error message and password prompt
 <div created="20200319195540848" modified="20200319202011650" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20200319200516993" modified="20200319203515438" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20200319200516993" modified="20200324030608594" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Tools</pre>
 </div>
-<div created="20200324000333996" list="$:/ControlPanel Warnings! [[Grocery Lister]]" modified="20200324000333996" title="$:/StoryList">
+<div created="20200324030627096" list="Warnings! [[Grocery Lister]]" modified="20200324030627096" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200319165926977" modified="20200319170922418" title="$:/temp/advancedsearch">
@@ -10619,8 +10640,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200319194829199" modified="20200319194830669" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>browser</pre>
 </div>
-<div created="20200319202553679" modified="20200319202753119" title="$:/temp/search">
-<pre></pre>
+<div created="20200319202553679" modified="20200324030537190" title="$:/temp/search">
+<pre>List</pre>
 </div>
 <div created="20200319194820962" modified="20200319194820962" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -10743,7 +10764,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;/$list&gt;
 </pre>
 </div>
-<div created="20200319163411584" modified="20200324001804469" retailers="Lidl" section="Bakery" tags="export Item Recurring Selected" title="Green Bread">
+<div created="20200319163411584" modified="20200324030217475" retailers="Lidl" section="Bakery" tags="export Item Recurring" title="Green Bread">
 <pre></pre>
 </div>
 <div created="20200319170616677" modified="20200319174654230" tags="$:/tags/ViewTemplate export Tool" title="Grocery Item ViewTemplate">
@@ -10769,7 +10790,15 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;/$list&gt;
 </pre>
 </div>
-<div created="20200319163429623" modified="20200324002419957" tags="export Tool" title="Grocery Lister">
+<div created="20200319163429623" modified="20200324030547580" tags="export Tool" title="Grocery Lister">
+<pre>; [[List by Retailer]]
+: Show your Grocery List broken down by retailer
+; [[List by Section]]
+: Show your Grocery List broken down by section. Also select whether to display empty sections, and whether items are checked, unchecked, or recurring.
+; [[List Recurring Items]]
+: List items that are recurring. This section is now less important, since you can do the same thing within [[List by Section]] .</pre>
+</div>
+<div created="20200324025052043" modified="20200324025052043" tags="" title="List by Retailer">
 <pre>!! List by retailer
 &lt;$list filter=&quot;[list[Retailers]]&quot; variable=&quot;retailer&quot;&gt;
 
@@ -10778,26 +10807,38 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;$checkbox tiddler=&lt;&lt;item&gt;&gt; tag=&quot;Selected&quot;/&gt; &lt;$link to=&lt;&lt;item&gt;&gt;&gt;&lt;&lt;item&gt;&gt;&lt;/$link&gt;&lt;br/&gt;
 &lt;/$list&gt;
 &lt;/$list&gt;
-
-!! List by section
+</pre>
+</div>
+<div created="20200324025024115" modified="20200324025951650" tags="" title="List by Section">
+<pre>!! List by section
 
 ''Show empty sections:'' 
 &lt;$select tiddler=&quot;$:/MAS/state/show-empty-sections&quot; default=&quot;Item&quot;&gt;
 &lt;option value=&quot;Item&quot;&gt;Yes&lt;/option&gt;
 &lt;option value=&quot;Selected&quot;&gt;No&lt;/option&gt;
+&lt;/$select&gt; &lt;br/&gt;
+''Display type:'' 
+&lt;$select tiddler=&quot;$:/MAS/state/displaytype&quot; default=&quot;[tag[Item]]&quot;&gt;
+&lt;option value=&quot;[tag[Item]]&quot;&gt;All Items&lt;/option&gt;
+&lt;option value=&quot;[tag[Selected]]&quot;&gt;Checked Items&lt;/option&gt;
+&lt;option value=&quot;[!tag[Selected]]&quot;&gt;Unchecked Items&lt;/option&gt;
+&lt;option value=&quot;[tag[Recurring]]&quot;&gt;Recurring Items&lt;/option&gt;
+
 &lt;/$select&gt;
+
 
 &lt;$list filter=&quot;[list[Sections]]&quot; variable=&quot;section&quot;&gt;
 &lt;$list filter=&quot;[&lt;section&gt;listed[section]tag[Item]tag{$:/MAS/state/show-empty-sections}limit[1]]&quot; &gt;
 
 !!! &lt;&lt;section&gt;&gt;
-&lt;$list filter=&quot;[&lt;section&gt;listed[section]tag[Item]]&quot; variable=&quot;item&quot;&gt;
+&lt;$list filter=&quot;[&lt;section&gt;listed[section]subfilter{$:/MAS/state/displaytype}]&quot; variable=&quot;item&quot;&gt;
 &lt;$checkbox tiddler=&lt;&lt;item&gt;&gt; tag=&quot;Selected&quot;/&gt; &lt;&lt;item&gt;&gt;&lt;br/&gt;
 &lt;/$list&gt;
 &lt;/$list&gt;
-&lt;/$list&gt;
-
-!! List Recurring Items (any store, any section)
+&lt;/$list&gt;</pre>
+</div>
+<div created="20200324025156435" modified="20200324025156435" tags="" title="List Recurring Items">
+<pre>!! List Recurring Items (any store, any section)
 &lt;$list filter=&quot;[tag[Item]tag[Recurring]]&quot; variable=&quot;item&quot;&gt;
 &lt;$checkbox tiddler=&lt;&lt;item&gt;&gt; tag=&quot;Selected&quot;/&gt; &lt;&lt;item&gt;&gt;&lt;br/&gt;
 &lt;/$list&gt;
