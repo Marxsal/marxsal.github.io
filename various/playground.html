@@ -147,6 +147,8 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/edit</li>
+
 <li>$:/GitHub/Filename</li>
 
 <li>$:/GitHub/Path</li>
@@ -174,6 +176,8 @@ Error message and password prompt
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
+
+<li>$:/state/showeditpreview</li>
 
 <li>$:/state/tab--1963855381</li>
 
@@ -208,6 +212,8 @@ Error message and password prompt
 <li>Date Conversion Macros</li>
 
 <li>Draft of 'New Tiddler'</li>
+
+<li>Encode simple messages with URI</li>
 
 <li>Helpful Stuff</li>
 
@@ -9436,6 +9442,9 @@ Error message and password prompt
 <div created="20200224044803061" modified="20200301041412565" title="$:/DefaultTiddlers">
 <pre>[[Table of Contents]]</pre>
 </div>
+<div created="20200518191449125" modified="20200518191449968" title="$:/edit">
+<pre>HELLO</pre>
+</div>
 <div created="20200224021952199" modified="20200224021955003" title="$:/GitHub/Filename">
 <pre>playground.html</pre>
 </div>
@@ -9528,11 +9537,14 @@ Error message and password prompt
 <div created="20200224020911975" modified="20200224020923005" title="$:/SiteTitle">
 <pre>Code Playground</pre>
 </div>
+<div created="20200518191440448" modified="20200518191440448" title="$:/state/showeditpreview">
+<pre>yes</pre>
+</div>
 <div created="20200301044146785" modified="20200301044146785" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
-<div created="20200224021847786" modified="20200301044140439" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20200224021847786" modified="20200518191644759" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
 <div created="20200224021849942" modified="20200224021849942" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -9540,7 +9552,7 @@ Error message and password prompt
 <div created="20200224021640035" modified="20200304051446931" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200304051734864" list="$:/Import [[Table of Contents]] [[Date Conversion Macros]]" modified="20200304051734864" title="$:/StoryList">
+<div created="20200518191642425" list="$:/ControlPanel [[Encode simple messages with URI]] [[Table of Contents]]" modified="20200518191642425" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -9591,11 +9603,11 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;1366&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;768&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -9804,6 +9816,30 @@ jharesbeitrag_kasko
 &lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot; checkactions=&lt;&lt;tagreset&gt;&gt;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt; &lt;&lt;tagreset&gt;&gt;&lt;br/&gt; 
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
+</div>
+<div created="20200518191326013" modified="20200518191639461" tags="" title="Encode simple messages with URI">
+<pre>There is an &quot;EncodeURI&quot; filter operator, but it doesn't encode alphabetic characters.
+
+&lt;$edit-text tiddler=&quot;$:/edit&quot; tag=&quot;input&quot; /&gt;
+
+&lt;$vars 
+alpha=&quot;[[ ]] [[!]] [[,]] A B C D E F G H I J K L M N O P Q R S T U V W X Y Z&quot;
+uri=&quot;%20 %21 %2C %41 %42 %43 %44 %45 %46 %47 %48 %49 %4A %4B %4C %4D %4E %4F %50 %51 %52 %53 %54 %55 %56 %57 %58 %59 %5A&quot;
+&gt;
+&lt;$list filter=&quot;[{$:/edit}split[]]&quot; variable=char&gt;
+&lt;$list filter=&quot;[enlist&lt;alpha&gt;allbefore&lt;char&gt;count[]add[1]]&quot; variable=idx&gt;
+&lt;$list filter=&quot;[enlist&lt;uri&gt;nth&lt;idx&gt;]&quot; variable=&quot;out&quot;&gt;
+&lt;&lt;out&gt;&gt;
+&lt;/$list&gt;&lt;/$list&gt;&lt;/$list&gt;
+&lt;/$vars&gt;
+
+----
+!!! Decode with built-in URI decoder. Notice that you have to squeeze the space out.
+
+&lt;$list filter=&quot;%48%45%4C%4C%4F   +[decodeuri[]]&quot;&gt;
+&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;
+&lt;/$list&gt;
+</pre>
 </div>
 <div caption="Tools, Etc." created="20200224021206985" modified="20200301044549813" tags="$:/tags/SideBar" title="Helpful Stuff">
 <pre>&lt;$button&gt;Modal Notes 
