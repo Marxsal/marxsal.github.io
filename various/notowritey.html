@@ -145,11 +145,19 @@ Error message and password prompt
 
 <li>:/config/nw/roadmap</li>
 
+<li>:/temp/nw/movetid</li>
+
+<li>:/temp/nw/movetype</li>
+
+<li>:/temp/nw/tid</li>
+
 <li>$:/.giffmex/Buttons/more-tiddler-edit-actions</li>
 
 <li>$:/.giffmex/EditTemplate/custom</li>
 
 <li>$:/.giffmex/language/toolbar</li>
+
+<li>$:/config/AutoSave</li>
 
 <li>$:/config/codemirror/theme</li>
 
@@ -161,9 +169,13 @@ Error message and password prompt
 
 <li>$:/core</li>
 
+<li>$:/core/images/chevron-down</li>
+
 <li>$:/core/images/chevron-left</li>
 
 <li>$:/core/images/chevron-right</li>
+
+<li>$:/core/images/chevron-up</li>
 
 <li>$:/core/images/fold-button-minus</li>
 
@@ -287,6 +299,12 @@ Error message and password prompt
 
 <li>$:/temp/nw-export-tid</li>
 
+<li>$:/temp/nw/anchor/</li>
+
+<li>$:/temp/nw/movenum</li>
+
+<li>$:/temp/nw/movetype</li>
+
 <li>$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary</li>
 
 <li>$:/temp/search</li>
@@ -296,6 +314,8 @@ Error message and password prompt
 <li>$:/temp/tagname</li>
 
 <li>$:/temp/tempdoc-27186632</li>
+
+<li>$:/temp/xtidx/</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -365,6 +385,8 @@ Error message and password prompt
 
 <li>DocumentTemplate</li>
 
+<li>Draft of 'Working: Move multiple tiddlers in list'</li>
+
 <li>Edit Box (2).png</li>
 
 <li>Edit Box.png</li>
@@ -390,6 +412,8 @@ Error message and password prompt
 <li>Howto</li>
 
 <li>Initial line.png</li>
+
+<li>MoveSelection</li>
 
 <li>My First Tiddler</li>
 
@@ -491,6 +515,10 @@ Error message and password prompt
 
 <li>Update existing document for outliner</li>
 
+<li>Working: Move multiple tiddlers in list</li>
+
+<li>Working: Re-ordering items one by one</li>
+
 </ul>
 </p>
 
@@ -510,6 +538,15 @@ Error message and password prompt
 </div>
 <div created="20200604223701065" modified="20200604224153969" title=":/config/nw/roadmap">
 <pre>marksmark2</pre>
+</div>
+<div created="20200608202513693" modified="20200608202624442" title=":/temp/nw/movetid">
+<pre>My First Tiddler Series II 2</pre>
+</div>
+<div b4="putbefore" created="20200609021146707" modified="20200609033851133" title=":/temp/nw/movetype">
+<pre></pre>
+</div>
+<div created="20200607200419775" modified="20200607211801909" title=":/temp/nw/tid">
+<pre>My First Tiddler Series II 3</pre>
 </div>
 <div caption="{{$:/core/images/down-arrow}} {{$:/language/Buttons/More/Caption}}" created="20200519140835678" description="{{$:/language/Buttons/More/Hint}}" modified="20200521203326745" tags="$:/tags/EditToolbar $:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/.giffmex/Buttons/more-tiddler-edit-actions">
 <pre>&lt;$button class=&quot;tc-btn-invisible&quot; popup=&quot;$:/SamplePopupState&quot;&gt;{{$:/core/images/chevron-down}}&lt;/$button&gt;
@@ -546,6 +583,9 @@ Grab snippets: e.g., `tiddlywiki --rendertiddlers [!is[system]] $:/core/template
 </div>
 <div created="20200519150023135" modified="20200521203302683" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/.giffmex/language/toolbar">
 <pre>toolbar</pre>
+</div>
+<div created="20200609025034491" modified="20200609025034491" title="$:/config/AutoSave">
+<pre>no</pre>
 </div>
 <div created="20200528184222297" modified="20200528184331864" title="$:/config/codemirror/theme" type="string">
 <pre>happy-happy-joy-joy-2</pre>
@@ -9932,11 +9972,17 @@ Grab snippets: e.g., `tiddlywiki --rendertiddlers [!is[system]] $:/core/template
     }
 }</pre>
 </div>
+<div created="20200609042957166" modified="20200609042957166" tags="$:/tags/Image kit" title="$:/core/images/chevron-down">
+<pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-chevron-down tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;&lt;g fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M64.053 85.456a7.889 7.889 0 01-5.6-2.316L2.473 27.16a7.92 7.92 0 010-11.196c3.086-3.085 8.105-3.092 11.196 0L64.05 66.344l50.382-50.382a7.92 7.92 0 0111.195 0c3.085 3.086 3.092 8.105 0 11.196l-55.98 55.98a7.892 7.892 0 01-5.595 2.317z&quot;/&gt;&lt;path d=&quot;M64.053 124.069a7.889 7.889 0 01-5.6-2.316l-55.98-55.98a7.92 7.92 0 010-11.196c3.086-3.085 8.105-3.092 11.196 0l50.382 50.382 50.382-50.382a7.92 7.92 0 0111.195 0c3.085 3.086 3.092 8.104 0 11.196l-55.98 55.98a7.892 7.892 0 01-5.595 2.316z&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
+</div>
 <div created="20200603223030093" modified="20200603223244710" tags="$:/tags/Image kit" title="$:/core/images/chevron-left">
 <pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-chevron-left tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;&lt;g fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M47.544 64.053c0-2.027.77-4.054 2.316-5.6l55.98-55.98a7.92 7.92 0 0111.196 0c3.085 3.086 3.092 8.105 0 11.196L66.656 64.05l50.382 50.382a7.92 7.92 0 010 11.195c-3.086 3.085-8.105 3.092-11.196 0l-55.98-55.98a7.892 7.892 0 01-2.317-5.595z&quot;/&gt;&lt;path d=&quot;M8.931 64.053c0-2.027.77-4.054 2.316-5.6l55.98-55.98a7.92 7.92 0 0111.196 0c3.085 3.086 3.092 8.105 0 11.196L28.041 64.05l50.382 50.382a7.92 7.92 0 010 11.195c-3.086 3.085-8.104 3.092-11.196 0l-55.98-55.98a7.892 7.892 0 01-2.316-5.595z&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
 </div>
 <div created="20200603223216481" modified="20200603223237383" tags="$:/tags/Image kit" title="$:/core/images/chevron-right">
 <pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-chevron-right tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;&lt;g fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M83.456 63.947c0 2.027-.77 4.054-2.316 5.6l-55.98 55.98a7.92 7.92 0 01-11.196 0c-3.085-3.086-3.092-8.105 0-11.196L64.344 63.95 13.963 13.567a7.92 7.92 0 010-11.195c3.086-3.085 8.105-3.092 11.196 0l55.98 55.98a7.892 7.892 0 012.317 5.595z&quot;/&gt;&lt;path d=&quot;M122.069 63.947c0 2.027-.77 4.054-2.316 5.6l-55.98 55.98a7.92 7.92 0 01-11.196 0c-3.085-3.086-3.092-8.105 0-11.196l50.382-50.382-50.382-50.382a7.92 7.92 0 010-11.195c3.086-3.085 8.104-3.092 11.196 0l55.98 55.98a7.892 7.892 0 012.316 5.595z&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
+</div>
+<div created="20200609043007586" modified="20200609043007586" tags="$:/tags/Image kit" title="$:/core/images/chevron-up">
+<pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-chevron-up tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;&lt;g fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M63.947 44.544c2.027 0 4.054.77 5.6 2.316l55.98 55.98a7.92 7.92 0 010 11.196c-3.086 3.085-8.105 3.092-11.196 0L63.95 63.656l-50.382 50.382a7.92 7.92 0 01-11.195 0c-3.085-3.086-3.092-8.105 0-11.196l55.98-55.98a7.892 7.892 0 015.595-2.317z&quot;/&gt;&lt;path d=&quot;M63.947 5.931c2.027 0 4.054.77 5.6 2.316l55.98 55.98a7.92 7.92 0 010 11.196c-3.086 3.085-8.105 3.092-11.196 0L63.95 25.041 13.567 75.423a7.92 7.92 0 01-11.195 0c-3.085-3.086-3.092-8.104 0-11.196l55.98-55.98a7.892 7.892 0 015.595-2.316z&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
 </div>
 <div created="20200603222507324" modified="20200603223303243" tags="$:/tags/Image kit" title="$:/core/images/fold-button-minus">
 <pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-minus-button tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;
@@ -10198,7 +10244,7 @@ color:$(foregroundColor)$;
 [[Update existing document for outliner]]
 </pre>
 </div>
-<div created="20200525232125420" modified="20200606181824741" title="$:/GitHub/Filename">
+<div created="20200525232125420" modified="20200609161423662" title="$:/GitHub/Filename">
 <pre>notowritey.html</pre>
 </div>
 <div created="20200525232108158" modified="20200525232108158" title="$:/GitHub/Path">
@@ -10220,7 +10266,8 @@ color:$(foregroundColor)$;
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[image.png]]</pre>
+# [[$:/core/images/chevron-down]]
+# [[$:/core/images/chevron-up]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10732,7 +10779,7 @@ color:$(foregroundColor)$;
 <div created="20200525003718805" modified="20200606180130933" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20200524214009084" modified="20200606180116710" title="$:/state/sidebar">
+<div created="20200524214009084" modified="20200607190829710" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20200524212625101" modified="20200606175746188" title="$:/state/tab--1498284803">
@@ -10750,19 +10797,19 @@ color:$(foregroundColor)$;
 <div created="20200528183316606" modified="20200530033017575" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
 </div>
-<div created="20200525185209851" modified="20200606181810915" title="$:/state/tab-1749438307">
+<div created="20200525185209851" modified="20200607035817916" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
-<div created="20200525232045259" modified="20200526000529281" title="$:/state/tab-2065006209">
+<div created="20200525232045259" modified="20200609161409598" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20200524193231651" modified="20200606181754108" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Tools</pre>
+<div created="20200524193231651" modified="20200609044609268" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200606181807741" list="$:/ControlPanel [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200606181807741" title="$:/StoryList">
+<div created="20200609161402866" list="$:/ControlPanel [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200609161402866" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -10852,11 +10899,11 @@ color:$(foregroundColor)$;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1366&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;768&quot;
+            &quot;text&quot;: &quot;1080&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -10871,16 +10918,25 @@ color:$(foregroundColor)$;
 <div created="20200604153857544" modified="20200604153857545" title="$:/temp/NewFieldName-1821989104">
 <pre>l</pre>
 </div>
-<div created="20200524193208371" modified="20200603003421711" title="$:/temp/NewTagName">
+<div created="20200524193208371" modified="20200608223711233" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div created="20200530181858707" modified="20200530182259676" title="$:/temp/nw-export-tid">
 <pre>New Tiddler 4</pre>
 </div>
+<div created="20200609021249544" modified="20200609021249545" title="$:/temp/nw/anchor/">
+<pre>My First Tiddler Series II 6</pre>
+</div>
+<div created="20200609021149323" modified="20200609023841544" title="$:/temp/nw/movenum">
+<pre>2</pre>
+</div>
+<div created="20200609034207369" modified="20200609034207369" title="$:/temp/nw/movetype">
+<pre>putafter</pre>
+</div>
 <div created="20200525185215069" modified="20200525185308339" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20200525025112783" modified="20200606181718305" title="$:/temp/search">
+<div created="20200525025112783" modified="20200609161400845" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200525185238665" modified="20200525185238666" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
@@ -10891,6 +10947,9 @@ color:$(foregroundColor)$;
 </div>
 <div created="20200605233648257" modified="20200605233648257" title="$:/temp/tempdoc-27186632">
 <pre>edit</pre>
+</div>
+<div created="20200607194040063" modified="20200607194040063" title="$:/temp/xtidx/">
+<pre>My First Tiddler Series II 2</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.22">
 <pre>{
@@ -11070,7 +11129,7 @@ The world should have no limits. especially not imaginary ones.
 <div created="20200604200843349" fold="no" level="1" modified="20200605172100271" reset="!!! Useful URLs" tags="developer" title="DeveloperNotes">
 <pre>!!! Useful URLs</pre>
 </div>
-<div created="20200604201042630" fold="no" level="2" modified="20200605221330008" nosplit="nosplit" reset="* [[Icons|https://tid.li/tw5/apps/svg.html#Advanced%20Icon%20Editing]]
+<div created="20200604201042630" fold="no" level="2" modified="20200609043554251" nosplit="nosplit" reset="* [[Icons|https://tid.li/tw5/apps/svg.html#Advanced%20Icon%20Editing]]
 * [[How can I make a div not larger than its contents?|https://stackoverflow.com/questions/450903/how-can-i-make-a-div-not-larger-than-its-contents]]
 * [[Div height 100% and expands to fit content|https://stackoverflow.com/questions/9537838/div-height-100-and-expands-to-fit-content]]
 * [[Two divs side by side - Fluid display|https://stackoverflow.com/questions/17217766/two-divs-side-by-side-fluid-display]]
@@ -11247,6 +11306,21 @@ or
 
 </pre>
 </div>
+<div created="20200608210501513" draft.of="Working: Move multiple tiddlers in list" draft.title="Working: Move multiple tiddlers in list" list="A D E B C" modified="20200609015719548" reset="A B C D E" tags="kit" title="Draft of 'Working: Move multiple tiddlers in list'">
+<pre>\define neworder()
+Move &lt;&lt;movenum&gt;&gt; tiddlers: &lt;&lt;marker-list&gt;&gt; after &lt;&lt;anchor&gt;&gt; &lt;br/&gt;
+&lt;$list filter=&quot;[list[]remove&lt;marker-list&gt;append&lt;marker-list&gt;putafter:$(movenum)$&lt;anchor&gt;]&quot; /&gt;
+&lt;$button&gt;Move it! &lt;&lt;marker-list&gt;&gt;
+&lt;$action-listops $filter=&quot;[list[]remove&lt;marker-list&gt;append&lt;marker-list&gt;putafter:$(movenum)$&lt;anchor&gt;]&quot; /&gt;
+&lt;/$button&gt;
+\end
+
+&lt;$vars marker=&quot;B&quot; anchor=&quot;E&quot; movenum=&quot;2&quot; &gt;
+&lt;$set name=marker-list filter=&quot;[list[]allafter:include&lt;marker&gt;limit&lt;movenum&gt;]&quot;&gt;
+&lt;&lt;neworder&gt;&gt;
+&lt;/$set&gt;
+&lt;/$vars&gt;</pre>
+</div>
 <div created="20200605233751268" modified="20200605234011932" title="Edit Box (2).png" type="image/png">
 <pre>iVBORw0KGgoAAAANSUhEUgAAArsAAACVCAYAAABYWjLtAAAABHNCSVQICAgIfAhkiAAAIABJREFUeF7tnQeYFMXatguJSs5BCZIMgBIEAQmSFZCggseAOeecP8M55iwiiorKwYABUERARQEVJCsCAiaCknMwAerPXeevtWlmZ3tmemZndp/3uubane7qCnf1bj/11lvVBf7eY0YmAiIgAiIgAiIgAiIgAnmQwH55sE1qkgiIgAiIgAiIgAiIgAhYAhK7uhFEQAREQAREQAREQATyLAGJ3TzbtWqYCIiACIiACIiACIiAxK7uAREQAREQAREQAREQgTxLQGI3z3atGiYCIiACIiACIiACIiCxq3tABERABERABERABEQgzxKQ2M2zXauGiYAIiIAIiIAIiIAISOzqHhABERABERABERABEcizBCR282zXqmEiIAIiIAIiIAIiIAISu7oHREAEREAEREAEREAE8iyBQkFbNmfOnKBJlU4EREAEREAEREAERCAfE2jWrFnatD6w2KXGVatWTZuKqyIiIAIiIAIiIAIiIALpR2D16tVpVSmFMaRVd6gyIiACIiACIiACIiACYRKQ2A2TpvISAREQAREQAREQARFIKwISu2nVHaqMCIiACIiACIiACIhAmAQkdsOkqbxEQAREQAREQAREQATSioDEblp1hyojAiIgAiIgAiIgAiIQJgGJ3TBpKi8REAEREAEREAEREIG0IiCxm1bdocqIgAiIgAiIgAiIgAiESUBiN0yayksEREAEREAEREAERCCtCEjsplV3qDIiIAIiIAIiIAIiIAJhEpDYDZOm8hIBERABERABERABEUgrAhK7adUdqowIiIAIiIAIiIAIiECYBCR2w6SpvERABERABERABERABNKKgMRuWnWHKiMCIiACIiACIiACIhAmAYndMGkqLxEQAREQAREQAREQgbQikJDYfeihh0yXLl2ifl5//XXb4B9++MGmmzlzZmAAK1assNdMnTo18DVhJrznnnvMRRddFGaWGZPXe++9Z9lv3749tDr379/fDB48OGp+3B9vvfVW1DTuZBj988033+x1/z766KOBys4p0S233LJXvuvWrcvpEhNGe3IsRAlEQAREQAREIJ8RKJRIe3v37m2OPvrorCyeeuopU6ZMGTNgwICsY7Vr1467iMKFC5uaNWua/fff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m74P2j8sliOemsVo7dq1s3G7ePyjvaAEofjmm2/a69jCDrFM3yZihKKQD7tm8AY596IUt1tG0PYErQP1ZheGgQMHmp9//tneR/xNsTMFO4Uw8+FnwPZwHGcHlHjv3aD1UzoREAEREAERSDWBtBO77Ffr3boKIE8++WQWF34//PDD7XeEBFP8zzzzjGH/XoRojx49zJlnnhk3x2HDhlnR6jVXH2KE2SMYQ4RR/vjx4+1WZ4gY4oTZNSFegYSgJPaYraPOO+88WwYCjK2m2OYs2cb+rdTfa+ztitE+vH+x2s0332yFljOEJB+MuGT/Hsvsp3zyySebsWPHGvqCQYR3n92g/cMLMVjgx/ZpbDXGlmjsHPH+++9n2wTOI87ZV5n7EKFIrHQihmeXUArCathGD+HJFnIM0LCg7YmlDmw3huiFIfsxM2hiUR6zHm6gGEt+SisCIiACIiACmUygwB4x8b+l/jm0Ys6cOXa/UpkIiIAIiIAIiIAIiIAIZEeA9w64sLrs0qTyeJ6J2U0lNJUlAiIgAiIgAiIgAiKQGQQkdjOjn1RLERABERABERABERCBOAhI7MYBTZeIgAiIgAiIgAiIgAhkBgGJ3czoJ9VSBERABERABERABEQgDgISu3FA0yUiIAIiIAIiIAIiIAKZQUBiNzP6SbUUAREQAREQAREQARGIg4DEbhzQdIkIiIAIiIAIiIAIiEBmEJDYzYx+Ui1FQAREQAREQAREQATiICCxGwc0XSICIiACIiACIiACIpAZBCR2M6OfVEsREAEREAEREAEREIE4CEjsxgFNl4iACIiACIiACIiACGQGAYndzOgn1VIEREAEREAEREAERCAOAhK7cUDTJSIgAiIgAiIgAiIgAplBQGI3M/pJtRQBERABERABERABEYiDgMRuHNB0iQiIgAiIgAiIgAiIQGYQKBRLNVevXh1LcqUVAREQAREQAREQAREQgVwlUODvPZarNVDhIiACIiACIiACIiACIpAkAgpjSBJYZSsCIiACIiACIiACIpD7BCR2c78PVAMREAEREAEREAEREIEkEZDYTRJYZSsCIiACIiACIiACIpD7BCR2c78PVAMREAEREAEREAEREIEkEZDYTRJYZSsCIiACIiACIiACIpD7BCR2c78PVAMREAEREAEREAEREIEkEQi8z+5ff/1lvv76a7N06VLz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HQm4bQ9r1qyZjtVTnURABPIRgYQ8u/mIU8Y3lRhhXopBaAWxzixWY5cK4pjjianOeCBqgAiIgAiIgAiIQL4gILGbL7rZ2BdpEIdMrC6x1MREswUbu1QkulNGPkGoZoqACIiACIiACGQgAYndDOy0eKrMrg8tWrSwH5kIiIAIiIAIiIAI5BcCWoafX3pa7RQBERABERABERCBfEggJs8ur9l1iw7yISs1WQREQAREQAREQAREIMMIBPbsInTZAkwmAiIgAiIgAiIgAiIgAplCIPDWY5nSINVTBERABERABERABERABByBwJ5dIRMBERABERABERABERCBTCMgsZtpPab6ioAIiIAIiIAIiIAIBCYgsRsYlRKKgAiIgAiIgAiIgAhkGgGJ3UzrMdVXBERABERABERABEQgMAGJ3cColFAEREAEREAEREAERCDTCEjsZlqPqb4iIAIiIAIiIAIiIAKBCUjsBkalhCIgAiIgAiIgAiIgAplGQGI303pM9RUBERABERABERABEQhMQGI3MColFAEREAEREAEREAERyDQCEruZ1mOqrwiIgAiIgAiIgAiIQGACEruBUSmhCIiACIiACIiACIhAphH4fwhT2BCsic+YAAAAAElFTkSuQmCC</pre>
 </div>
@@ -11311,8 +11385,9 @@ tag=&quot;div&quot;
 <div created="20200524234047159" description="Clean -another- after testing" filter="[prefix[Another]] -[[Another tiddler]] [prefix[My First Tiddler]] -[[My First Tiddler]]" modified="20200525002146882" tags="$:/tags/Filter" title="Filter for testing">
 <pre></pre>
 </div>
-<div created="20200531193641167" modified="20200605001720187" tags="kit $:/tags/Macro" title="Folding Macros">
-<pre>\define indent(amt)
+<div created="20200531193641167" modified="20200609160911268" tags="kit $:/tags/Macro" title="Folding Macros">
+<pre>\define nw-first-50-chars(tid) &lt;$set filter=&quot;[&lt;__tid__&gt;get[text]splitregexp[\n\n]!is[blank]first[]split[]limit[50]join[]]&quot; name=&quot;char50&quot;&gt;&lt;&lt;char50&gt;&gt;&lt;/$set&gt;
+\define indent(amt)
 &lt;$action-setfield level=&lt;&lt;dent&gt;&gt; /&gt;&lt;&lt;hypo&gt;&gt;
 \end
 \define unused-code()
@@ -11329,18 +11404,29 @@ tag=&quot;div&quot;
 &lt;div class=&quot;tc-drop-down&quot; style=&quot;min-width: 7em;&quot;&gt;
 Level: &lt;$text text={{{[[1]][all[current]get[level]]+[!is[blank]last[]]}}}/&gt;   &lt;br/&gt;
 &lt;div&gt;
+&lt;!-- ----------------- INDENT LEFT ---------------------- --&gt;
 &lt;$set filter=&quot;[{!!level}add[-1]max[1]]&quot; name=dent select=0&gt;
-&lt;$button actions=&lt;&lt;indent&gt;&gt; class=&quot;tc-btn-invisible&quot; style=&quot;display: inline-block;width: unset;padding:0;&quot;&gt;{{$:/core/images/chevron-left}}&lt;/$button&gt;
+&lt;$button actions=&lt;&lt;indent&gt;&gt; class=&quot;tc-btn-invisible&quot; style=&quot;display: inline-block;width: unset;padding:0;&quot; tooltip=&quot;Indent left&quot;&gt;{{$:/core/images/chevron-left}}&lt;/$button&gt;
 &lt;/$set&gt;
+&lt;!-- ----------------- MOVE UP ---------------------- --&gt;
+&lt;$button class=&quot;tc-btn-invisible nw-menu-button&quot;  tooltip=&quot;Move Up&quot;&gt;{{$:/core/images/chevron-up}}
+&lt;$action-listops $tiddler=&lt;&lt;maintag&gt;&gt; $filter=&quot;[list&lt;maintag&gt;move:-1&lt;__tid__&gt;]&quot; /&gt;
+&lt;/$button&gt;
+&lt;!-- ----------------- MOVE DOWN ---------------------- --&gt;
+&lt;$button class=&quot;tc-btn-invisible nw-menu-button&quot;  tooltip=&quot;Move Down&quot;&gt;{{$:/core/images/chevron-down}}
+&lt;$action-listops $tiddler=&lt;&lt;maintag&gt;&gt; $filter=&quot;[list&lt;maintag&gt;move:1&lt;__tid__&gt;]&quot; /&gt;
+&lt;/$button&gt;
+&lt;!-- ----------------- INDENT RIGHT ---------------------- --&gt;
 &lt;$set filter=&quot;[{!!level}add[1]min[5]]&quot; name=dent select=0&gt;
-&lt;$button actions=&lt;&lt;indent&gt;&gt; class=&quot;tc-btn-invisible&quot; style=&quot;display: inline-block;width: unset;padding: 0;&quot;&gt;{{$:/core/images/chevron-right}}&lt;/$button&gt;
+&lt;$button actions=&lt;&lt;indent&gt;&gt; class=&quot;tc-btn-invisible nw-menu-button&quot; xstyle=&quot;display: inline-block;width: unset;padding: 0;&quot; tooltip=&quot;Indent right&quot;&gt;{{$:/core/images/chevron-right}}&lt;/$button&gt;
 &lt;/$set&gt;
 &lt;/div&gt;
+&lt;!-- -------------------- BOOKMARKS -------------- --&gt;
 &lt;$wikify text=&lt;&lt;nw-bookmark-tag&gt;&gt; name=&quot;bookmark&quot;&gt;
 &lt;$fieldmangler&gt;
 &lt;$list filter=&quot;[all[current]!tag&lt;bookmark&gt;]&quot; variable=&quot;dum&quot;&gt;
 &lt;$vars starcolor=&quot;gray&quot;&gt;
-&lt;$button message=&quot;tm-add-tag&quot; param=&lt;&lt;bookmark&gt;&gt; class=&quot;tc-btn-invisible&quot; style=&quot;display: inline-block;width: unset;padding: 0;&quot; 
+&lt;$button message=&quot;tm-add-tag&quot; param=&lt;&lt;bookmark&gt;&gt; class=&quot;tc-btn-invisible nw-menu-button&quot; xstyle=&quot;display: inline-block;width: unset;padding: 0;&quot; 
 tooltip=&quot;Set bookmark&quot; 
 &gt;{{||$:/images/nw/star-solid}} (&lt;&lt;bookmark&gt;&gt;)
 &lt;/$button&gt;
@@ -11348,14 +11434,23 @@ tooltip=&quot;Set bookmark&quot;
 &lt;/$list&gt;
 &lt;$list filter=&quot;[all[current]tag&lt;bookmark&gt;]&quot; variable=&quot;dum&quot;&gt;
 &lt;$vars starcolor=&quot;yellow&quot;&gt;
-&lt;$button message=&quot;tm-remove-tag&quot; param=&lt;&lt;bookmark&gt;&gt; class=&quot;tc-btn-invisible&quot; style=&quot;display: inline-block;width: unset;padding: 0;&quot; 
+&lt;$button message=&quot;tm-remove-tag&quot; param=&lt;&lt;bookmark&gt;&gt; class=&quot;tc-btn-invisible nw-menu-button&quot; xstyle=&quot;display: inline-block;width: unset;padding: 0;&quot; 
 tooltip=&quot;Remove bookmark&quot; 
-&gt;{{||$:/images/nw/star-solid}} (&lt;&lt;bookmark&gt;&gt;)
-&lt;/$button&gt;
+&gt;{{||$:/images/nw/star-solid}} (&lt;&lt;bookmark&gt;&gt;)&lt;/$button&gt;
 &lt;/$vars&gt;
 &lt;/$list&gt;
 &lt;/$fieldmangler&gt;
 &lt;/$wikify&gt;
+
+&lt;!-- ----------------- MOVE TO ---------------------- --&gt;
+&lt;br/&gt;
+&lt;$button class=&quot;tc-btn-invisible nw-menu-button&quot; tooltip=&quot;Move one or more tiddlers somewhere in the document.&quot; &gt;Move &amp;gt;
+&lt;$action-setfield $tiddler=&quot;MoveSelection&quot;
+  tiddler=&quot;&quot;&quot;$tid$&quot;&quot;&quot;
+	tag=&lt;&lt;maintag&gt;&gt; /&gt;
+&lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;MoveSelection&quot;/&gt;
+&lt;/$button&gt;
+
 &lt;/div&gt;
 &lt;/$reveal&gt;
 
@@ -11457,16 +11552,54 @@ Prev Level: &lt;&lt;plevel&gt;&gt;&lt;br/&gt;
 <div created="20200525193530342" modified="20200525193536493" title="Initial line.png" type="image/png">
 <pre>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</pre>
 </div>
+<div created="20200607185721224" list="" modified="20200609034202558" subtitle="Move Tiddler" tag="covid19" tags="kit" tiddler="My First Tiddler Series II 3" title="MoveSelection">
+<pre>\define neworder()
+&lt;!-- Move &lt;&lt;movenum&gt;&gt; tiddlers: &lt;&lt;marker-list&gt;&gt; after &lt;&lt;anchor&gt;&gt; in {{!!tag}}&lt;br/&gt; --&gt;
+&lt;!-- $list filter=&quot;[list{!!tag}remove&lt;marker-list&gt;append&lt;marker-list&gt;$(b4)$:$(movenum)$&lt;anchor&gt;]&quot; --&gt;
+&lt;$button&gt;Move tiddler(s)
+&lt;$action-listops $tiddler={{!!tag}} $filter=&quot;[list{!!tag}remove&lt;marker-list&gt;append&lt;marker-list&gt;$(b4)$:$(movenum)$&lt;anchor&gt;]&quot; /&gt;
+&lt;/$button&gt;
+\end
+
+Move tiddler that starts:&lt;br/&gt;
+&lt;$macrocall $name=&quot;nw-first-50-chars&quot; tid={{!!tiddler}} /&gt; &lt;br/&gt;
+aka ''{{!!tiddler}}'' &amp;nbsp; 
+
+&lt;$radio tiddler=&quot;$:/temp/nw/movetype&quot; field=text value=&quot;putbefore&quot;&gt; before &lt;/$radio&gt; /
+&lt;$radio tiddler=&quot;$:/temp/nw/movetype&quot; field=text value=&quot;putafter&quot;&gt; after &lt;/$radio&gt; :
+
+&lt;$select tiddler=&quot;$:/temp/nw/anchor/&quot; &gt;
+	&lt;$list filter=&quot;[tag{!!tag}]&quot; variable=&quot;tid&quot;&gt;
+  &lt;$list filter=&quot;[&lt;tid&gt;get[text]splitregexp[\n\n]!is[blank]first[]split[]limit[50]join[]]&quot; variable=&quot;first&quot;&gt;
+     &lt;option value=&lt;&lt;tid&gt;&gt;&gt;&lt;&lt;first&gt;&gt;&lt;/option&gt;
+  &lt;/$list&gt;
+  &lt;/$list&gt;
+&lt;/$select&gt;
+
+''Total tiddlers to move: ''
+&lt;$select tiddler=&quot;$:/temp/nw/movenum&quot;&gt;
+&lt;$list filter=&quot;[range[1,9]]&quot; variable=&quot;mnum&quot;&gt;
+    &lt;option value=&lt;&lt;mnum&gt;&gt;&gt;&lt;&lt;mnum&gt;&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;
+
+&lt;$vars marker={{!!tiddler}} anchor={{$:/temp/nw/anchor/}} movenum={{$:/temp/nw/movenum}} b4={{$:/temp/nw/movetype}}  &gt;
+&lt;$set name=marker-list filter=&quot;[list{!!tag}allafter:include&lt;marker&gt;limit&lt;movenum&gt;]&quot;&gt;
+&lt;&lt;neworder&gt;&gt;
+&lt;/$set&gt;
+&lt;/$vars&gt;
+</pre>
+</div>
 <div created="20200524193152366" modified="20200525041128763" tags="mydoc kit" title="My First Tiddler">
 <pre>Sometimes I sit and type. Other times I just type.</pre>
 </div>
-<div created="20200525221907597" fold="no" level="1" modified="20200604033600479" tags="covid19" title="My First Tiddler Series II">
+<div created="20200525221907597" fold="no" level="1" modified="20200608204155660" reset="This is an initial line. It says things initially. But ..." tags="covid19" title="My First Tiddler Series II">
 <pre>This is an initial line. It says things initially. But ...</pre>
 </div>
 <div created="20200525222113579" fold="no" level="2" modified="20200605233457014" nosplit="" reset="We have great hopes, but for the moment note that:" tags="covid19" title="My First Tiddler Series II 1">
 <pre>We have great hopes, but for the moment note that:</pre>
 </div>
-<div created="20200525222113590" fold="no" level="3" modified="20200606173133597" reset="   #  It is only an editor
+<div created="20200525222113590" fold="no" level="3" modified="20200608202539756" reset="   #  It is only an editor
    #  It only edits
    #  ~~It doesn't outline.~~ Yet See [[My First Tiddler Series II 4 3]]" tags="covid19" title="My First Tiddler Series II 2">
 <pre>   #  It is only an editor
@@ -11718,10 +11851,14 @@ Copy HTML to tiddler {{$:/temp/nw-export-tid}}
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20200525034100646" modified="20200605031052714" tags="$:/tags/Stylesheet kit" title="NotoWritey Styles" type="text/vnd.tiddlywiki">
+<div created="20200525034100646" modified="20200609040212770" tags="$:/tags/Stylesheet kit" title="NotoWritey Styles" type="text/vnd.tiddlywiki">
 <pre>svg.tc-image-star { fill: gray ;}
 
 .nw-reveal-a &gt; p { margin: 0 ;}
+
+button.nw-menu-button {
+display: inline-block;width: unset;padding: 0;
+}
 
 .nw-select {
 float: left;
@@ -11990,6 +12127,38 @@ This is some text. Let's see where [[this|http://tiddlywiki.com]] takes us. [[Th
 &lt;$action-setfield fold=&quot;no&quot; level=&quot;1&quot;/&gt;
 &lt;/$list&gt;
 &lt;/$button&gt;</pre>
+</div>
+<div created="20200608210501513" list="A D E B C" modified="20200608223716227" reset="A B C D E" tags="kit" title="Working: Move multiple tiddlers in list">
+<pre>\define neworder()
+Move &lt;&lt;movenum&gt;&gt; tiddlers: &lt;&lt;marker-list&gt;&gt; after &lt;&lt;anchor&gt;&gt; &lt;br/&gt;
+&lt;$list filter=&quot;[list[]remove&lt;marker-list&gt;append&lt;marker-list&gt;putafter:$(movenum)$&lt;anchor&gt;]&quot; /&gt;
+&lt;$button&gt;Move it! &lt;&lt;marker-list&gt;&gt;
+&lt;$action-listops $filter=&quot;[list[]remove&lt;marker-list&gt;append&lt;marker-list&gt;putafter:$(movenum)$&lt;anchor&gt;]&quot; /&gt;
+&lt;/$button&gt;
+\end
+
+&lt;$vars marker=&quot;B&quot; anchor=&quot;E&quot; movenum=&quot;2&quot; &gt;
+&lt;$set name=marker-list filter=&quot;[list[]allafter:include&lt;marker&gt;limit&lt;movenum&gt;]&quot;&gt;
+&lt;&lt;neworder&gt;&gt;
+&lt;/$set&gt;
+&lt;/$vars&gt;</pre>
+</div>
+<div created="20200608210501513" list="A C D E B" modified="20200608214531940" tags="kit" title="Working: Re-ordering items one by one">
+<pre>\define neworder()
+&lt;$button&gt;Move it! 
+&lt;$action-listops $filter=&quot;[list[]move:$(movement)$&lt;marker&gt;]&quot; /&gt;
+&lt;/$button&gt;
+\end
+&lt;$vars marker=&quot;B&quot; anchor=&quot;E&quot;&gt;
+&lt;$vars 
+  anchor-num={{{[list[]allbefore&lt;anchor&gt;count[]]}}}
+  marker-num={{{[list[]allbefore&lt;marker&gt;count[]]}}} &gt;
+&lt;$vars movement={{{[&lt;anchor-num&gt;subtract&lt;marker-num&gt;add[1]]}}} &gt;
+&lt;&lt;movement&gt;&gt;
+&lt;&lt;neworder&gt;&gt;
+&lt;/$vars&gt;
+&lt;/$vars&gt;
+&lt;/$vars&gt;</pre>
 </div>
 
 
