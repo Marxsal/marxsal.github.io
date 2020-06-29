@@ -141,7 +141,11 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/config/codemirror/lineNumbers</li>
+
 <li>$:/core</li>
+
+<li>$:/core/macros/export</li>
 
 <li>$:/DefaultTiddlers</li>
 
@@ -179,17 +183,27 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror</li>
+
+<li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror---1125263437</li>
+
+<li>$:/state/plugin-info-370132446-$:/plugins/MAS/NotoWritey---354646093</li>
+
+<li>$:/state/tab--1498284803</li>
+
+<li>$:/state/tab--697582678</li>
+
 <li>$:/state/tab-1749438307</li>
-
-<li>$:/state/tab-2065006209</li>
-
-<li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
 <li>$:/StoryList</li>
 
+<li>$:/temp/advancedsearch</li>
+
 <li>$:/temp/info-plugin</li>
+
+<li>$:/temp/search</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -244,6 +258,10 @@ Error message and password prompt
 <li>Documentation: Howto - Image Initial Line</li>
 
 <li>Documentation: Howto -- Text see initialize</li>
+
+<li>Draft of '$:/core/ui/Buttons/export-tiddler'</li>
+
+<li>Draft of 'NotoWritey Macros'</li>
 
 <li>Draft of 'Working: Move multiple tiddlers in list'</li>
 
@@ -343,6 +361,9 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20200629180831786" modified="20200629180831786" title="$:/config/codemirror/lineNumbers" type="bool">
+<pre>true</pre>
+</div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" revision="0" title="$:/core" type="application/json" version="5.1.23-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -9742,6 +9763,38 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20200629182039390" modified="20200629182117407" tags="$:/tags/Macro" title="$:/core/macros/export">
+<pre>\define exportButtonFilename(baseFilename)
+$baseFilename$$(extension)$
+\end
+
+\define exportButton(exportFilter:&quot;[!is[system]sort[title]]&quot;,lingoBase,baseFilename:&quot;tiddlers&quot;)
+&lt;span class=&quot;tc-popup-keep&quot;&gt;&lt;$button popup=&lt;&lt;qualify &quot;$:/state/popup/export&quot;&gt;&gt; tooltip={{$lingoBase$Hint}} aria-label={{$lingoBase$Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt; selectedClass=&quot;tc-selected&quot;&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+{{$:/core/images/export-button}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text={{$lingoBase$Caption}}/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;&lt;/span&gt;&lt;$reveal state=&lt;&lt;qualify &quot;$:/state/popup/export&quot;&gt;&gt; type=&quot;popup&quot; position=&quot;below&quot; animate=&quot;yes&quot;&gt;
+&lt;div class=&quot;tc-drop-down&quot;&gt;
+&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/Exporter]]&quot;&gt;
+&lt;$set name=&quot;extension&quot; value={{!!extension}}&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+&lt;$action-sendmessage $message=&quot;tm-download-file&quot; $param=&lt;&lt;currentTiddler&gt;&gt; exportFilter=&quot;&quot;&quot;$exportFilter$&quot;&quot;&quot; filename=&lt;&lt;exportButtonFilename &quot;&quot;&quot;$baseFilename$&quot;&quot;&quot;&gt;&gt;/&gt;
+&lt;$action-deletetiddler $tiddler=&lt;&lt;qualify &quot;$:/state/popup/export&quot;&gt;&gt;/&gt;
+&lt;$transclude field=&quot;description&quot;/&gt;
+&lt;/$button&gt;
+&lt;/$set&gt;
+&lt;/$list&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+This space for rent
+&lt;/$button&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+\end
+</pre>
+</div>
 <div bag="default" created="20200627213743846" modified="20200627213745027" revision="0" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki">
 <pre>[[How To Use NotoWritey]]
 [[The plan / Roadmap]]
@@ -10438,20 +10491,32 @@ Error message and password prompt
 <div bag="default" created="20200627220200418" modified="20200627220203469" revision="0" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>NotoWritey</pre>
 </div>
-<div created="20200629024819663" modified="20200629024819663" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
+<div created="20200629180803245" modified="20200629180803246" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror">
+<pre>yes</pre>
 </div>
-<div created="20200629024822079" modified="20200629024822079" title="$:/state/tab-2065006209">
-<pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
+<div created="20200629180807115" modified="20200629180807115" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror---1125263437">
+<pre>usage</pre>
 </div>
-<div created="20200629024751357" modified="20200629024751357" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20200629152918259" modified="20200629152918259" title="$:/state/plugin-info-370132446-$:/plugins/MAS/NotoWritey---354646093">
+<pre>contents</pre>
+</div>
+<div created="20200629181132222" modified="20200629181616800" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
+</div>
+<div created="20200629180825675" modified="20200629180825675" title="$:/state/tab--697582678">
+<pre>$:/core/ui/ControlPanel/Settings/CodeMirror</pre>
+</div>
+<div created="20200629152907395" modified="20200629180823173" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Settings</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200629024810472" list="$:/ControlPanel [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200629024810472" title="$:/StoryList">
+<div created="20200629152904950" list="$:/AdvancedSearch $:/core/macros/export [[Draft of '$:/core/ui/Buttons/export-tiddler']] $:/plugins/tiddlywiki/codemirror-search-replace $:/plugins/MAS/NotoWritey [[Draft of 'NotoWritey Macros']] DocumentTemplate [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200629181624773" title="$:/StoryList">
 <pre></pre>
+</div>
+<div created="20200629181130238" modified="20200629181622188" title="$:/temp/advancedsearch">
+<pre>exportButton</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -10466,7 +10531,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200629024745410&quot;
+            &quot;text&quot;: &quot;20200629152715540&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -10514,6 +10579,9 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20200629152838169" modified="20200629181130239" title="$:/temp/search">
+<pre></pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23-prerelease">
 <pre>{
@@ -10681,7 +10749,17 @@ If you're not ready to have the tiddler split, click on the &quot;No split&quot;
 <div bag="default" created="20200525191046864" fold="no" level="1" modified="20200629023219701" reset="!!! Basic usage" revision="0" tags="Howto" title="Documentation: How to use NotoWritey 2" type="text/vnd.tiddlywiki">
 <pre>!!! Installation</pre>
 </div>
-<div bag="default" created="20200629022811905" fold="no" level="2" modified="20200629023151215" nosplit="nosplit" reset="installation steps" revision="0" tags="Howto" title="Documentation: How to use NotoWritey 2 1" type="text/vnd.tiddlywiki">
+<div bag="default" created="20200629022811905" fold="no" level="2" modified="20200629152744663" nosplit="nosplit" reset="For stand-alone ~TiddlyWiki, drag and drop the following plugin into your ~TiddlyWiki file:
+
+&lt;&lt;&lt;
+$:/plugins/MAS/NotoWritey
+&lt;&lt;&lt;
+
+For node.js, you can find the plugin files at:
+
+&lt;&lt;&lt;
+https://github.com/Marxsal/NotoWritey/tree/master/plugins/NotoWritey
+&lt;&lt;&lt;" revision="0" tags="Howto" title="Documentation: How to use NotoWritey 2 1" type="text/vnd.tiddlywiki">
 <pre>For stand-alone ~TiddlyWiki, drag and drop the following plugin into your ~TiddlyWiki file:
 
 &lt;&lt;&lt;
@@ -10725,6 +10803,137 @@ https://github.com/Marxsal/NotoWritey/tree/master/plugins/NotoWritey
 </div>
 <div bag="default" created="20200525191755890" fold="no" level="2" modified="20200628194024912" revision="0" tags="Howto" title="Documentation: Howto -- Text see initialize" type="text/vnd.tiddlywiki">
 <pre>Fill in the blank for the name of the starter tiddler. Note that any existing tiddler with the same name will get written over. Then click &quot;initialize&quot;. Your tiddler will now contain a single line, like this:</pre>
+</div>
+<div caption="{{$:/core/images/export-button}} {{$:/language/Buttons/ExportTiddler/Caption}}" description="{{$:/language/Buttons/ExportTiddler/Hint}}" draft.of="$:/core/ui/Buttons/export-tiddler" draft.title="$:/core/ui/Buttons/export-tiddler" modified="20200629181321805" tags="$:/tags/ViewToolbar" title="Draft of '$:/core/ui/Buttons/export-tiddler'">
+<pre>\define makeExportFilter()
+[[$(currentTiddler)$]]
+\end
+&lt;$macrocall $name=&quot;exportButton&quot; exportFilter=&lt;&lt;makeExportFilter&gt;&gt; lingoBase=&quot;$:/language/Buttons/ExportTiddler/&quot; baseFilename=&lt;&lt;currentTiddler&gt;&gt;/&gt;</pre>
+</div>
+<div created="20200525034606174" draft.of="NotoWritey Macros" draft.title="NotoWritey Macros" modified="20200629180856091" tags="$:/tags/Macro kit" title="Draft of 'NotoWritey Macros'" type="text/vnd.tiddlywiki">
+<pre>\define default-name() $(currentTiddler)$-YOUR-ID-HERE
+\define nw-bookmark-tiddler() :/config/nw/$(tagname)$
+\define nw-bookmark-tag() {{:/config/nw/$(tagname)$}}
+\define notag(tag) 
+&lt;$vars lb=&quot;[[&quot; rb=&quot;]]&quot;&gt;
+
+There is no tag tiddler &lt;code&gt;&lt;&lt;tagname&gt;&gt;&lt;/code&gt; (or it's missing list field). &lt;br/&gt;
+''Initial tiddler name:'' &lt;$edit-text 
+  tiddler=&quot;$:/temp/initial&quot; 
+  size=40 
+  tag=&quot;input&quot;
+  default=&lt;&lt;default-name&gt;&gt;
+/&gt;&lt;br/&gt;
+&lt;$reveal state=&quot;$:/temp/initial&quot; text=&quot;&quot; type=&quot;match&quot;&gt;
+You must modify the above initial tiddler name.
+&lt;/$reveal&gt;
+&lt;$reveal state=&quot;$:/temp/initial&quot; text=&lt;&lt;tagname&gt;&gt; type=&quot;match&quot;&gt;
+The initial tiddler can not be the same as the master tag tiddler!
+&lt;/$reveal&gt;
+
+&lt;$reveal state=&quot;$:/temp/initial&quot; text=&quot;&quot; type=&quot;nomatch&quot;&gt;
+&lt;$reveal state=&quot;$:/temp/initial&quot; text=&lt;&lt;tagname&gt;&gt; type=&quot;nomatch&quot;&gt;
+This button will set up initial tiddler and initialize tiddler &lt;code&gt;&lt;&lt;tagname&gt;&gt;&lt;/code&gt; &lt;br/&gt;
+&lt;$button&gt;Initialize 
+&lt;$action-setfield $tiddler={{$:/temp/initial}} tags={{{[&lt;tagname&gt;addprefix&lt;lb&gt;addsuffix&lt;rb&gt;]}}}
+  fold=&quot;no&quot; level=&quot;1&quot; text=&quot;This is an initial line.&quot;
+/&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;tagname&gt;&gt; list={{{[{$:/temp/initial}addprefix&lt;lb&gt;addsuffix&lt;rb&gt;]}}} /&gt;
+&lt;$action-deletetiddler $tiddler=&quot;&quot;&quot;$:/temp/initial&quot;&quot;&quot;/&gt;
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/$reveal&gt;
+&lt;/$vars&gt;
+\end
+
+\define nw-display-toolbar()
+&lt;$reveal state=&quot;$:/config/notowritey/editor-toolbar/visibility&quot; type=&quot;match&quot; text=&quot;hide&quot;&gt;
+ display: none;
+&lt;/$reveal&gt;
+\end
+
+
+\define noto2(tag)
+&lt;$list filter=&quot;[title&lt;__tag__&gt;has[list]]&quot; emptyMessage=&lt;&lt;notag &quot;&quot;&quot;$tag$&quot;&quot;&quot;&gt;&gt;&gt;
+&lt;$vars maintag=&quot;&quot;&quot;$tag$&quot;&quot;&quot;&gt;
+&lt;$list filter=&quot;[tag&lt;maintag&gt;]&quot; template=&quot;EditorViewTemplate&quot;/&gt;
+&lt;/$vars&gt;
+&lt;/$list&gt;
+\end
+
+\define compile-w()
+&lt;$list filter=&quot;[tag&lt;tagname&gt;]&quot;&gt;
+&lt;$view field=&quot;text&quot;/&gt;
+&lt;/$list&gt;
+\end
+
+\define compile-h()
+&lt;$list filter=&quot;[tag&lt;tagname&gt;]&quot;&gt;
+&lt;$transclude mode=block/&gt;
+&lt;/$list&gt;
+\end
+
+
+\define noto(tag)
+&lt;$set filter=&quot;&quot;&quot;[&lt;currentTiddler&gt;] [&lt;__tag__&gt;] +[!is[blank]last[]]&quot;&quot;&quot; name=&quot;tagname&quot; select=0 &gt;
+&lt;$list filter=&quot;[title&lt;tagname&gt;has[list]]&quot; emptyMessage=&lt;&lt;notag&gt;&gt;&gt;
+&lt;$vars maintag=&lt;&lt;tagname&gt;&gt; &gt;
+&lt;$list filter=&quot;[tag&lt;maintag&gt;]&quot; template=&quot;DocumentTemplate&quot;/&gt;
+&lt;/$vars&gt;
+&lt;/$list&gt;
+
+&lt;div class=&quot;nw-settings&quot; &gt;
+
+&lt;hr style=&quot;border-width:2px;margin-bottom:0px;&quot; /&gt;&lt;h3 style=&quot;background-color: lightcyan;text-align:center;margin:0px;line-height:1.5em&quot; &gt; ~NotoWritey Settings &lt;/h3&gt;&lt;hr style=&quot;border-width:2px;margin-top:0px;&quot; /&gt;
+
+''Tag Pill:'' &lt;$tiddler tiddler=&lt;&lt;tagname&gt;&gt; &gt;
+&lt;$transclude tiddler=&quot;$:/core/ui/TagTemplate&quot; /&gt;
+&lt;/$tiddler&gt;
+|
+''Show Editor Toolbar'': &lt;$checkbox tiddler=&quot;$:/config/notowritey/editor-toolbar/visibility&quot; field=&quot;text&quot; checked=&quot;show&quot; unchecked=&quot;hide&quot; default=&quot;show&quot;/&gt; 
+&lt;br/&gt; 
+''Tag for bookmarks:'' &lt;$edit-text 
+  tiddler=&lt;&lt;nw-bookmark-tiddler&gt;&gt; 
+  size=20 
+  tag=&quot;input&quot;
+  default=&quot;Edit this tag name or it won't work. Sorry.&quot;
+/&gt;
+
+''Export to tiddler:'' &lt;$edit-text 
+  tiddler=&quot;$:/temp/nw-export-tid&quot; 
+  size=40 
+  tag=&quot;input&quot;
+  default=&quot;Edit this field&quot;
+/&gt;
+
+&lt;$wikify text=&quot;&quot;&quot;&lt;&lt;compile-w&gt;&gt;&quot;&quot;&quot; name=&quot;compiled&quot;&gt;
+&lt;$button message=&quot;tm-copy-to-clipboard&quot; param=&lt;&lt;compiled&gt;&gt; &gt;
+Copy wikitext to clipboard
+&lt;/$button&gt;
+&lt;$button&gt;
+Copy wikitext to tiddler {{$:/temp/nw-export-tid}}
+&lt;$action-setfield $tiddler={{$:/temp/nw-export-tid}} $field=&quot;text&quot; $value=&lt;&lt;compiled&gt;&gt; /&gt;
+&lt;/$button&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/$wikify&gt;
+
+&lt;$wikify text=&quot;&quot;&quot;&lt;&lt;compile-h&gt;&gt;&quot;&quot;&quot; name=&quot;compiled&quot; output=&quot;html&quot;&gt;
+&lt;$button message=&quot;tm-copy-to-clipboard&quot; param=&lt;&lt;compiled&gt;&gt; &gt;
+Copy HTML to clipboard
+&lt;/$button&gt;
+&lt;$button &gt;
+Copy HTML to tiddler {{$:/temp/nw-export-tid}}
+&lt;$action-setfield $tiddler={{$:/temp/nw-export-tid}} $field=&quot;text&quot; $value=&lt;&lt;compiled&gt;&gt; /&gt;
+&lt;/$button&gt;
+&lt;/$wikify&gt;
+
+&lt;$button&gt;Backup Tiddler Order
+&lt;$action-listops $tiddler=&lt;&lt;tagname&gt;&gt; $field=&quot;nw-list-backup&quot; $filter=&quot;[list&lt;tagname&gt;]&quot; /&gt;
+&lt;/$button&gt;
+
+&lt;/div&gt;
+&lt;/$set&gt;
+\end</pre>
 </div>
 <div bag="default" created="20200608210501513" draft.of="Working: Move multiple tiddlers in list" draft.title="Working: Move multiple tiddlers in list" list="A D E B C" modified="20200627213703831" reset="A B C D E" revision="0" tags="kit" title="Draft of 'Working: Move multiple tiddlers in list'" type="text/vnd.tiddlywiki">
 <pre>\define neworder()
