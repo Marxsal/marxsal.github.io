@@ -183,11 +183,17 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/editpreviewtype</li>
+
 <li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror</li>
 
 <li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror---1125263437</li>
 
 <li>$:/state/plugin-info-370132446-$:/plugins/MAS/NotoWritey---354646093</li>
+
+<li>$:/state/showeditpreview</li>
+
+<li>$:/state/sidebar</li>
 
 <li>$:/state/tab--1498284803</li>
 
@@ -260,6 +266,8 @@ Error message and password prompt
 <li>Documentation: Howto - Image Initial Line</li>
 
 <li>Documentation: Howto -- Text see initialize</li>
+
+<li>Draft of 'How To Use NotoWritey'</li>
 
 <li>Draft of 'NotoWritey Macros'</li>
 
@@ -9765,9 +9773,12 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200629182039390" modified="20200629183644576" tags="$:/tags/Macro" title="$:/core/macros/export">
+<div created="20200629182039390" modified="20200629185115544" tags="$:/tags/Macro" title="$:/core/macros/export">
 <pre>\define compile-h2()
 &lt;$transclude mode=block/&gt;
+\end
+\define compile-w2()
+&lt;$view field=&quot;text&quot;/&gt;
 \end
 \define exportButtonFilename(baseFilename)
 $baseFilename$$(extension)$
@@ -9796,6 +9807,11 @@ $baseFilename$$(extension)$
 &lt;$wikify text=&quot;&quot;&quot;&lt;&lt;compile-h2&gt;&gt;&quot;&quot;&quot; name=&quot;compiled&quot; output=&quot;html&quot;&gt;
 &lt;$button class=&quot;tc-btn-invisible&quot; message=&quot;tm-copy-to-clipboard&quot; param=&lt;&lt;compiled&gt;&gt; &gt;
 HTML -&gt; clip
+&lt;/$button&gt;
+&lt;/$wikify&gt;
+&lt;$wikify text=&quot;&quot;&quot;&lt;&lt;compile-w2&gt;&gt;&quot;&quot;&quot; name=&quot;compiled&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; message=&quot;tm-copy-to-clipboard&quot; param=&lt;&lt;compiled&gt;&gt; &gt;
+Copy wikitext to clipboard
 &lt;/$button&gt;
 &lt;/$wikify&gt;
 &lt;/div&gt;
@@ -10499,6 +10515,9 @@ HTML -&gt; clip
 <div bag="default" created="20200627220200418" modified="20200627220203469" revision="0" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>NotoWritey</pre>
 </div>
+<div created="20200629184635605" modified="20200629184635605" title="$:/state/editpreviewtype">
+<pre>$:/core/ui/EditTemplate/body/preview/output</pre>
+</div>
 <div created="20200629180803245" modified="20200629180803246" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror">
 <pre>yes</pre>
 </div>
@@ -10507,6 +10526,12 @@ HTML -&gt; clip
 </div>
 <div created="20200629152918259" modified="20200629152918259" title="$:/state/plugin-info-370132446-$:/plugins/MAS/NotoWritey---354646093">
 <pre>contents</pre>
+</div>
+<div created="20200629184528903" modified="20200629184657411" title="$:/state/showeditpreview">
+<pre>no</pre>
+</div>
+<div created="20200629184532621" modified="20200629184532621" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20200629181132222" modified="20200629181616800" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Shadows</pre>
@@ -10523,7 +10548,7 @@ HTML -&gt; clip
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200629152904950" list="[[New Tiddler]] $:/AdvancedSearch [[Draft of 'NotoWritey Macros']] $:/core/macros/export [[Documentation: How to use NotoWritey 1]] $:/plugins/tiddlywiki/codemirror-search-replace $:/plugins/MAS/NotoWritey DocumentTemplate [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200629183437278" title="$:/StoryList">
+<div created="20200629152904950" list="[[New Tiddler]] $:/AdvancedSearch [[Draft of 'NotoWritey Macros']] $:/core/macros/export [[Documentation: How to use NotoWritey 1]] $:/plugins/tiddlywiki/codemirror-search-replace $:/plugins/MAS/NotoWritey DocumentTemplate [[Draft of 'How To Use NotoWritey']] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200629183437278" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200629181130238" modified="20200629181622188" title="$:/temp/advancedsearch">
@@ -10814,6 +10839,9 @@ https://github.com/Marxsal/NotoWritey/tree/master/plugins/NotoWritey
 </div>
 <div bag="default" created="20200525191755890" fold="no" level="2" modified="20200628194024912" revision="0" tags="Howto" title="Documentation: Howto -- Text see initialize" type="text/vnd.tiddlywiki">
 <pre>Fill in the blank for the name of the starter tiddler. Note that any existing tiddler with the same name will get written over. Then click &quot;initialize&quot;. Your tiddler will now contain a single line, like this:</pre>
+</div>
+<div bag="default" created="20200525190045960" draft.of="How To Use NotoWritey" draft.title="How To Use NotoWritey" modified="20200629184525664" revision="0" tags="kit" title="Draft of 'How To Use NotoWritey'" type="text/vnd.tiddlywiki">
+<pre>&lt;&lt;noto Howto&gt;&gt;</pre>
 </div>
 <div created="20200525034606174" draft.of="NotoWritey Macros" draft.title="NotoWritey Macros" modified="20200629182703510" tags="$:/tags/Macro kit" title="Draft of 'NotoWritey Macros'" type="text/vnd.tiddlywiki">
 <pre>\define default-name() $(currentTiddler)$-YOUR-ID-HERE
