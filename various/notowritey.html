@@ -9771,7 +9771,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200629182039390" modified="20200629185115544" tags="$:/tags/Macro" title="$:/core/macros/export">
+<div created="20200629182039390" modified="20200629190124929" tags="$:/tags/Macro" title="$:/core/macros/export">
 <pre>\define compile-h2()
 &lt;$transclude mode=block/&gt;
 \end
@@ -9807,9 +9807,9 @@ $baseFilename$$(extension)$
 HTML -&gt; clip
 &lt;/$button&gt;
 &lt;/$wikify&gt;
-&lt;$wikify text=&quot;&quot;&quot;&lt;&lt;compile-w2&gt;&gt;&quot;&quot;&quot; name=&quot;compiled&quot;&gt;
+&lt;$wikify text=&quot;&quot;&quot;&lt;&lt;currentTiddler&gt;&gt;&quot;&quot;&quot; name=&quot;compiled&quot;&gt;
 &lt;$button class=&quot;tc-btn-invisible&quot; message=&quot;tm-copy-to-clipboard&quot; param=&lt;&lt;compiled&gt;&gt; &gt;
-Copy wikitext to clipboard
+Wikitext -&gt; clipboard
 &lt;/$button&gt;
 &lt;/$wikify&gt;
 &lt;/div&gt;
