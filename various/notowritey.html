@@ -259,8 +259,6 @@ Error message and password prompt
 
 <li>Documentation: Howto -- Text see initialize</li>
 
-<li>Draft of '$:/core/ui/Buttons/export-tiddler'</li>
-
 <li>Draft of 'NotoWritey Macros'</li>
 
 <li>Draft of 'Working: Move multiple tiddlers in list'</li>
@@ -9763,8 +9761,11 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200629182039390" modified="20200629182117407" tags="$:/tags/Macro" title="$:/core/macros/export">
-<pre>\define exportButtonFilename(baseFilename)
+<div created="20200629182039390" modified="20200629183042544" tags="$:/tags/Macro" title="$:/core/macros/export">
+<pre>\define compile-h()
+&lt;$transclude mode=block/&gt;
+\end
+\define exportButtonFilename(baseFilename)
 $baseFilename$$(extension)$
 \end
 
@@ -9787,9 +9788,12 @@ $baseFilename$$(extension)$
 &lt;/$button&gt;
 &lt;/$set&gt;
 &lt;/$list&gt;
-&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
-This space for rent
+&lt;hr/&gt;
+&lt;$wikify text=&quot;&quot;&quot;&lt;&lt;compile-h&gt;&gt;&quot;&quot;&quot; name=&quot;compiled&quot; output=&quot;html&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; message=&quot;tm-copy-to-clipboard&quot; param=&lt;&lt;compiled&gt;&gt; &gt;
+HTML -&gt; clip
 &lt;/$button&gt;
+&lt;/$wikify&gt;
 &lt;/div&gt;
 &lt;/$reveal&gt;
 \end
@@ -10512,7 +10516,7 @@ This space for rent
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200629152904950" list="$:/AdvancedSearch $:/core/macros/export [[Draft of '$:/core/ui/Buttons/export-tiddler']] $:/plugins/tiddlywiki/codemirror-search-replace $:/plugins/MAS/NotoWritey [[Draft of 'NotoWritey Macros']] DocumentTemplate [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200629181624773" title="$:/StoryList">
+<div created="20200629152904950" list="$:/AdvancedSearch [[Draft of 'NotoWritey Macros']] $:/core/macros/export $:/plugins/tiddlywiki/codemirror-search-replace $:/plugins/MAS/NotoWritey DocumentTemplate [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200629182642183" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200629181130238" modified="20200629181622188" title="$:/temp/advancedsearch">
@@ -10804,13 +10808,7 @@ https://github.com/Marxsal/NotoWritey/tree/master/plugins/NotoWritey
 <div bag="default" created="20200525191755890" fold="no" level="2" modified="20200628194024912" revision="0" tags="Howto" title="Documentation: Howto -- Text see initialize" type="text/vnd.tiddlywiki">
 <pre>Fill in the blank for the name of the starter tiddler. Note that any existing tiddler with the same name will get written over. Then click &quot;initialize&quot;. Your tiddler will now contain a single line, like this:</pre>
 </div>
-<div caption="{{$:/core/images/export-button}} {{$:/language/Buttons/ExportTiddler/Caption}}" description="{{$:/language/Buttons/ExportTiddler/Hint}}" draft.of="$:/core/ui/Buttons/export-tiddler" draft.title="$:/core/ui/Buttons/export-tiddler" modified="20200629181321805" tags="$:/tags/ViewToolbar" title="Draft of '$:/core/ui/Buttons/export-tiddler'">
-<pre>\define makeExportFilter()
-[[$(currentTiddler)$]]
-\end
-&lt;$macrocall $name=&quot;exportButton&quot; exportFilter=&lt;&lt;makeExportFilter&gt;&gt; lingoBase=&quot;$:/language/Buttons/ExportTiddler/&quot; baseFilename=&lt;&lt;currentTiddler&gt;&gt;/&gt;</pre>
-</div>
-<div created="20200525034606174" draft.of="NotoWritey Macros" draft.title="NotoWritey Macros" modified="20200629180856091" tags="$:/tags/Macro kit" title="Draft of 'NotoWritey Macros'" type="text/vnd.tiddlywiki">
+<div created="20200525034606174" draft.of="NotoWritey Macros" draft.title="NotoWritey Macros" modified="20200629182703510" tags="$:/tags/Macro kit" title="Draft of 'NotoWritey Macros'" type="text/vnd.tiddlywiki">
 <pre>\define default-name() $(currentTiddler)$-YOUR-ID-HERE
 \define nw-bookmark-tiddler() :/config/nw/$(tagname)$
 \define nw-bookmark-tag() {{:/config/nw/$(tagname)$}}
