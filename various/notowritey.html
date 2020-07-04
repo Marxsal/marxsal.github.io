@@ -157,6 +157,8 @@ Error message and password prompt
 
 <li>$:/images/nw/star-solid</li>
 
+<li>$:/Import</li>
+
 <li>$:/isEncrypted</li>
 
 <li>$:/plugins/MAS/NotoWritey</li>
@@ -179,15 +181,13 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
-<li>$:/state/tab-1749438307</li>
-
-<li>$:/state/tab-2065006209</li>
-
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
 <li>$:/StoryList</li>
 
 <li>$:/temp/info-plugin</li>
+
+<li>$:/temp/search</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -242,6 +242,8 @@ Error message and password prompt
 <li>Documentation: Howto - Image Initial Line</li>
 
 <li>Documentation: Howto -- Text see initialize</li>
+
+<li>DocumentTemplate</li>
 
 <li>Draft of 'Working: Move multiple tiddlers in list'</li>
 
@@ -9768,6 +9770,11 @@ Error message and password prompt
 <div bag="default" caption="star (Solid)" created="20200604220933403" modified="20200627213703922" revision="0" tags="$:/tags/Image kit" title="$:/images/nw/star-solid" type="text/vnd.tiddlywiki">
 <pre>&lt;svg class=&quot;tc-image-star tc-image-button&quot; width=&quot;22pt&quot;  height=&quot;22pt&quot; viewBox=&quot;0 0 576 512&quot;&gt;&lt;path fill=&lt;&lt;starcolor&gt;&gt; d=&quot;M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z&quot;/&gt;&lt;/svg&gt;</pre>
 </div>
+<div status="complete" title="$:/Import">
+<pre>The following tiddlers were imported:
+
+# [[DocumentTemplate]]</pre>
+</div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
 </div>
@@ -10446,16 +10453,10 @@ Error message and password prompt
 <div bag="default" created="20200627220200418" modified="20200703175625703" revision="0" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>NotoWritey</pre>
 </div>
-<div created="20200703181401830" modified="20200703181401830" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
-</div>
-<div created="20200703181403439" modified="20200703181403439" title="$:/state/tab-2065006209">
-<pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
-</div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200703181359750" list="$:/ControlPanel [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200703181359750" title="$:/StoryList">
+<div created="20200704165528869" list="$:/Import [[Documentation: How to use NotoWritey 3]] [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200704165528869" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10471,7 +10472,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200703181356465&quot;
+            &quot;text&quot;: &quot;20200704165228634&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -10519,6 +10520,9 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20200704165234769" modified="20200704165236285" title="$:/temp/search">
+<pre>Howto</pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23-prerelease">
 <pre>{
@@ -10730,6 +10734,111 @@ https://github.com/Marxsal/NotoWritey/tree/master/plugins/NotoWritey
 </div>
 <div bag="default" created="20200525191755890" fold="no" level="2" modified="20200628194024912" revision="0" tags="Howto" title="Documentation: Howto -- Text see initialize" type="text/vnd.tiddlywiki">
 <pre>Fill in the blank for the name of the starter tiddler. Note that any existing tiddler with the same name will get written over. Then click &quot;initialize&quot;. Your tiddler will now contain a single line, like this:</pre>
+</div>
+<div bag="default" created="20200528190017746" modified="20200704002746038" revision="0" tags="kit" title="DocumentTemplate" type="text/vnd.tiddlywiki">
+<pre>\define qualify-helper() &lt;&lt;qualify title:&quot;&quot;&quot;$:/temp/$(maintag)$&quot;&quot;&quot; &gt;&gt;
+\define qualify-restore-helper() &lt;&lt;qualify title:&quot;&quot;&quot;$:/temp/$(maintag)$/restore&quot;&quot;&quot; &gt;&gt;
+\define temp-tiddler() $:/temp/$(currentTiddler)$
+\define state-editor-settings() $:/state/editor-settings-$(currentTiddler)$
+\define maintag-helper() [[$(maintag)$]] 
+\define current-remover() -[[$(currentTiddler)$]]
+\define filt-append() [list[$(maintag)$]] +[putafter:$(count)$&lt;currentTiddler&gt;]
+\define dothese()
+&lt;$vars nav=&lt;&lt;navigateTo&gt;&gt;&gt;
+&lt;$reveal type=&quot;nomatch&quot; default=&lt;&lt;currentTiddler&gt;&gt; text=&lt;&lt;nav&gt;&gt; &gt;
+  &lt;$action-navigate $to=&lt;&lt;nav&gt;&gt;/&gt;
+&lt;/$reveal&gt;
+&lt;$reveal type=&quot;match&quot; default=&lt;&lt;currentTiddler&gt;&gt; text=&lt;&lt;nav&gt;&gt; &gt;
+  &lt;$action-setfield reset={{!!text}} /&gt;
+  &lt;$action-setfield $tiddler=&lt;&lt;quali&gt;&gt; $value=&quot;edit&quot; /&gt;
+  &lt;$action-setfield $tiddler=&lt;&lt;temp-tiddler&gt;&gt; $value={{!!text}} /&gt;	
+&lt;/$reveal&gt;
+&lt;/$vars&gt;
+\end
+&lt;$wikify name=&quot;quali&quot; text=&lt;&lt;qualify-helper&gt;&gt; &gt;
+&lt;$reveal state=&lt;&lt;quali&gt;&gt; type=&quot;nomatch&quot; text=&quot;edit&quot; class=&quot;nw-reveal-a&quot; tag=&quot;div&quot;&gt;
+&lt;$linkcatcher actions=&lt;&lt;dothese&gt;&gt;&gt;
+&lt;$tiddler tiddler=&lt;&lt;currentTiddler&gt;&gt;&gt;
+&lt;$macrocall $name=&quot;show-tiddler&quot;  tid=&lt;&lt;currentTiddler&gt;&gt;  /&gt;&lt;!-- $transclude mode=&quot;block&quot; --&gt;
+&lt;/$tiddler&gt;
+&lt;/$linkcatcher&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&lt;&lt;quali&gt;&gt; type=&quot;match&quot; text=&quot;edit&quot; class=&quot;nw-editor&quot; tag=&quot;div&quot;&gt;&lt;span class=nw-edit-control &gt;&lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;state-editor-settings&gt;&gt; &gt;{{$:/core/images/options-button}}&lt;/$button&gt;&lt;/span&gt;
+&lt;$tiddler tiddler=&lt;&lt;temp-tiddler&gt;&gt; &gt;&lt;!-- FINDME --&gt;
+{{||$:/core/ui/EditTemplate/body/editor}}
+&lt;/$tiddler&gt;
+
+
+&lt;$button class=&quot;mybuttons&quot; &gt;Close
+&lt;$reveal stateTitle=&lt;&lt;currentTiddler&gt;&gt; stateField=&quot;nosplit&quot; type=&quot;nomatch&quot; text=&quot;nosplit&quot; &gt;
+&lt;$list filter=&quot;[&lt;temp-tiddler&gt;get[text]splitregexp[\n\n]!is[blank]butfirst[]]&quot; variable=&quot;frazon&quot;&gt;
+&lt;$action-createtiddler 
+	$basetitle=&lt;&lt;currentTiddler&gt;&gt; $savetitle=&quot;SaveTitle&quot; 
+	text=&lt;&lt;frazon&gt;&gt; tags=&lt;&lt;maintag-helper&gt;&gt; fold=&quot;no&quot; level={{!!level}}
+  
+/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;maintag&gt;&gt; $subfilter=&quot;[{SaveTitle}]&quot;/&gt;
+
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[&lt;temp-tiddler&gt;get[text]splitregexp[\n\n]!is[blank]butfirst[]count[]]&quot; variable=&quot;count&quot;&gt;
+     &lt;$action-listops $tiddler=&lt;&lt;maintag&gt;&gt; $filter=&lt;&lt;filt-append&gt;&gt; /&gt;
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[&lt;temp-tiddler&gt;get[text]splitregexp[\n\n]!is[blank]first[]]&quot; variable=&quot;first&quot;&gt;
+     &lt;$action-setfield text=&lt;&lt;first&gt;&gt; /&gt;
+&lt;/$list&gt;
+
+&lt;/$reveal&gt;
+&lt;$action-deletetiddler $tiddler=&lt;&lt;quali&gt;&gt;/&gt;
+&lt;$action-deletetiddler $tiddler=&lt;&lt;temp-tiddler&gt;&gt;/&gt;
+&lt;/$button&gt; | &lt;!-- FINDME --&gt;
+
+&lt;$reveal type=&quot;popup&quot; state=&lt;&lt;state-editor-settings&gt;&gt; class=&quot;nw-edit-settings tc-popup-keep&quot; style=&quot;left: unset; right: 2em;&quot; positionAllowNegative=&quot;yes&quot; position=&quot;right&quot;&gt;
+
+&lt;$button&gt;Delete 
+&lt;$action-deletetiddler $tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;maintag&gt;&gt; $field=&quot;list&quot; $subfilter=&lt;&lt;current-remover&gt;&gt; /&gt;
+&lt;$action-deletetiddler $tiddler=&lt;&lt;quali&gt;&gt;/&gt;
+&lt;$action-deletetiddler $tiddler=&lt;&lt;temp-tiddler&gt;&gt;/&gt;
+&lt;/$button&gt; |
+&lt;$button&gt;Reset 
+&lt;$action-setfield text={{!!reset}}/&gt;
+&lt;/$button&gt;
+
+&lt;$checkbox field=&quot;nosplit&quot; checked=&quot;nosplit&quot; unchecked=&quot;&quot;/&gt; No split |
+&lt;$link&gt;Link&lt;/$link&gt;
+&lt;br/&gt;
+&lt;!-- ------------ Visual Break ---------------- --&gt;
+&lt;$wikify text=&lt;&lt;qualify-restore-helper&gt;&gt; name=&quot;rest-tid&quot;&gt;
+&lt;$vars 
+  vsn-cap-fld={{{[[1]][&lt;rest-tid&gt;get[text]] +[!is[blank]last[]addprefix[vsn-cap-]]}}}
+     vsn-fld={{{[[1]][&lt;rest-tid&gt;get[text]] +[!is[blank]last[]addprefix[vsn-]]}}}
+&gt;
+&lt;$button&gt;Save to:
+&lt;$action-setfield $field=&lt;&lt;vsn-fld&gt;&gt; $value={{!!text}}/&gt;
+&lt;/$button&gt; 
+or
+&lt;$button&gt;Rest. fm:
+&lt;$action-setfield $field=&quot;text&quot; $value={{{[all[current]get&lt;vsn-fld&gt;]}}}/&gt;
+&lt;/$button&gt; 
+&lt;!-- FINDME --&gt;	
+&lt;$select tiddler=&lt;&lt;rest-tid&gt;&gt; default=&quot;1&quot; &gt;
+&lt;$list filter=&quot;[range[1,5]]&quot; variable=&quot;nw-item&quot;&gt;
+  &lt;option value=&lt;&lt;nw-item&gt;&gt;&gt;&lt;&lt;nw-item&gt;&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;
+&lt;$edit-text 
+  field=&lt;&lt;vsn-cap-fld&gt;&gt; 
+  size=40
+  tag=&quot;input&quot;
+  placeholder=&quot;Write something&quot;
+/&gt;
+&lt;/$vars&gt;
+&lt;/$wikify&gt;
+&lt;/$reveal&gt; &lt;!-- END OF POPUP EDIT CONTROLS --&gt; 
+&lt;/$reveal&gt; &lt;!-- END OF EDIT MODE --&gt;
+&lt;/$wikify&gt;</pre>
 </div>
 <div bag="default" created="20200608210501513" draft.of="Working: Move multiple tiddlers in list" draft.title="Working: Move multiple tiddlers in list" list="A D E B C" modified="20200627213703831" reset="A B C D E" revision="0" tags="kit" title="Draft of 'Working: Move multiple tiddlers in list'" type="text/vnd.tiddlywiki">
 <pre>\define neworder()
