@@ -157,8 +157,6 @@ Error message and password prompt
 
 <li>$:/images/nw/star-solid</li>
 
-<li>$:/Import</li>
-
 <li>$:/isEncrypted</li>
 
 <li>$:/plugins/MAS/NotoWritey</li>
@@ -186,8 +184,6 @@ Error message and password prompt
 <li>$:/StoryList</li>
 
 <li>$:/temp/info-plugin</li>
-
-<li>$:/temp/search</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -242,8 +238,6 @@ Error message and password prompt
 <li>Documentation: Howto - Image Initial Line</li>
 
 <li>Documentation: Howto -- Text see initialize</li>
-
-<li>DocumentTemplate</li>
 
 <li>Draft of 'Working: Move multiple tiddlers in list'</li>
 
@@ -9770,11 +9764,6 @@ Error message and password prompt
 <div bag="default" caption="star (Solid)" created="20200604220933403" modified="20200627213703922" revision="0" tags="$:/tags/Image kit" title="$:/images/nw/star-solid" type="text/vnd.tiddlywiki">
 <pre>&lt;svg class=&quot;tc-image-star tc-image-button&quot; width=&quot;22pt&quot;  height=&quot;22pt&quot; viewBox=&quot;0 0 576 512&quot;&gt;&lt;path fill=&lt;&lt;starcolor&gt;&gt; d=&quot;M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z&quot;/&gt;&lt;/svg&gt;</pre>
 </div>
-<div status="complete" title="$:/Import">
-<pre>The following tiddlers were imported:
-
-# [[DocumentTemplate]]</pre>
-</div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
 </div>
@@ -10456,7 +10445,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200704165528869" list="$:/Import [[Documentation: How to use NotoWritey 3]] [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200704165528869" title="$:/StoryList">
+<div list="[[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10472,7 +10461,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200704165228634&quot;
+            &quot;text&quot;: &quot;20200704171635819&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -10520,9 +10509,6 @@ Error message and password prompt
         }
     }
 }</pre>
-</div>
-<div created="20200704165234769" modified="20200704165236285" title="$:/temp/search">
-<pre>Howto</pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23-prerelease">
 <pre>{
@@ -10720,7 +10706,7 @@ https://github.com/Marxsal/NotoWritey/tree/master/plugins/NotoWritey
 <div bag="default" created="20200525191046888" fold="no" level="2" modified="20200628194024781" revision="0" tags="Howto" title="Documentation: How to use NotoWritey 6" type="text/vnd.tiddlywiki">
 <pre>where &quot;mytag&quot; is the tag that will hold all the components of your document together.</pre>
 </div>
-<div bag="default" created="20200530195837680" fold="no" level="2" modified="20200628194024803" revision="0" tags="Howto" title="Documentation: How to use NotoWritey 6 1" type="text/vnd.tiddlywiki">
+<div bag="default" created="20200530195837680" fold="no" level="2" modified="20200704171653731" reset="If you don't supply a tag name, then the title of the current tiddler will be used as the tag name. Be aware that that means the list field of the current will be written over as the document is constructed." revision="0" tags="Howto" title="Documentation: How to use NotoWritey 6 1" type="text/vnd.tiddlywiki">
 <pre>If you don't supply a tag name, then the title of the current tiddler will be used as the tag name. Be aware that that means the list field of the current will be written over as the document is constructed.</pre>
 </div>
 <div bag="default" created="20200525191046890" fold="no" level="2" modified="20200628194024828" revision="0" tags="Howto" title="Documentation: How to use NotoWritey 7" type="text/vnd.tiddlywiki">
@@ -10734,111 +10720,6 @@ https://github.com/Marxsal/NotoWritey/tree/master/plugins/NotoWritey
 </div>
 <div bag="default" created="20200525191755890" fold="no" level="2" modified="20200628194024912" revision="0" tags="Howto" title="Documentation: Howto -- Text see initialize" type="text/vnd.tiddlywiki">
 <pre>Fill in the blank for the name of the starter tiddler. Note that any existing tiddler with the same name will get written over. Then click &quot;initialize&quot;. Your tiddler will now contain a single line, like this:</pre>
-</div>
-<div bag="default" created="20200528190017746" modified="20200704002746038" revision="0" tags="kit" title="DocumentTemplate" type="text/vnd.tiddlywiki">
-<pre>\define qualify-helper() &lt;&lt;qualify title:&quot;&quot;&quot;$:/temp/$(maintag)$&quot;&quot;&quot; &gt;&gt;
-\define qualify-restore-helper() &lt;&lt;qualify title:&quot;&quot;&quot;$:/temp/$(maintag)$/restore&quot;&quot;&quot; &gt;&gt;
-\define temp-tiddler() $:/temp/$(currentTiddler)$
-\define state-editor-settings() $:/state/editor-settings-$(currentTiddler)$
-\define maintag-helper() [[$(maintag)$]] 
-\define current-remover() -[[$(currentTiddler)$]]
-\define filt-append() [list[$(maintag)$]] +[putafter:$(count)$&lt;currentTiddler&gt;]
-\define dothese()
-&lt;$vars nav=&lt;&lt;navigateTo&gt;&gt;&gt;
-&lt;$reveal type=&quot;nomatch&quot; default=&lt;&lt;currentTiddler&gt;&gt; text=&lt;&lt;nav&gt;&gt; &gt;
-  &lt;$action-navigate $to=&lt;&lt;nav&gt;&gt;/&gt;
-&lt;/$reveal&gt;
-&lt;$reveal type=&quot;match&quot; default=&lt;&lt;currentTiddler&gt;&gt; text=&lt;&lt;nav&gt;&gt; &gt;
-  &lt;$action-setfield reset={{!!text}} /&gt;
-  &lt;$action-setfield $tiddler=&lt;&lt;quali&gt;&gt; $value=&quot;edit&quot; /&gt;
-  &lt;$action-setfield $tiddler=&lt;&lt;temp-tiddler&gt;&gt; $value={{!!text}} /&gt;	
-&lt;/$reveal&gt;
-&lt;/$vars&gt;
-\end
-&lt;$wikify name=&quot;quali&quot; text=&lt;&lt;qualify-helper&gt;&gt; &gt;
-&lt;$reveal state=&lt;&lt;quali&gt;&gt; type=&quot;nomatch&quot; text=&quot;edit&quot; class=&quot;nw-reveal-a&quot; tag=&quot;div&quot;&gt;
-&lt;$linkcatcher actions=&lt;&lt;dothese&gt;&gt;&gt;
-&lt;$tiddler tiddler=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;$macrocall $name=&quot;show-tiddler&quot;  tid=&lt;&lt;currentTiddler&gt;&gt;  /&gt;&lt;!-- $transclude mode=&quot;block&quot; --&gt;
-&lt;/$tiddler&gt;
-&lt;/$linkcatcher&gt;
-&lt;/$reveal&gt;
-&lt;$reveal state=&lt;&lt;quali&gt;&gt; type=&quot;match&quot; text=&quot;edit&quot; class=&quot;nw-editor&quot; tag=&quot;div&quot;&gt;&lt;span class=nw-edit-control &gt;&lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;state-editor-settings&gt;&gt; &gt;{{$:/core/images/options-button}}&lt;/$button&gt;&lt;/span&gt;
-&lt;$tiddler tiddler=&lt;&lt;temp-tiddler&gt;&gt; &gt;&lt;!-- FINDME --&gt;
-{{||$:/core/ui/EditTemplate/body/editor}}
-&lt;/$tiddler&gt;
-
-
-&lt;$button class=&quot;mybuttons&quot; &gt;Close
-&lt;$reveal stateTitle=&lt;&lt;currentTiddler&gt;&gt; stateField=&quot;nosplit&quot; type=&quot;nomatch&quot; text=&quot;nosplit&quot; &gt;
-&lt;$list filter=&quot;[&lt;temp-tiddler&gt;get[text]splitregexp[\n\n]!is[blank]butfirst[]]&quot; variable=&quot;frazon&quot;&gt;
-&lt;$action-createtiddler 
-	$basetitle=&lt;&lt;currentTiddler&gt;&gt; $savetitle=&quot;SaveTitle&quot; 
-	text=&lt;&lt;frazon&gt;&gt; tags=&lt;&lt;maintag-helper&gt;&gt; fold=&quot;no&quot; level={{!!level}}
-  
-/&gt;
-&lt;$action-listops $tiddler=&lt;&lt;maintag&gt;&gt; $subfilter=&quot;[{SaveTitle}]&quot;/&gt;
-
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[&lt;temp-tiddler&gt;get[text]splitregexp[\n\n]!is[blank]butfirst[]count[]]&quot; variable=&quot;count&quot;&gt;
-     &lt;$action-listops $tiddler=&lt;&lt;maintag&gt;&gt; $filter=&lt;&lt;filt-append&gt;&gt; /&gt;
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[&lt;temp-tiddler&gt;get[text]splitregexp[\n\n]!is[blank]first[]]&quot; variable=&quot;first&quot;&gt;
-     &lt;$action-setfield text=&lt;&lt;first&gt;&gt; /&gt;
-&lt;/$list&gt;
-
-&lt;/$reveal&gt;
-&lt;$action-deletetiddler $tiddler=&lt;&lt;quali&gt;&gt;/&gt;
-&lt;$action-deletetiddler $tiddler=&lt;&lt;temp-tiddler&gt;&gt;/&gt;
-&lt;/$button&gt; | &lt;!-- FINDME --&gt;
-
-&lt;$reveal type=&quot;popup&quot; state=&lt;&lt;state-editor-settings&gt;&gt; class=&quot;nw-edit-settings tc-popup-keep&quot; style=&quot;left: unset; right: 2em;&quot; positionAllowNegative=&quot;yes&quot; position=&quot;right&quot;&gt;
-
-&lt;$button&gt;Delete 
-&lt;$action-deletetiddler $tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;
-&lt;$action-listops $tiddler=&lt;&lt;maintag&gt;&gt; $field=&quot;list&quot; $subfilter=&lt;&lt;current-remover&gt;&gt; /&gt;
-&lt;$action-deletetiddler $tiddler=&lt;&lt;quali&gt;&gt;/&gt;
-&lt;$action-deletetiddler $tiddler=&lt;&lt;temp-tiddler&gt;&gt;/&gt;
-&lt;/$button&gt; |
-&lt;$button&gt;Reset 
-&lt;$action-setfield text={{!!reset}}/&gt;
-&lt;/$button&gt;
-
-&lt;$checkbox field=&quot;nosplit&quot; checked=&quot;nosplit&quot; unchecked=&quot;&quot;/&gt; No split |
-&lt;$link&gt;Link&lt;/$link&gt;
-&lt;br/&gt;
-&lt;!-- ------------ Visual Break ---------------- --&gt;
-&lt;$wikify text=&lt;&lt;qualify-restore-helper&gt;&gt; name=&quot;rest-tid&quot;&gt;
-&lt;$vars 
-  vsn-cap-fld={{{[[1]][&lt;rest-tid&gt;get[text]] +[!is[blank]last[]addprefix[vsn-cap-]]}}}
-     vsn-fld={{{[[1]][&lt;rest-tid&gt;get[text]] +[!is[blank]last[]addprefix[vsn-]]}}}
-&gt;
-&lt;$button&gt;Save to:
-&lt;$action-setfield $field=&lt;&lt;vsn-fld&gt;&gt; $value={{!!text}}/&gt;
-&lt;/$button&gt; 
-or
-&lt;$button&gt;Rest. fm:
-&lt;$action-setfield $field=&quot;text&quot; $value={{{[all[current]get&lt;vsn-fld&gt;]}}}/&gt;
-&lt;/$button&gt; 
-&lt;!-- FINDME --&gt;	
-&lt;$select tiddler=&lt;&lt;rest-tid&gt;&gt; default=&quot;1&quot; &gt;
-&lt;$list filter=&quot;[range[1,5]]&quot; variable=&quot;nw-item&quot;&gt;
-  &lt;option value=&lt;&lt;nw-item&gt;&gt;&gt;&lt;&lt;nw-item&gt;&gt;&lt;/option&gt;
-&lt;/$list&gt;
-&lt;/$select&gt;
-&lt;$edit-text 
-  field=&lt;&lt;vsn-cap-fld&gt;&gt; 
-  size=40
-  tag=&quot;input&quot;
-  placeholder=&quot;Write something&quot;
-/&gt;
-&lt;/$vars&gt;
-&lt;/$wikify&gt;
-&lt;/$reveal&gt; &lt;!-- END OF POPUP EDIT CONTROLS --&gt; 
-&lt;/$reveal&gt; &lt;!-- END OF EDIT MODE --&gt;
-&lt;/$wikify&gt;</pre>
 </div>
 <div bag="default" created="20200608210501513" draft.of="Working: Move multiple tiddlers in list" draft.title="Working: Move multiple tiddlers in list" list="A D E B C" modified="20200627213703831" reset="A B C D E" revision="0" tags="kit" title="Draft of 'Working: Move multiple tiddlers in list'" type="text/vnd.tiddlywiki">
 <pre>\define neworder()
@@ -10913,7 +10794,7 @@ tag=&quot;div&quot;
 <div bag="default" created="20200525192713840" modified="20200627213703735" revision="0" tags="kit" title="How to use NotoWritey.png" type="image/png">
 <pre>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</pre>
 </div>
-<div bag="default" created="20200525190226313" list="[[Documentation: How to use NotoWritey]] [[Documentation: How to use NotoWritey 1]] [[Documentation: How to use NotoWritey 1 1]] [[Documentation: How to use NotoWritey 2]] [[Documentation: How to use NotoWritey 2 1]] [[Documentation: How to use NotoWritey 2 2]] [[Documentation: How to use NotoWritey 3]] [[Documentation: How to use NotoWritey 4]] [[Documentation: How to use NotoWritey 5]] [[Documentation: How to use NotoWritey 6]] [[Documentation: How to use NotoWritey 6 1]] [[Documentation: How to use NotoWritey 7]] [[Documentation: How to use NotoWritey 7 1]] [[Documentation: Howto -- Text see initialize]] [[Documentation: Howto - Image Initial Line]] [[Documentation: How to use NotoWritey - Click to Edit]] [[Documentation: How to use NotoWritey - Img Edit Box]] [[Documentation: How to use NotoWritey - Click close]]" modified="20200629022812222" revision="0" tags="kit" title="Howto" type="text/vnd.tiddlywiki">
+<div bag="default" created="20200525190226313" list="[[Documentation: How to use NotoWritey]] [[Documentation: How to use NotoWritey 1]] [[Documentation: How to use NotoWritey 1 1]] [[Documentation: How to use NotoWritey 2]] [[Documentation: How to use NotoWritey 2 1]] [[Documentation: How to use NotoWritey 2 2]] [[Documentation: How to use NotoWritey 3]] [[Documentation: How to use NotoWritey 4]] [[Documentation: How to use NotoWritey 5]] [[Documentation: How to use NotoWritey 6]] [[Documentation: How to use NotoWritey 6 1]] [[Documentation: How to use NotoWritey 7]] [[Documentation: How to use NotoWritey 7 1]] [[Documentation: Howto -- Text see initialize]] [[Documentation: Howto - Image Initial Line]] [[Documentation: How to use NotoWritey - Click to Edit]] [[Documentation: How to use NotoWritey - Img Edit Box]] [[Documentation: How to use NotoWritey - Click close]]" modified="20200704171653730" revision="0" tags="kit" title="Howto" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20200525193530342" modified="20200627215950009" revision="0" title="Initial line.png" type="image/png">
