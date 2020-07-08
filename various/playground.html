@@ -9606,8 +9606,8 @@ Text -&gt; clipboard
 <div created="20200301044146785" modified="20200301044146785" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
-<div created="20200224021847786" modified="20200518191644759" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
+<div created="20200224021847786" modified="20200708232159951" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20200224021849942" modified="20200224021849942" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -9615,7 +9615,7 @@ Text -&gt; clipboard
 <div created="20200224021640035" modified="20200304051446931" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="$:/Import [[Table of Contents]]" title="$:/StoryList">
+<div created="20200708232112026" list="$:/Import [[Table of Contents]]" modified="20200708232156965" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200224021725205" modified="20200227183823416" title="$:/temp/currentpop">
@@ -10116,7 +10116,7 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 
 {{StyleSwapper}}</pre>
 </div>
-<div created="20200301040925985" modified="20200629220236827" tags="" title="Table of Contents">
+<div created="20200301040925985" modified="20200708232343417" tags="" title="Table of Contents">
 <pre>!! A few of my favorite things
 
 * [[My Modal Notes]]
@@ -10134,7 +10134,11 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 * $:/core/macros/export
 ** Use the &quot;Export Tiddler&quot; option to send text and HTML to the clipboard
 ** Note that this is a core tiddler. Be careful if using in your TW file since it may interfere with upgrades.
-</pre>
+* [[Zip File Experiments]]
+** A macro to export multiple tiddlers as a zip file
+** The existing mechanism for exporting tiddlers can only export ONE tiddler
+** This macro works with the jszip plugin for TW 5.1.23+
+** Note that that means it won't work inside the playground (as of 2020-07-08)</pre>
 </div>
 <div created="20200228004305793" modified="20200228033629630" tags="[[Project Radio Tag]]" title="Use checkboxes like radio buttons for tagging">
 <pre>\define tagreset() 
