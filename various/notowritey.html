@@ -145,6 +145,8 @@ Error message and password prompt
 
 <li>$:/config/codemirror/lineNumbers</li>
 
+<li>$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/codemirror-keymap-vim</li>
+
 <li>$:/core</li>
 
 <li>$:/DefaultTiddlers</li>
@@ -194,6 +196,10 @@ Error message and password prompt
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
 <li>$:/StoryList</li>
+
+<li>$:/temp/Documentation: How to use NotoWritey 1</li>
+
+<li>$:/temp/Howto--1726130440</li>
 
 <li>$:/temp/info-plugin</li>
 
@@ -357,6 +363,9 @@ Error message and password prompt
 </div>
 <div bag="default" created="20200709173250016" modified="20200709173250048" revision="0" title="$:/config/codemirror/lineNumbers" type="bool">
 <pre>true</pre>
+</div>
+<div created="20200710012305872" modified="20200710012305872" title="$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/codemirror-keymap-vim">
+<pre>yes</pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" revision="0" title="$:/core" type="application/json" version="5.1.23-prerelease">
 <pre>{
@@ -9773,7 +9782,7 @@ Error message and password prompt
 <div bag="default" created="20200628180100927" modified="20200628184622488" revision="0" title="$:/GitHub/Repo" type="text/vnd.tiddlywiki">
 <pre>Marxsal/marxsal.github.io</pre>
 </div>
-<div bag="default" created="20200628180057066" modified="20200628180059373" revision="0" title="$:/GitHub/Username" type="text/vnd.tiddlywiki">
+<div bag="default" created="20200628180057066" modified="20200710012334182" revision="0" title="$:/GitHub/Username" type="text/vnd.tiddlywiki">
 <pre>marxsal</pre>
 </div>
 <div bag="default" caption="star (Regular)" created="20200604202003853" modified="20200627213703942" revision="0" tags="$:/tags/Image kit" title="$:/images/nw/star-shell" type="text/vnd.tiddlywiki">
@@ -10535,7 +10544,7 @@ Error message and password prompt
 <div bag="default" created="20200627220200418" modified="20200703175625703" revision="0" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>NotoWritey</pre>
 </div>
-<div created="20200709232323970" modified="20200709232323970" title="$:/state/tab-1749438307">
+<div created="20200709232323970" modified="20200710012328701" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
 <div created="20200709232326387" modified="20200709232326387" title="$:/state/tab-2065006209">
@@ -10544,8 +10553,14 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200709232319141" list="$:/ControlPanel [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200709232319142" title="$:/StoryList">
+<div created="20200710012211013" list="$:/ControlPanel $:/plugins/tiddlywiki/codemirror-keymap-vim [[How To Use NotoWritey]] [[The plan / Roadmap]] [[Update existing document for outliner]]" modified="20200710012302651" title="$:/StoryList">
 <pre></pre>
+</div>
+<div created="20200710012219791" modified="20200710012219791" title="$:/temp/Documentation: How to use NotoWritey 1">
+<pre>NotoWritey is a text editor and outliner for ~TiddlyWiki that allows you to concentrate on writing documents one section (tiddler) at a time. By breaking documents down into their components, it makes it easier to follow the &lt;a href=&quot;https://tiddlywiki.com/#Philosophy%20of%20Tiddlers&quot; target=&quot;_blank&quot; class=&quot;tc-tiddlylink-external&quot;&gt;Philosophy of tiddlers&lt;/a&gt; and to reference individual sections of your document for use in references and quote extraction.</pre>
+</div>
+<div created="20200710012219791" modified="20200710012219791" title="$:/temp/Howto--1726130440">
+<pre>edit</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -10560,23 +10575,23 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200709232313522&quot;
+            &quot;text&quot;: &quot;20200710012203615&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///home/mark/Wikis/notowritey-orig/index.html&quot;
+            &quot;text&quot;: &quot;https://marxsal.github.io/various/notowritey.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;marxsal.github.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;marxsal.github.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;file:&quot;
+            &quot;text&quot;: &quot;https:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -10584,7 +10599,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/home/mark/Wikis/notowritey-orig/index.html&quot;
+            &quot;text&quot;: &quot;/various/notowritey.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -10592,7 +10607,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;null&quot;
+            &quot;text&quot;: &quot;https://marxsal.github.io&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
@@ -10769,7 +10784,7 @@ If you're not ready to have the tiddler split, click on the &quot;No split&quot;
 <div bag="default" created="20200525193937420" fold="no" level="2" modified="20200628194024637" reset="[img[Edit Box.png]]" revision="0" tags="Howto" title="Documentation: How to use NotoWritey - Img Edit Box" type="text/vnd.tiddlywiki">
 <pre>[img[Edit Box (2).png]]</pre>
 </div>
-<div bag="default" created="20200525191046855" fold="no" level="2" modified="20200628194024664" reset="NotoWritey is a text editor and outliner for ~TiddlyWiki that allows you to concentrate on writing documents one section (tiddler) at a time. By breaking documents down into their components, it makes it easier to follow the &lt;a href=&quot;https://tiddlywiki.com/#Philosophy%20of%20Tiddlers&quot; target=&quot;_blank&quot; class=&quot;tc-tiddlylink-external&quot;&gt;Philosophy of tiddlers&lt;/a&gt; and to reference individual sections of your document for use in references and quote extraction." revision="0" tags="Howto" title="Documentation: How to use NotoWritey 1" type="text/vnd.tiddlywiki">
+<div bag="default" created="20200525191046855" fold="no" level="2" modified="20200710012219791" reset="NotoWritey is a text editor and outliner for ~TiddlyWiki that allows you to concentrate on writing documents one section (tiddler) at a time. By breaking documents down into their components, it makes it easier to follow the &lt;a href=&quot;https://tiddlywiki.com/#Philosophy%20of%20Tiddlers&quot; target=&quot;_blank&quot; class=&quot;tc-tiddlylink-external&quot;&gt;Philosophy of tiddlers&lt;/a&gt; and to reference individual sections of your document for use in references and quote extraction." revision="0" tags="Howto" title="Documentation: How to use NotoWritey 1" type="text/vnd.tiddlywiki">
 <pre>NotoWritey is a text editor and outliner for ~TiddlyWiki that allows you to concentrate on writing documents one section (tiddler) at a time. By breaking documents down into their components, it makes it easier to follow the &lt;a href=&quot;https://tiddlywiki.com/#Philosophy%20of%20Tiddlers&quot; target=&quot;_blank&quot; class=&quot;tc-tiddlylink-external&quot;&gt;Philosophy of tiddlers&lt;/a&gt; and to reference individual sections of your document for use in references and quote extraction.</pre>
 </div>
 <div bag="default" created="20200604153934464" fold="no" level="2" modified="20200628194024687" revision="0" tags="Howto" title="Documentation: How to use NotoWritey 1 1" type="text/vnd.tiddlywiki">
