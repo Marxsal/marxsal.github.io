@@ -409,13 +409,9 @@ Error message and password prompt
 
 <li>$:/view</li>
 
-<li>RenameTags</li>
-
 <li>Review: The Haines SunUp Solarcooker (draft)</li>
 
 <li>Solar Cooking</li>
-
-<li>SunUp</li>
 
 <li>Updating Stroll</li>
 
@@ -12288,7 +12284,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200728214609135" list="RenameTags $:/AdvancedSearch [[Dave Gifford]] [[Review: The Haines SunUp Solarcooker (draft)]]" modified="20200728214739578" title="$:/StoryList">
+<div created="20200728214609135" list="[[Review: The Haines SunUp Solarcooker (draft)]]" modified="20200728214824191" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -12503,31 +12499,6 @@ exports.context = contextWidget;
 <div bag="default" created="20200127165334843" modified="20200521145813991" revision="0" tags="$:/giffmex/stroll" title="$:/view" type="text/vnd.tiddlywiki">
 <pre>classic</pre>
 </div>
-<div created="20140114170004978" creator="Stephan Hradek" description="A great trick invented by Alberto Molina to search and replace tags." modified="20200521150920458" modifier="Stephan Hradek" title="RenameTags">
-<pre>This great trick was shown to the tiddlywiki google group by [[Alberto Molina|https://groups.google.com/forum/#!topic/tiddlywiki/OCntQ79DuwM]]. I enhanced it a bit.
-
-|!Search tag: | &lt;$edit-text tiddler=&quot;$:/temp/RenameTags/search&quot; tag=&quot;input&quot; type=&quot;text&quot;/&gt; |
-|!Replace by: | &lt;$edit-text tiddler=&quot;$:/temp/RenameTags/replace&quot; tag=&quot;input&quot; type=&quot;text&quot;/&gt; |
-
----
-&lt;$reveal type=&quot;nomatch&quot; text=&quot;&quot; state=&quot;$:/temp/RenameTags/replace&quot;&gt;
-
-!First step
-!!//Apply the tag &lt;$tiddler tiddler={{$:/temp/RenameTags/replace}}&gt;&lt;$transclude tiddler=&quot;$:/core/ui/TagTemplate&quot;/&gt;&lt;/$tiddler&gt; to the following tiddlers//
-&lt;$list filter=&quot;[!has[draft.of]tag{$:/temp/RenameTags/search}!tag{$:/temp/RenameTags/replace}sort[created]]&quot;&gt;
-&lt;$checkbox tag={{$:/temp/RenameTags/replace}}&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/$checkbox&gt;&lt;br/&gt;
-&lt;/$list&gt;
-&lt;/$reveal&gt;
-
-&lt;$reveal type=&quot;nomatch&quot; text=&quot;&quot; state=&quot;$:/temp/RenameTags/search&quot;&gt;
-
-!Second step
-!!//Remove the tag &lt;$tiddler tiddler={{$:/temp/RenameTags/search}}&gt;&lt;$transclude tiddler=&quot;$:/core/ui/TagTemplate&quot;/&gt;&lt;/$tiddler&gt; from the following tiddlers//
-&lt;$list filter=&quot;[!has[draft.of]tag{$:/temp/RenameTags/search}tag{$:/temp/RenameTags/replace}sort[created]]&quot;&gt;
-&lt;$checkbox tag={{$:/temp/RenameTags/search}}&gt; ~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~&lt;/$checkbox&gt;&lt;br/&gt;
-&lt;/$list&gt;
-&lt;/$reveal&gt;</pre>
-</div>
 <div created="20200727224259195" modified="20200728214552373" tags="" title="Review: The Haines SunUp Solarcooker (draft)" type="text/x-markdown">
 <pre>[[Solar Cooking]]
 
@@ -12642,9 +12613,6 @@ So far, I really like this cooker. But I can't give it a firm &quot;thumbs up&qu
 </pre>
 </div>
 <div created="20200728203033846" modified="20200728203033846" title="Solar Cooking">
-<pre></pre>
-</div>
-<div created="20200728203033848" modified="20200728203033848" title="SunUp">
 <pre></pre>
 </div>
 <div created="20200520002033316" modified="20200521150039273" tags="" title="Updating Stroll">
