@@ -185,11 +185,15 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/advancedsearch/currentTab</li>
+
 <li>$:/state/plugin-info--896887961-$:/plugins/MAS/DragAndReplace</li>
 
 <li>$:/state/plugin-info--896887961-$:/plugins/MAS/DragAndReplace---369350655</li>
 
 <li>$:/state/showeditpreview</li>
+
+<li>$:/state/tab--1498284803</li>
 
 <li>$:/state/tab-1749438307</li>
 
@@ -221,13 +225,13 @@ Error message and password prompt
 
 <li>Draft of 'Excise text from View Tiddler'</li>
 
-<li>Draft of 'New Tiddler 1'</li>
-
 <li>Draft of 'New Tiddler'</li>
 
 <li>Draft of 'Table of Contents'</li>
 
 <li>Encode simple messages with URI</li>
+
+<li>Excise from View Template Example</li>
 
 <li>Helpful Stuff</li>
 
@@ -10358,6 +10362,9 @@ Text -&gt; clipboard
 <div created="20200224020911975" modified="20200224020923005" title="$:/SiteTitle">
 <pre>Code Playground</pre>
 </div>
+<div created="20201224223117364" modified="20201224223117364" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/Filter</pre>
+</div>
 <div created="20201224210908021" modified="20201224210908021" title="$:/state/plugin-info--896887961-$:/plugins/MAS/DragAndReplace">
 <pre>yes</pre>
 </div>
@@ -10367,19 +10374,22 @@ Text -&gt; clipboard
 <div created="20201224205211216" modified="20201224210650720" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
+<div created="20201224223117364" modified="20201224223117364" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Filter</pre>
+</div>
 <div created="20201224193324487" modified="20201224210901542" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20201224193327832" modified="20201224193327832" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20201224210607896" modified="20201224210857646" title="$:/state/tab/sidebar--595412856">
+<div created="20201224210607896" modified="20201224223332740" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201224193321648" list="$:/Import [[Draft of 'New Tiddler 1']] $:/ControlPanel [[Richard the IIIrd]] [[Draft of 'Table of Contents']] [[Draft of 'Excise text from View Tiddler']]" modified="20201224210914576" title="$:/StoryList">
+<div created="20201224193321648" list="$:/AdvancedSearch $:/state/tab/sidebar--595412856 $:/Import [[Excise from View Template Example]] $:/ControlPanel $:/plugins/MAS/DragAndReplace [[Draft of 'Table of Contents']] [[Draft of 'Excise text from View Tiddler']]" modified="20201224223331489" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10601,18 +10611,17 @@ width: 95%;
 
 </pre>
 </div>
-<div created="20201224205256652" draft.of="New Tiddler 1" draft.title="Excise text from View Tiddler" modified="20201224222403378" tags="" title="Draft of 'New Tiddler 1'">
-<pre></pre>
-</div>
 <div created="20200228033107314" draft.of="New Tiddler" draft.title="New Tiddler" modified="20200228033108820" tags="" title="Draft of 'New Tiddler'">
 <pre>&lt;$list filter=&quot;[all[current]!tag[TagMe]]&quot;&gt;
 &lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot; checkactions=&lt;&lt;tagreset&gt;&gt;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt; &lt;&lt;tagreset&gt;&gt;&lt;br/&gt; 
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20200301040925985" draft.of="Table of Contents" draft.title="Table of Contents" modified="20201224211217012" tags="" title="Draft of 'Table of Contents'">
+<div created="20200301040925985" draft.of="Table of Contents" draft.title="Table of Contents" modified="20201224223016780" tags="" title="Draft of 'Table of Contents'">
 <pre>\define setup-excerpt()
-
+&lt;$action-navigate $to=&quot;Excise from View Template Example&quot;/&gt;
+&lt;$action-setmessage $message=tm-close-other-tiddlers $param=&quot;Excise from View Template Example&quot; /&gt;
+\end
 
 !! A few of my favorite things
 
@@ -10665,6 +10674,42 @@ uri=&quot;%20 %21 %2C %41 %42 %43 %44 %45 %46 %47 %48 %49 %4A %4B %4C %4D %4E %4
 &lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;
 &lt;/$list&gt;
 </pre>
+</div>
+<div created="20201224205256652" modified="20201224223554337" tags="" title="Excise from View Template Example">
+<pre>!!! To use this example, 
+
+* Click on the `Drop and Replace` item in the sidebar.
+* Select one or more lines from the text below and drag/drop them onto `D&amp;R - Reference.`
+* The text will 
+
+!!! To use in your own TiddlyWiki
+
+* Drag and drop $:/plugins/MAS/DragAndReplace into your own TiddlyWiki
+
+!!! Warnings
+
+* Your tiddlywiki must be version 5.1.23 or higher.
+* Only one tiddler with text that matches the dragged text can be open at any time
+* 
+
+&quot;&quot;&quot;
+Now is the winter of our discontent
+Made glorious summer by this sun of York;
+And all the clouds that lour'd upon our house
+In the deep bosom of the ocean buried.
+Now are our brows bound with victorious wreaths;
+Our bruised arms hung up for monuments;
+Our stern alarums changed to merry meetings,
+Our dreadful marches to delightful measures.
+Grim-visaged war hath smooth'd his wrinkled front;
+And now, instead of mounting barbed steeds
+To fright the souls of fearful adversaries,
+He capers nimbly in a lady's chamber
+To the lascivious pleasing of a lute.
+But I, that am not shaped for sportive tricks,
+Nor made to court an amorous looking-glass;
+I, that am rudely stamp'd, and want love's majesty
+To strut before a wanton ambling nymph;</pre>
 </div>
 <div caption="Tools, Etc." created="20200224021206985" modified="20200301044549813" tags="$:/tags/SideBar" title="Helpful Stuff">
 <pre>&lt;$button&gt;Modal Notes 
