@@ -179,6 +179,8 @@ Error message and password prompt
 
 <li>$:/plugins/jd/fullscreen-editor</li>
 
+<li>$:/plugins/MAS/DragAndReplace</li>
+
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
@@ -188,6 +190,8 @@ Error message and password prompt
 <li>$:/state/tab-1749438307</li>
 
 <li>$:/state/tab-2065006209</li>
+
+<li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -210,6 +214,8 @@ Error message and password prompt
 <li>Create a range of dates</li>
 
 <li>Date Conversion Macros</li>
+
+<li>Draft of 'New Tiddler 1'</li>
 
 <li>Draft of 'New Tiddler'</li>
 
@@ -10203,46 +10209,7 @@ Text -&gt; clipboard
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home]]
-# [[$:/core/macros/export]]
-# [[$:/DefaultTiddlers]]
-# [[$:/edit]]
-# [[$:/GitHub/Filename]]
-# [[$:/GitHub/Path]]
-# [[$:/GitHub/Repo]]
-# [[$:/GitHub/Username]]
-# [[$:/isEncrypted]]
-# [[$:/MAS/fontsize]]
-# [[$:/MAS/fontsize/default]]
-# [[$:/MAS/story/fontsize/default]]
-# [[$:/MAS/story/width/default]]
-# [[$:/MAS/storywidth]]
-# [[$:/plugins/jd/fullscreen-editor]]
-# [[$:/SiteSubtitle]]
-# [[$:/SiteTitle]]
-# [[$:/themes/tiddlywiki/snowwhite]]
-# [[$:/themes/tiddlywiki/vanilla]]
-# [[2020-02-27 Scratch]]
-# [[A]]
-# [[B]]
-# [[C]]
-# [[Character X converter for Esperanto]]
-# [[Create a range of dates]]
-# [[Date Conversion Macros]]
-# [[Draft of 'New Tiddler']]
-# [[Encode simple messages with URI]]
-# [[Helpful Stuff]]
-# [[How to create external images en masse?]]
-# [[How to create external images en masse? Vsn 2]]
-# [[Make Images]]
-# [[ModalEditTemplate]]
-# [[My Modal Notes]]
-# [[Notes for Today]]
-# [[Popme]]
-# [[Shift margin]]
-# [[Table of Contents]]
-# [[Use checkboxes like radio buttons for tagging]]
-# [[Zip File Experiments]]</pre>
+# [[$:/plugins/MAS/DragAndReplace]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10313,6 +10280,70 @@ Text -&gt; clipboard
     }
 }</pre>
 </div>
+<div created="20201221155300375" description="Perform excisions from displayed text using drag and drop" list="readme" modified="20201221155807413" plugin-type="plugin" title="$:/plugins/MAS/DragAndReplace" type="application/json" version="0.0.08">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;Drop and replace&quot;: {
+            &quot;created&quot;: &quot;20201217185534161&quot;,
+            &quot;text&quot;: &quot;\\define droppable-rtext-actions() \n&lt;$vars reg1=\&quot;&lt;br.*?&gt;\&quot; lf=\&quot;\&quot;\&quot;\n\&quot;\&quot;\&quot; block-text='\&quot;\&quot;\&quot;\n' &gt;\n&lt;$set filter=\&quot;[&lt;actionTiddler&gt;search-replace:g:regexp&lt;reg1&gt;,[%LINEFEED%]]\&quot; name=\&quot;white-safe\&quot; select=\&quot;0\&quot;&gt;\n\n&lt;$wikify text=&lt;&lt;white-safe&gt;&gt; name=\&quot;sanitized-safe\&quot; &gt;\n\n&lt;$set filter=\&quot;[&lt;sanitized-safe&gt;search-replace:g:[%LINEFEED%],&lt;lf&gt;]\&quot; name=actionText select=\&quot;0\&quot;&gt;\n\n&lt;$action-setfield $tiddler={{$:/savedtitle}} text={{{ [&lt;actionText&gt;addprefix&lt;block-text&gt;] }}} /&gt;\n\n&lt;$list filter=\&quot;[list[$:/StoryList!!list]!is[system]!has[draft.of]!tag[Excerpt]]\&quot;&gt;\n&lt;$list filter=\&quot;[all[current]search:text:whitespace&lt;actionText&gt;]\&quot; variable=\&quot;tid\&quot; &gt;\n&lt;$action-createtiddler $basetitle=\&quot;Excerpt\&quot; $savetitle=\&quot;$:/savedtitle\&quot; tags=\&quot;Excerpt\&quot; text=\&quot;NEXT TIDDLER\&quot; /&gt;\n&lt;$vars savedtitle={{$:/savedtitle}} &gt;\n&lt;$vars replacement={{{ [&lt;savedtitle&gt;addprefix&lt;pre-subst&gt;addsuffix&lt;suf-subst&gt;]}}} &gt;\n&lt;$list filter=\&quot;[&lt;tid&gt;get[text]search-replace&lt;actionText&gt;,&lt;replacement&gt;]\&quot; variable=\&quot;newtext\&quot;&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;tid&gt;&gt; $field=\&quot;text\&quot; $value=&lt;&lt;newtext&gt;&gt; /&gt;\n&lt;/$list&gt;\n&lt;/$vars&gt;&lt;/$vars&gt;\n&lt;/$list&gt;\n&lt;/$list&gt;\n&lt;/$set&gt;\n&lt;/$wikify&gt;\n&lt;/$set&gt;\n&lt;/$vars&gt;\n\\end\n\n&lt;$vars pre-subst=\&quot;{{\&quot; suf-subst=\&quot;||TE}}\&quot; &gt;\n\n&lt;$droppable actions=&lt;&lt;droppable-rtext-actions&gt;&gt; &gt;\n\n* D&amp;R - Reference\n&lt;/$droppable&gt;\n&lt;/$vars&gt;\n\n\nSaved: $:/savedtitle&quot;,
+            &quot;tags&quot;: &quot;$:/tags/SideBar ExcerptProject&quot;,
+            &quot;title&quot;: &quot;Drop and replace&quot;,
+            &quot;modified&quot;: &quot;20201221152240056&quot;
+        },
+        &quot;Richard the IIIrd&quot;: {
+            &quot;created&quot;: &quot;20201219040037241&quot;,
+            &quot;text&quot;: &quot;\&quot;\&quot;\&quot;\nNow is the winter of our discontent\nMade glorious summer by this sun of York;\nAnd all the clouds that lour'd upon our house\nIn the deep bosom of the ocean buried.\nNow are our brows bound with victorious wreaths;\nOur bruised arms hung up for monuments;\nOur stern alarums changed to merry meetings,\nOur dreadful marches to delightful measures.\nGrim-visaged war hath smooth'd his wrinkled front;\nAnd now, instead of mounting barbed steeds\nTo fright the souls of fearful adversaries,\nHe capers nimbly in a lady's chamber\nTo the lascivious pleasing of a lute.\nBut I, that am not shaped for sportive tricks,\nNor made to court an amorous looking-glass;\nI, that am rudely stamp'd, and want love's majesty\nTo strut before a wanton ambling nymph;&quot;,
+            &quot;tags&quot;: &quot;ExcerptProject&quot;,
+            &quot;title&quot;: &quot;Richard the IIIrd&quot;,
+            &quot;modified&quot;: &quot;20201221152806950&quot;
+        },
+        &quot;$:/savedtitle&quot;: {
+            &quot;created&quot;: &quot;20201219045241374&quot;,
+            &quot;text&quot;: &quot;Excerpt&quot;,
+            &quot;title&quot;: &quot;$:/savedtitle&quot;,
+            &quot;modified&quot;: &quot;20201221152736841&quot;,
+            &quot;tags&quot;: &quot;ExcerptProject&quot;
+        },
+        &quot;TE&quot;: {
+            &quot;created&quot;: &quot;20201221000449275&quot;,
+            &quot;text&quot;: &quot;&lt;mark&gt;{{!!text}}&lt;/mark&gt;&quot;,
+            &quot;tags&quot;: &quot;ExcerptProject&quot;,
+            &quot;title&quot;: &quot;TE&quot;,
+            &quot;modified&quot;: &quot;20201221152539053&quot;
+        },
+        &quot;Richard the IIIrd - backup&quot;: {
+            &quot;created&quot;: &quot;20201221001809313&quot;,
+            &quot;text&quot;: &quot;\&quot;\&quot;\&quot;\nNow is the winter of our discontent\nMade glorious summer by this sun of York;\nAnd all the clouds that lour'd upon our house\nIn the deep bosom of the ocean buried.\nNow are our brows bound with victorious wreaths;\nOur bruised arms hung up for monuments;\nOur stern alarums changed to merry meetings,\nOur dreadful marches to delightful measures.\nGrim-visaged war hath smooth'd his wrinkled front;\nAnd now, instead of mounting barbed steeds\nTo fright the souls of fearful adversaries,\nHe capers nimbly in a lady's chamber\nTo the lascivious pleasing of a lute.\nBut I, that am not shaped for sportive tricks,\nNor made to court an amorous looking-glass;\nI, that am rudely stamp'd, and want love's majesty\nTo strut before a wanton ambling nymph;&quot;,
+            &quot;tags&quot;: &quot;Excerpt ExcerptProject&quot;,
+            &quot;title&quot;: &quot;Richard the IIIrd - backup&quot;,
+            &quot;modified&quot;: &quot;20201221152700210&quot;
+        },
+        &quot;Excerpt&quot;: {
+            &quot;created&quot;: &quot;20201221002636221&quot;,
+            &quot;text&quot;: &quot;&quot;,
+            &quot;title&quot;: &quot;Excerpt&quot;,
+            &quot;modified&quot;: &quot;20201221152720149&quot;,
+            &quot;tags&quot;: &quot;Excerpt ExcerptProject&quot;
+        },
+        &quot;Filter for Excerpts&quot;: {
+            &quot;created&quot;: &quot;20201221014042568&quot;,
+            &quot;text&quot;: &quot;&quot;,
+            &quot;title&quot;: &quot;Filter for Excerpts&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Filter ExcerptProject&quot;,
+            &quot;filter&quot;: &quot;[prefix[Excerpt]]-Excerpt&quot;,
+            &quot;description&quot;: &quot;All Excerpts except starter&quot;,
+            &quot;modified&quot;: &quot;20201221014320535&quot;
+        },
+        &quot;$:/plugins/MAS/DragAndReplace/readme&quot;: {
+            &quot;created&quot;: &quot;20201221154249493&quot;,
+            &quot;text&quot;: &quot;Use the [[Richard the IIIrd]] Tiddler as an example. Open the [[Richard the IIIrd]] Tiddler. Open the \&quot;//Drop and replace//\&quot; tag in the sidebar. Select some text from the [[Richard the IIIrd]] text and drag onto the //D&amp;R - Reference// link.\n\nThe text should be replaced with transcluded  markup text (set to display yellow). The excerpted text will be found in sequentially numbered tiddlers, Excerpt, Excerpt 1, etc.\n\nThe transcluded text is processed vi the [[TE]] template.\n&quot;,
+            &quot;tags&quot;: &quot;ExcerptProject&quot;,
+            &quot;title&quot;: &quot;$:/plugins/MAS/readme&quot;,
+            &quot;modified&quot;: &quot;20201221155004492&quot;
+        }
+    }
+}</pre>
+</div>
 <div created="20200224020938711" modified="20200224020942876" title="$:/SiteSubtitle">
 <pre>Race you to the swings!</pre>
 </div>
@@ -10322,16 +10353,19 @@ Text -&gt; clipboard
 <div created="20201224205211216" modified="20201224205211216" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201224193324487" modified="20201224193324487" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
+<div created="20201224193324487" modified="20201224205951597" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20201224193327832" modified="20201224193327832" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
+<div created="20201224210607896" modified="20201224210609194" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Tools</pre>
+</div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201224193321648" list="$:/ControlPanel [[Table of Contents]]" modified="20201224205212908" title="$:/StoryList">
+<div created="20201224193321648" list="$:/Import [[Draft of 'New Tiddler 1']] $:/ControlPanel [[Table of Contents]]" modified="20201224205212908" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10547,6 +10581,9 @@ width: 95%;
 11 Days from modified date: &lt;&lt;date-from-field modified 11&gt;&gt; &lt;br/&gt;
 40 days from 1860-12-1 : &lt;&lt;daysfrom 1860 12 01 40&gt;&gt;
 </pre>
+</div>
+<div created="20201224205256652" draft.of="New Tiddler 1" draft.title="New Tiddler 1" modified="20201224205256652" tags="" title="Draft of 'New Tiddler 1'">
+<pre></pre>
 </div>
 <div created="20200228033107314" draft.of="New Tiddler" draft.title="New Tiddler" modified="20200228033108820" tags="" title="Draft of 'New Tiddler'">
 <pre>&lt;$list filter=&quot;[all[current]!tag[TagMe]]&quot;&gt;
