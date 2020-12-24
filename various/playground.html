@@ -185,6 +185,10 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/plugin-info--896887961-$:/plugins/MAS/DragAndReplace</li>
+
+<li>$:/state/plugin-info--896887961-$:/plugins/MAS/DragAndReplace---369350655</li>
+
 <li>$:/state/showeditpreview</li>
 
 <li>$:/state/tab-1749438307</li>
@@ -215,9 +219,13 @@ Error message and password prompt
 
 <li>Date Conversion Macros</li>
 
+<li>Draft of 'Excise text from View Tiddler'</li>
+
 <li>Draft of 'New Tiddler 1'</li>
 
 <li>Draft of 'New Tiddler'</li>
+
+<li>Draft of 'Table of Contents'</li>
 
 <li>Encode simple messages with URI</li>
 
@@ -10350,22 +10358,28 @@ Text -&gt; clipboard
 <div created="20200224020911975" modified="20200224020923005" title="$:/SiteTitle">
 <pre>Code Playground</pre>
 </div>
+<div created="20201224210908021" modified="20201224210908021" title="$:/state/plugin-info--896887961-$:/plugins/MAS/DragAndReplace">
+<pre>yes</pre>
+</div>
+<div created="20201224210909759" modified="20201224210909759" title="$:/state/plugin-info--896887961-$:/plugins/MAS/DragAndReplace---369350655">
+<pre>contents</pre>
+</div>
 <div created="20201224205211216" modified="20201224210650720" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20201224193324487" modified="20201224205951597" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20201224193324487" modified="20201224210901542" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20201224193327832" modified="20201224193327832" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20201224210607896" modified="20201224210609194" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Tools</pre>
+<div created="20201224210607896" modified="20201224210857646" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201224193321648" list="$:/Import [[Draft of 'New Tiddler 1']] $:/ControlPanel [[Table of Contents]]" modified="20201224205212908" title="$:/StoryList">
+<div created="20201224193321648" list="$:/Import [[Draft of 'New Tiddler 1']] $:/ControlPanel [[Richard the IIIrd]] [[Draft of 'Table of Contents']] [[Draft of 'Excise text from View Tiddler']]" modified="20201224210914576" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10582,7 +10596,12 @@ width: 95%;
 40 days from 1860-12-1 : &lt;&lt;daysfrom 1860 12 01 40&gt;&gt;
 </pre>
 </div>
-<div created="20201224205256652" draft.of="New Tiddler 1" draft.title="New Tiddler 1" modified="20201224205256652" tags="" title="Draft of 'New Tiddler 1'">
+<div created="20201224210826430" draft.of="Excise text from View Tiddler" draft.title="Excise text from View Tiddler" modified="20201224210844727" title="Draft of 'Excise text from View Tiddler'">
+<pre>This 
+
+</pre>
+</div>
+<div created="20201224205256652" draft.of="New Tiddler 1" draft.title="Excise text from View Tiddler" modified="20201224222403378" tags="" title="Draft of 'New Tiddler 1'">
 <pre></pre>
 </div>
 <div created="20200228033107314" draft.of="New Tiddler" draft.title="New Tiddler" modified="20200228033108820" tags="" title="Draft of 'New Tiddler'">
@@ -10590,6 +10609,38 @@ width: 95%;
 &lt;$checkbox tag=TagMe xinvertTag=&quot;yes&quot; checkactions=&lt;&lt;tagreset&gt;&gt;/&gt;&lt;$link&gt; &lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt; &lt;&lt;tagreset&gt;&gt;&lt;br/&gt; 
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
+</div>
+<div created="20200301040925985" draft.of="Table of Contents" draft.title="Table of Contents" modified="20201224211217012" tags="" title="Draft of 'Table of Contents'">
+<pre>\define setup-excerpt()
+
+
+!! A few of my favorite things
+
+* [[My Modal Notes]]
+** Take notes in edit box that can be opened in it's own window
+* [[Date Conversion Macros]]
+** Dates before 1900, without using javascript
+** Outputs dates in simple yyyy-mm-dd format
+** 2020-03-02 Added padding to dates
+* [[Use checkboxes like radio buttons for tagging]]
+** Checking one item as tagged, untags the other items
+* [[How to create external images en masse? Vsn 2]]
+** Turn a list of images into external image references
+* [[Encode simple messages with URI]]
+** Turn your simple messages into a decodeable URI string
+* $:/core/macros/export
+** Use the &quot;Export Tiddler&quot; option to send text and HTML to the clipboard
+** Note that this is a core tiddler. Be careful if using in your TW file since it may interfere with upgrades.
+* [[Zip File Experiments]]
+** A macro to export multiple tiddlers as a zip file
+** The existing mechanism for exporting tiddlers can only export ONE tiddler
+** This macro works with the jszip plugin for TW 5.1.23+
+** Note that that means it won't work inside the playground (as of 2020-07-08)
+* [[Character X converter for Esperanto]]
+** Convert letters as &quot;cx&quot; into &quot;ĉ&quot; and copy to clipboard
+* &lt;$button actions=&lt;&lt;setup-excerpt&gt;&gt;&gt;Excise text from View Tiddler&lt;/$button&gt;
+** Excise text without being in view mode
+</pre>
 </div>
 <div created="20200518191326013" modified="20200518191639461" tags="" title="Encode simple messages with URI">
 <pre>There is an &quot;EncodeURI&quot; filter operator, but it doesn't encode alphabetic characters.
