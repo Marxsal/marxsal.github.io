@@ -195,6 +195,8 @@ Error message and password prompt
 
 <li>$:/state/showeditpreview</li>
 
+<li>$:/state/sidebar</li>
+
 <li>$:/state/tab--1498284803</li>
 
 <li>$:/state/tab-1749438307</li>
@@ -10205,8 +10207,8 @@ Text -&gt; clipboard
 <div created="20200518191449125" modified="20200518191449968" title="$:/edit">
 <pre>HELLO</pre>
 </div>
-<div created="20201224205245083" modified="20201224205245748" title="$:/GitHub/Branch">
-<pre>master</pre>
+<div created="20201224205245083" modified="20201230051424311" title="$:/GitHub/Branch">
+<pre>2020-12-29-date-fix</pre>
 </div>
 <div created="20200224021952199" modified="20200224021955003" title="$:/GitHub/Filename">
 <pre>playground.html</pre>
@@ -10217,7 +10219,7 @@ Text -&gt; clipboard
 <div created="20200224021923939" modified="20200224021936630" title="$:/GitHub/Repo">
 <pre>Marxsal/marxsal.github.io</pre>
 </div>
-<div created="20200224021855162" modified="20201005185251452" title="$:/GitHub/Username">
+<div created="20200224021855162" modified="20201230051429055" title="$:/GitHub/Username">
 <pre>marxsal</pre>
 </div>
 <div status="complete" title="$:/Import">
@@ -10376,14 +10378,17 @@ Text -&gt; clipboard
 <div created="20201224210909759" modified="20201224210909759" title="$:/state/plugin-info--896887961-$:/plugins/MAS/DragAndReplace---369350655">
 <pre>contents</pre>
 </div>
-<div created="20201224205211216" modified="20201224210650720" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20201224205211216" modified="20201230043508592" title="$:/state/showeditpreview">
+<pre>yes</pre>
+</div>
+<div created="20201230001036879" modified="20201230051358143" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div created="20201224223117364" modified="20201224223117364" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
-<div created="20201224193324487" modified="20201224210901542" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20201224193324487" modified="20201230001610406" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
 <div created="20201224193327832" modified="20201224193327832" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -10394,7 +10399,7 @@ Text -&gt; clipboard
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[Table of Contents]]" title="$:/StoryList">
+<div created="20201230000915819" list="$:/ControlPanel [[Date Conversion Macros]]" modified="20201230051359726" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10551,7 +10556,7 @@ width: 95%;
 &lt;/$wikify&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" created="20191021022240198" creator="MASX" modified="20200304050536498" modifier="MAS" revision="0" tags="Tools SFGardenProject $:/tags/Macro" title="Date Conversion Macros" type="text/vnd.tiddlywiki">
+<div bag="default" created="20191021022240198" creator="MASX" modified="20201230051352401" modifier="MAS" revision="0" tags="Tools SFGardenProject $:/tags/Macro" title="Date Conversion Macros" type="text/vnd.tiddlywiki">
 <pre>\define mas-g(y,m,d,offset:&quot;0&quot;)
 &lt;$set name=m value={{{ [&lt;__m__&gt;add[9]remainder[12]] }}}&gt;
 &lt;$set name=y value={{{ [&lt;m&gt;divide[10]floor[]negate[]add&lt;__y__&gt;] }}} &gt;
@@ -10564,8 +10569,47 @@ width: 95%;
 &lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;
 \end
 
+\define mas-mar1() &lt;$macrocall $name=mas-g y=&lt;&lt;yyyy&gt;&gt; m=3 d=1 /&gt;
+\define mas-mar1-dec() &lt;$macrocall $name=mas-g y={{{ [&lt;yyyy&gt;subtract[1]] }}} m=3 d=1 /&gt;
 
 \define mas-d(g)
+&lt;!--  yyyy = int((g + 1.4780)/365.2425) --&gt;
+&lt;$vars yyyy={{{ [&lt;__g__&gt;add[1.4780]divide[365.2425]floor[]] }}} &gt;
+YEAR &lt;&lt;yyyy&gt;&gt; YEAR &lt;br/&gt;
+&lt;!--  mar1 = gday(yyyy, 3, 1) --&gt;
+
+&lt;$wikify name=mar1 text=&lt;&lt;mas-mar1&gt;&gt; &gt; 
+&lt;$wikify name=mar1-dec text=&lt;&lt;mas-mar1-dec&gt;&gt; &gt;
+
+MAR1==&lt;&lt;mar1&gt;&gt; MAR1-DEC==&lt;&lt;mar1-dec&gt;&gt;&lt;br/&gt;
+&lt;!--  ddd = (g &gt;= mar1) ? g - mar1 : g - gday(--yyyy,3,1)A --&gt;
+&lt;$vars 
+  g-mar1={{{ [&lt;__g__&gt;subtract&lt;mar1&gt;] }}}
+  g-mar1-dec={{{ [&lt;__g__&gt;subtract&lt;mar1-dec&gt;] }}}
+&gt;
+
+&lt;&lt;__g__&gt;&gt; MINUS &lt;&lt;mar1&gt;&gt; GMAR1==&lt;&lt;g-mar1&gt;&gt; GMAR1-DEC==&lt;&lt;g-mar1-dec&gt;&gt;&lt;br/&gt;
+
+&lt;$vars ddd={{{ [&lt;__g__&gt;compare:number:gteq&lt;mar1&gt;then&lt;g-mar1&gt;else&lt;g-mar1-dec&gt;] }}} &gt;
+DDD==&lt;&lt;ddd&gt;&gt; &lt;br/&gt;
+&lt;!--   mi = int( .017 + ddd / 30.6 ) --&gt;
+&lt;$vars mi={{{ [&lt;ddd&gt;divide[30.6]add[0.017]floor[]] }}} &gt;
+&lt;!--
+  mm = ( mi + 2 ) % 12 + 1
+  yyyy += int( (mi + 2) / 12 )
+  dd= ddd - int( mi * 30.6 + 0.5) + 1
+--&gt;
+&lt;$vars 
+  mm={{{ [&lt;mi&gt;add[2]remainder[12]add[1]] }}}
+  yyyyx={{{ [&lt;mi&gt;add[2]remainder[12]add[1]add&lt;yyyy&gt;] }}}
+  dd={{{ [&lt;mi&gt;multiply[30.6]add[0.5]floor[]add[1]] }}}
+&gt;
+&lt;!--   return sprintf(&quot;%d/%02d/%02d&quot;, yyyy, mm, dd) --&gt;
+&lt;$macrocall $name=pad num=&lt;&lt;yyyyx&gt;&gt; padby=&quot;4&quot;/&gt;-&lt;$macrocall $name=pad num=&lt;&lt;mm&gt;&gt; padby=&quot;2&quot;/&gt;-&lt;$macrocall $name=pad num=&lt;&lt;dd&gt;&gt; padby=&quot;2&quot;/&gt;
+&lt;/$vars&gt;&lt;/$vars&gt;&lt;/$vars&gt;&lt;/$vars&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$vars&gt;
+\end
+
+\define xmas-d(g)
 &lt;$set name=daysperyear value=&quot;365.2425&quot;&gt;
 &lt;!-- y = (10000*g + 14780)/3652425 --&gt;
 &lt;$set name=y value={{{ [[10000]multiply&lt;__g__&gt;add[14780]divide[3652425]floor[]] }}}&gt;
@@ -10608,8 +10652,13 @@ width: 95%;
 &lt;&lt;pad 13 4&gt;&gt;
 
 11 Days from modified date: &lt;&lt;date-from-field modified 11&gt;&gt; &lt;br/&gt;
-40 days from 1860-12-1 : &lt;&lt;daysfrom 1860 12 01 40&gt;&gt;
-</pre>
+40 days from 1860-12-1 : &lt;&lt;daysfrom 1860 12 01 40&gt;&gt;&lt;br/&gt;
+
+&lt;&lt;daysfrom 2020 02 27 3&gt;&gt;
+
+&lt;&lt;mas-g 2020 02 27 &gt;&gt;
+
+&lt;&lt;mas-d 737787 &gt;&gt;</pre>
 </div>
 <div created="20200228033107314" draft.of="New Tiddler" draft.title="New Tiddler" modified="20200228033108820" tags="" title="Draft of 'New Tiddler'">
 <pre>&lt;$list filter=&quot;[all[current]!tag[TagMe]]&quot;&gt;
