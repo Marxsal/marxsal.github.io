@@ -145,6 +145,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
 
+<li>$:/config/TextEditor/EditorHeight/Mode</li>
+
 <li>$:/core</li>
 
 <li>$:/core/macros/export</li>
@@ -281,6 +283,9 @@ Error message and password prompt
 </div>
 <div created="20200227185632032" modified="20200227185632032" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
 <pre>show</pre>
+</div>
+<div created="20201231041325597" modified="20201231041325597" title="$:/config/TextEditor/EditorHeight/Mode">
+<pre>fixed</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.23">
 <pre>{
@@ -10219,8 +10224,8 @@ Text -&gt; clipboard
 <div created="20200224021923939" modified="20200224021936630" title="$:/GitHub/Repo">
 <pre>Marxsal/marxsal.github.io</pre>
 </div>
-<div created="20200224021855162" modified="20201230051429055" title="$:/GitHub/Username">
-<pre>marxsal</pre>
+<div created="20200224021855162" modified="20201231045456843" title="$:/GitHub/Username">
+<pre></pre>
 </div>
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
@@ -10378,10 +10383,10 @@ Text -&gt; clipboard
 <div created="20201224210909759" modified="20201224210909759" title="$:/state/plugin-info--896887961-$:/plugins/MAS/DragAndReplace---369350655">
 <pre>contents</pre>
 </div>
-<div created="20201224205211216" modified="20201230043508592" title="$:/state/showeditpreview">
+<div created="20201224205211216" modified="20201231005514613" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201230001036879" modified="20201230051358143" title="$:/state/sidebar">
+<div created="20201230001036879" modified="20201231045007610" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20201224223117364" modified="20201224223117364" title="$:/state/tab--1498284803">
@@ -10556,7 +10561,7 @@ width: 95%;
 &lt;/$wikify&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" created="20191021022240198" creator="MASX" modified="20201230051352401" modifier="MAS" revision="0" tags="Tools SFGardenProject $:/tags/Macro" title="Date Conversion Macros" type="text/vnd.tiddlywiki">
+<div bag="default" created="20191021022240198" creator="MASX" modified="20201231045002767" modifier="MAS" revision="0" tags="Tools SFGardenProject $:/tags/Macro" title="Date Conversion Macros" type="text/vnd.tiddlywiki">
 <pre>\define mas-g(y,m,d,offset:&quot;0&quot;)
 &lt;$set name=m value={{{ [&lt;__m__&gt;add[9]remainder[12]] }}}&gt;
 &lt;$set name=y value={{{ [&lt;m&gt;divide[10]floor[]negate[]add&lt;__y__&gt;] }}} &gt;
@@ -10573,6 +10578,7 @@ width: 95%;
 \define mas-mar1-dec() &lt;$macrocall $name=mas-g y={{{ [&lt;yyyy&gt;subtract[1]] }}} m=3 d=1 /&gt;
 
 \define mas-d(g)
+G AT START == &lt;&lt;__g__&gt;&gt; &lt;br/&gt;
 &lt;!--  yyyy = int((g + 1.4780)/365.2425) --&gt;
 &lt;$vars yyyy={{{ [&lt;__g__&gt;add[1.4780]divide[365.2425]floor[]] }}} &gt;
 YEAR &lt;&lt;yyyy&gt;&gt; YEAR &lt;br/&gt;
@@ -10581,19 +10587,20 @@ YEAR &lt;&lt;yyyy&gt;&gt; YEAR &lt;br/&gt;
 &lt;$wikify name=mar1 text=&lt;&lt;mas-mar1&gt;&gt; &gt; 
 &lt;$wikify name=mar1-dec text=&lt;&lt;mas-mar1-dec&gt;&gt; &gt;
 
-MAR1==&lt;&lt;mar1&gt;&gt; MAR1-DEC==&lt;&lt;mar1-dec&gt;&gt;&lt;br/&gt;
+G==&lt;&lt;__g__&gt;&gt; MAR1==&lt;&lt;mar1&gt;&gt; MAR1-DEC==&lt;&lt;mar1-dec&gt;&gt;&lt;br/&gt;
 &lt;!--  ddd = (g &gt;= mar1) ? g - mar1 : g - gday(--yyyy,3,1)A --&gt;
 &lt;$vars 
   g-mar1={{{ [&lt;__g__&gt;subtract&lt;mar1&gt;] }}}
   g-mar1-dec={{{ [&lt;__g__&gt;subtract&lt;mar1-dec&gt;] }}}
 &gt;
 
-&lt;&lt;__g__&gt;&gt; MINUS &lt;&lt;mar1&gt;&gt; GMAR1==&lt;&lt;g-mar1&gt;&gt; GMAR1-DEC==&lt;&lt;g-mar1-dec&gt;&gt;&lt;br/&gt;
+GMAR1==&lt;&lt;g-mar1&gt;&gt; GMAR1-DEC==&lt;&lt;g-mar1-dec&gt;&gt;&lt;br/&gt;
 
 &lt;$vars ddd={{{ [&lt;__g__&gt;compare:number:gteq&lt;mar1&gt;then&lt;g-mar1&gt;else&lt;g-mar1-dec&gt;] }}} &gt;
 DDD==&lt;&lt;ddd&gt;&gt; &lt;br/&gt;
 &lt;!--   mi = int( .017 + ddd / 30.6 ) --&gt;
 &lt;$vars mi={{{ [&lt;ddd&gt;divide[30.6]add[0.017]floor[]] }}} &gt;
+MI==&lt;&lt;mi&gt;&gt;
 &lt;!--
   mm = ( mi + 2 ) % 12 + 1
   yyyy += int( (mi + 2) / 12 )
@@ -10601,12 +10608,14 @@ DDD==&lt;&lt;ddd&gt;&gt; &lt;br/&gt;
 --&gt;
 &lt;$vars 
   mm={{{ [&lt;mi&gt;add[2]remainder[12]add[1]] }}}
-  yyyyx={{{ [&lt;mi&gt;add[2]remainder[12]add[1]add&lt;yyyy&gt;] }}}
-  dd={{{ [&lt;mi&gt;multiply[30.6]add[0.5]floor[]add[1]] }}}
+  yyyyx={{{ [&lt;mi&gt;add[2]divide[12]floor[]add&lt;yyyy&gt;] }}}
+  dd={{{ [&lt;mi&gt;multiply[30.6]add[0.5]floor[]add[1]negate[]add&lt;ddd&gt;] }}}
 &gt;
 &lt;!--   return sprintf(&quot;%d/%02d/%02d&quot;, yyyy, mm, dd) --&gt;
 &lt;$macrocall $name=pad num=&lt;&lt;yyyyx&gt;&gt; padby=&quot;4&quot;/&gt;-&lt;$macrocall $name=pad num=&lt;&lt;mm&gt;&gt; padby=&quot;2&quot;/&gt;-&lt;$macrocall $name=pad num=&lt;&lt;dd&gt;&gt; padby=&quot;2&quot;/&gt;
-&lt;/$vars&gt;&lt;/$vars&gt;&lt;/$vars&gt;&lt;/$vars&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$vars&gt;
+&lt;/$vars&gt;&lt;/$vars&gt;&lt;/$vars&gt;&lt;/$vars&gt;
+&lt;/$wikify&gt;
+&lt;/$wikify&gt;&lt;/$vars&gt;
 \end
 
 \define xmas-d(g)
@@ -10654,9 +10663,9 @@ DDD==&lt;&lt;ddd&gt;&gt; &lt;br/&gt;
 11 Days from modified date: &lt;&lt;date-from-field modified 11&gt;&gt; &lt;br/&gt;
 40 days from 1860-12-1 : &lt;&lt;daysfrom 1860 12 01 40&gt;&gt;&lt;br/&gt;
 
-&lt;&lt;daysfrom 2020 02 27 3&gt;&gt;
+&lt;daysfrom 2020 02 27 3&gt;
 
-&lt;&lt;mas-g 2020 02 27 &gt;&gt;
+&lt;mas-g 2020 02 27 &gt;
 
 &lt;&lt;mas-d 737787 &gt;&gt;</pre>
 </div>
