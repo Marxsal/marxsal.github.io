@@ -245,6 +245,8 @@ Error message and password prompt
 
 <li>Helpful Stuff</li>
 
+<li>How to create a new macro · Discussion #61 · buggyj/tiddlyclip-plugin</li>
+
 <li>How to create external images en masse?</li>
 
 <li>How to create external images en masse? Vsn 2</li>
@@ -10239,7 +10241,7 @@ Text -&gt; clipboard
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[HTML2TW: Macro]]</pre>
+# [[How to create a new macro · Discussion #61 · buggyj/tiddlyclip-plugin]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10411,9 +10413,9 @@ Text -&gt; clipboard
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
-<div created="20220808172100839" list="$:/Import [[HTML2TW: Macro]] $:/ControlPanel [[Table of Contents]]" modified="20220808172244641" title="$:/StoryList">
+<div created="20220808172844883" list="$:/Import [[Table of Contents]] [[HTML2TW: Macro]]" modified="20220808172844883" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10764,6 +10766,58 @@ Download Local Copy&lt;br/&gt;
 Easily change Width/Fonts for mobile&lt;br/&gt;
 
 {{Shift margin}}</pre>
+</div>
+<div caption="How to create a new macro · Discussion #61 · buggyj/tiddlyclip-plugin" created="20220806221424465" creator="arunnbabu81" location="https://github.com/buggyj/tiddlyclip-plugin/discussions/61" modified="20220806221424465" modifier="arunnbabu81" title="How to create a new macro · Discussion #61 · buggyj/tiddlyclip-plugin" when="2022/8/7 03:44:24">
+<pre>https://github.com/buggyj/tiddlyclip-plugin/discussions/61
+
+
+
+This may seem a bit advance but it is actually quite easy to create new macros.
+
+I have created a new macro (called @totext) to overcome a limitation when using tiddlyclip with chrome. When snipping text in chrome all newlines are removed by the browser which make the snipped text hard to read (things work much better in firefox!). One solution to this problem is to create the snip from the selected html. When actioning a clip, both the text (provided by the browser) and the html got by tiddlyclip are sent the active docked tiddlywiki and appear in the variables @text and @web.
+
+!!!The default method is:
+
+[[
+
+[img[https://user-images.githubusercontent.com/2855795/151009110-c3dae453-2576-4b5a-ba27-7fa0e0649656.png]]
+
+|https://user-images.githubusercontent.com/2855795/151009110-c3dae453-2576-4b5a-ba27-7fa0e0649656.png]]
+
+!!!which I am replacing with:
+
+[[
+
+[img[https://user-images.githubusercontent.com/2855795/151009514-ba3e5945-8ed9-4f1b-8044-d558ccf00604.png]]
+
+|https://user-images.githubusercontent.com/2855795/151009514-ba3e5945-8ed9-4f1b-8044-d558ccf00604.png]]
+
+!!!This is the macro:
+
+[[
+
+[img[https://user-images.githubusercontent.com/2855795/151010048-9f3ca335-a8b7-475f-90a5-8dae138fcac8.png]]
+
+|https://user-images.githubusercontent.com/2855795/151010048-9f3ca335-a8b7-475f-90a5-8dae138fcac8.png]]
+
+
+
+------
+
+https://github.com/buggyj/tiddlyclip-plugin/discussions/61
+
+&lt;p dir=&quot;auto&quot;&gt;This may seem a bit advance but it is actually quite easy to create new macros.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I have created a new macro (called &lt;code class=&quot;notranslate&quot;&gt;@totext&lt;/code&gt;) to overcome a limitation when using tiddlyclip with chrome. When snipping text in chrome all newlines are   removed by the browser which make the snipped text hard to read (things work much better in firefox!). One solution to this problem is to create the snip from the selected html. When actioning a clip, both the text (provided by the browser) and the html got by tiddlyclip are sent the active docked tiddlywiki and appear in the variables &lt;code class=&quot;notranslate&quot;&gt;@text&lt;/code&gt; and &lt;code class=&quot;notranslate&quot;&gt;@web&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;The default method is:&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;&lt;a href=&quot;https://user-images.githubusercontent.com/2855795/151009110-c3dae453-2576-4b5a-ba27-7fa0e0649656.png&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img style=&quot;max-width: 100%;&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/2855795/151009110-c3dae453-2576-4b5a-ba27-7fa0e0649656.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;which I am replacing with:&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;&lt;a href=&quot;https://user-images.githubusercontent.com/2855795/151009514-ba3e5945-8ed9-4f1b-8044-d558ccf00604.png&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img style=&quot;max-width: 100%;&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/2855795/151009514-ba3e5945-8ed9-4f1b-8044-d558ccf00604.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+[img[https://user-images.githubusercontent.com/2855795/151009110-c3dae453-2576-4b5a-ba27-7fa0e0649656.png]]
+
+
+
+</pre>
 </div>
 <div created="20180826015855485" modified="20200301040256057" tags="Images TiddlyWiki" title="How to create external images en masse?" type="text/vnd.tiddlywiki">
 <pre>[[Forum link|https://groups.google.com/forum/#!searchin/tiddlywiki/emacs%7Csort:date/tiddlywiki/1yTi65sc8D8/0ru-PhMJBAAJ]]
