@@ -249,6 +249,8 @@ Error message and password prompt
 
 <li>How to create external images en masse? Vsn 2</li>
 
+<li>HTML2TW: Macro</li>
+
 <li>Make Images</li>
 
 <li>ModalEditTemplate</li>
@@ -10237,7 +10239,7 @@ Text -&gt; clipboard
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[child_play_swing-black-white.png]]</pre>
+# [[HTML2TW: Macro]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10409,9 +10411,9 @@ Text -&gt; clipboard
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>no</pre>
+<pre>yes</pre>
 </div>
-<div created="20201231214205397" list="$:/ControlPanel [[Table of Contents]]" modified="20201231233245781" title="$:/StoryList">
+<div created="20220808172100839" list="$:/Import $:/ControlPanel [[Table of Contents]]" modified="20220808172100839" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10831,6 +10833,190 @@ Fill in the fields.
 
 Click on the &quot;Make Image Tiddlers&quot; button, and a &quot;Image Tiddler&quot; (_canonical_uri based) will be made for each image.
 
+</pre>
+</div>
+<div created="20160321173747019" creator="MAS" modified="20220324171017071" modifier="MAS" module-type="macro" tags="HTML2TW $:/tags/tiddlyclip" title="HTML2TW: Macro" tweaks="tiddlyclip" type="application/javascript">
+<pre>/*\
+title: $:/MAS/Macros/html2tw.js
+type: application/javascript
+module-type: macro
+author: MAS
+version: 0.1
+
+Macro to convert HTML text into TW5 markup. Source string
+can be provided directly as an argument or in TW5 variable
+text2convert
+
+Disclaimer: Use at your own risk. It is likely that in some cases the algorithms used here will truncate significant portions of text.
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+&quot;use strict&quot;;
+
+/*
+Information about this macro
+*/
+
+exports.name = &quot;html2tw&quot;;
+
+exports.params = [
+	{name: &quot;text&quot;}
+];
+
+/*
+Run the macro
+*/
+exports.run = function(text) {
+    var intext = &quot;&quot; ;
+
+/* Check for special environmental variable. But argument text will take precedence. */
+    var vartext = (this &amp;&amp; this.getVariable) ? this.getVariable(&quot;text2convert&quot;): null;
+    if (vartext) intext = vartext ;
+
+    if (text) intext = text ;
+
+    /* Smooth out all the line feeds */
+    intext = intext.replace(/\n/g,&quot; &quot;) ;
+
+    /* DIV */
+    var pattern = new RegExp(&quot;&lt;div.*?&gt;(.*?)&lt;\/div&gt;&quot;,&quot;gi&quot;) ;
+    while(intext.search(pattern) &gt; -1) { 
+	intext = intext.replace(pattern, &quot;$1@@@@&quot;) ;
+    } 
+
+
+/* Basic formatting */
+    pattern = new RegExp (&quot;&lt;strong.*?&gt;(.*?)&lt;/strong&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;''$1''&quot;) ;
+    pattern = new RegExp (&quot;&lt;b\\s*.*?&gt;(.*?)&lt;/b&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;''$1''&quot;) ;
+    pattern = new RegExp (&quot;&lt;sup.*?&gt;(.*?)&lt;/sup&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;^^$1^^&quot;) ;
+    pattern = new RegExp (&quot;&lt;sub.*?&gt;(.*?)&lt;/sub&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;,,$1,,&quot;) ;
+    pattern = new RegExp (&quot;&lt;h1.*?&gt;(.*?)&lt;/h1&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;@@!$1&quot;) ;
+    pattern = new RegExp (&quot;&lt;h2.*?&gt;(.*?)&lt;/h2&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;@@!!!$1&quot;) ;
+    pattern = new RegExp (&quot;&lt;h3.*?&gt;(.*?)&lt;/h3&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;@@!!!$1&quot;) ;
+    pattern = new RegExp (&quot;&lt;h4.*?&gt;(.*?)&lt;/h4&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;@@!!!!$1&quot;) ;
+
+/* 
+    pattern = new RegExp (&quot;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;&quot;) ;
+
+*/
+
+    /* Aside (used in some pages */
+    pattern = new RegExp (&quot;&lt;aside.*?&gt;(.*?)&lt;/aside&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;@@---@@$1@@---@@&quot;) ;
+
+    /* ANCHORS */
+    pattern = new RegExp (&quot;&lt;a [^&gt;]*?href=\&quot;(.*?)\&quot;.*?&gt;(.*?)&lt;/a&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;[[$2|$1]]&quot;) ;
+
+    /* SPANS */
+    pattern = new RegExp (&quot;&lt;span *.*?&gt;(.*?)&lt;/span&gt;&quot;,&quot;gi&quot;) ;
+    while(intext.search(pattern) &gt; -1) { 
+	intext = intext.replace(pattern,&quot;$1&quot;) ;
+    }
+
+    /* IMAGES */
+    pattern = new RegExp (&quot;&lt;img.*?src=\&quot;(.*?)\&quot;.*?&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;@@[img[$1]]@@&quot;) ;
+
+    /* LISTS */
+    pattern = new RegExp (&quot;&lt;ul.*?&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;&quot;) ;
+    pattern = new RegExp (&quot;&lt;/ul&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;&quot;) ;
+    pattern = new RegExp (&quot;&lt;li.*?&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;@@*&quot;) ;
+    pattern = new RegExp (&quot;&lt;/li&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;&quot;) ;
+
+
+    /* PARAGRAPHS */
+    pattern = new RegExp (&quot;&lt;p.*?&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;@@&quot;) ;
+    pattern = new RegExp (&quot;&lt;\/p&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;@@&quot;) ;
+
+    /* TABLES */
+    /* Start by squishing out line feeds inside of table tags */
+    /* To do this, first we look for each table. Then we change its
+       tags to proprietary markers. Then we do a repeated global
+       change to get rid of the @@. Then we get rid of the proprietary
+       markers.  */
+
+    /* Note the following pattern is NOT global */
+    pattern = new RegExp (&quot;&lt;table.*?&gt;(.*?)&lt;\/table&gt;&quot;,&quot;i&quot;) ;
+    var pattern2 = new RegExp (&quot;&lt;xtable.*?&gt;(.*?)@@(.*?)&lt;\/xtable&gt;&quot;,&quot;gi&quot;) ;
+    
+    while(intext.search(pattern)&gt;-1) {
+	intext = intext.replace(pattern,&quot;&lt;xtable&gt;$1&lt;/xtable&gt;&quot;) ;
+	while(intext.search(pattern2) &gt; -1) {
+	    intext = intext.replace(pattern2,&quot;&lt;xtable&gt;$1$2&lt;/xtable&gt;&quot;) ;
+	}
+	intext = intext.replace(/&lt;xtable&gt;(.*?)&lt;\/xtable&gt;/,&quot;@@$1@@&quot;) ;
+    }
+
+    pattern = new RegExp (&quot;&lt;th.*?&gt;(.*?)&lt;/th&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;|!$1&quot;) ;
+    pattern = new RegExp (&quot;&lt;td.*?&gt;(.*?)&lt;/td&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;|$1&quot;) ;
+    pattern = new RegExp (&quot;&lt;/tr&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;|##&quot;) ;
+    pattern = new RegExp (&quot;\\s*&lt;tr.*?&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;&quot;) ;
+
+
+    /* UNKNOWN TAGS STRIPPED OUT */
+    /* Hide Iframes */
+    pattern = new RegExp (&quot;&lt;iframe (.*?)&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;[iframe $1]&quot;) ;
+    pattern = new RegExp (&quot;&lt;\/iframe&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;[/iframe]&quot;) ;
+
+    /* Strip tags */
+    pattern = new RegExp (&quot;&lt;\/*[a-zA-Z]+.*?&gt;&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;&quot;) ;
+
+    /* Restore Iframes */
+    pattern = new RegExp (&quot;\\[iframe (.*?)\\]&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;&lt;iframe $1&gt;&quot;) ;
+    pattern = new RegExp (&quot;\\[\/iframe\\]&quot; ,&quot;gi&quot;) ; 
+    intext = intext.replace(pattern, &quot;&lt;/iframe&gt;&quot;) ; 
+
+    /* Clean out excess spaces */
+    pattern = new RegExp(&quot;\\s\\s&quot;,&quot;gi&quot;) ;
+    while(intext.search(pattern) &gt; -1) { 
+	intext = intext.replace(pattern, &quot; &quot;) ;
+    } 
+    /* Clean spaces  between line breaks*/
+    pattern = new RegExp(&quot;\\s@@&quot;,&quot;gi&quot;) ;
+    intext = intext.replace(pattern,&quot;@@&quot;) ;
+  
+    /* Clean out excess line feeds */
+    pattern = new RegExp(&quot;@@@@&quot;,&quot;gi&quot;) ;
+    while(intext.search(pattern) &gt; -1) { 
+	intext = intext.replace(pattern, &quot;@@&quot;) ;
+    } 
+
+    /* Single line feed needed for tables and ?? */
+    intext = intext.replace(/##/g,&quot;\n&quot;) ;
+
+    return intext.replace(/@@/g, &quot;\n\n&quot;)  ;  
+
+/* $tw.utils.formatDateString(new Date(),format || &quot;0hh:0mm, DDth MMM YYYY&quot;); */
+};
+
+})();
 </pre>
 </div>
 <div created="20171208164711596" modified="20200611211709926" myimport="imported" tags="" title="Make Images">
