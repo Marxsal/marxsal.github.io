@@ -257,6 +257,8 @@ Error message and password prompt
 
 <li>Draft of 'New Tiddler'</li>
 
+<li>Draft of 'Sample HTML code block'</li>
+
 <li>Draft of 'Test text the before processed html2tw'</li>
 
 <li>Encode simple messages with URI</li>
@@ -270,6 +272,8 @@ Error message and password prompt
 <li>Help needed about HTML2TW: Macro - Discussion - Talk TW</li>
 
 <li>Helpful Stuff</li>
+
+<li>How the TW internal data structure looks like and why data-tiddlers are not optimal · Discussion #6116 · Jermolene/TiddlyWiki5</li>
 
 <li>How to create a new macro · Discussion #61 · buggyj/tiddlyclip-plugin</li>
 
@@ -298,6 +302,8 @@ Error message and password prompt
 <li>Notes for Today</li>
 
 <li>Popme</li>
+
+<li>Sample HTML code block</li>
 
 <li>Shift margin</li>
 
@@ -10473,13 +10479,13 @@ Text -&gt; clipboard
 <div created="20201224193327832" modified="20201224193327832" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20201224210607896" modified="20220810154919425" title="$:/state/tab/sidebar--595412856">
+<div created="20201224210607896" modified="20220812182247402" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20220810224647114" list="[[Test video feed]] [[Table of Contents]]" modified="20220810224647114" title="$:/StoryList">
+<div created="20220812213710742" list="[[How the TW internal data structure looks like and why data-tiddlers are not optimal · Discussion #6116 · Jermolene/TiddlyWiki5]] [[Table of Contents]]" modified="20220812213710742" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10591,8 +10597,8 @@ Text -&gt; clipboard
     }
 }</pre>
 </div>
-<div created="20220808230612519" modified="20220810215619088" title="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth">
-<pre>28.741092636579566vw</pre>
+<div created="20220808230612519" modified="20220812211836321" title="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth">
+<pre>33.489947218211626vw</pre>
 </div>
 <div created="20220808230607020" modified="20220808230607020" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
@@ -10827,6 +10833,39 @@ Some date: &lt;&lt;mas-g 2020 2 27 &gt;&gt;
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
+<div created="20220812171549703" draft.of="Sample HTML code block" draft.title="Sample HTML code block" modified="20220812182438722" tags="" title="Draft of 'Sample HTML code block'">
+<pre>&lt;p dir=&quot;auto&quot;&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;br&gt;
+    So the tiddler-like Object looks more like this:&lt;/p&gt;
+&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot;&gt;
+    &lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;{
+​​​​  title: &quot;test&quot;
+  created: Date Thu Oct 14 2021 11:24:29 GMT+0200 (Mitteleuropäische Sommerzeit)
+  ​​creator: &quot;Mario&quot;
+  tags: Array [ &quot;a&quot;, &quot;b&quot; ]
+  ​​text: &quot;some text&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;div class=&quot;zeroclipboard-container position-absolute right-0 top-0&quot;&gt;
+        &lt;clipboard-copy aria-label=&quot;Copy&quot; class=&quot;ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay&quot; data-copy-feedback=&quot;Copied!&quot; data-tooltip-direction=&quot;w&quot; value=&quot;{
+​​​​  title: &amp;quot;test&amp;quot;
+  created: Date Thu Oct 14 2021 11:24:29 GMT+0200 (Mitteleuropäische Sommerzeit)
+  ​​creator: &amp;quot;Mario&amp;quot;
+  tags: Array [ &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot; ]
+  ​​text: &amp;quot;some text&amp;quot;
+}&quot; tabindex=&quot;0&quot; role=&quot;button&quot;&gt;
+            &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-copy js-clipboard-copy-icon m-2&quot;&gt;
+                &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z&quot;&gt;&lt;/path&gt;
+                &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z&quot;&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2&quot;&gt;
+                &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z&quot;&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+        &lt;/clipboard-copy&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;p dir=&quot;auto&quot;&gt;As you can see, there are some &lt;strong&gt;values&lt;/strong&gt;, that are strings. &lt;code class=&quot;notranslate&quot;&gt;text, creator, title&lt;/code&gt; ... AND ...&lt;br&gt;
+    There are also some other elements: &lt;code class=&quot;notranslate&quot;&gt;created and tags&lt;/code&gt; that are different. &lt;code class=&quot;notranslate&quot;&gt;created&lt;/code&gt; is a &lt;strong&gt;Date&lt;/strong&gt; and &lt;code class=&quot;notranslate&quot;&gt;tags&lt;/code&gt; is an &lt;strong&gt;Array []&lt;/strong&gt;.&lt;/p&gt;</pre>
+</div>
 <div caption="Improve Contributors Section in Release Tiddler by kookma · Pull Request #6788 · Jermolene/TiddlyWiki5" created="20220810160446933" draft.of="Test text the before processed html2tw" draft.title="Test text the before processed html2tw" location="https://github.com/Jermolene/TiddlyWiki5/pull/6788" modified="20220810160943826" title="Draft of 'Test text the before processed html2tw'" when="2022/8/10 09:04:46">
 <pre>https://github.com/Jermolene/TiddlyWiki5/pull/6788
 
@@ -10952,6 +10991,61 @@ Download Local Copy&lt;br/&gt;
 Easily change Width/Fonts for mobile&lt;br/&gt;
 
 {{Shift margin}}</pre>
+</div>
+<div caption="How the TW internal data structure looks like and why data-tiddlers are not optimal · Discussion #6116 · Jermolene/TiddlyWiki5" created="20220812213348680" location="https://github.com/Jermolene/TiddlyWiki5/discussions/6116" modified="20220812213348680" title="How the TW internal data structure looks like and why data-tiddlers are not optimal · Discussion #6116 · Jermolene/TiddlyWiki5" when="2022/8/12 14:33:48">
+<pre>https://github.com/Jermolene/TiddlyWiki5/discussions/6116
+
+
+
+''4'' So the tiddler-like Object looks more like this:
+
+```
+
+{
+​​​​ title: &quot;test&quot;
+ created: Date Thu Oct 14 2021 11:24:29 GMT+0200 (Mitteleuropäische Sommerzeit)
+ ​​creator: &quot;Mario&quot;
+ tags: Array [ &quot;a&quot;, &quot;b&quot; ]
+ ​​text: &quot;some text&quot;
+}
+
+
+```
+
+As you can see, there are some ''values'', that are strings. `text, creator, title` ... AND ...
+
+There are also some other elements: `created and tags` that are different. `created` is a ''Date'' and `tags` is an ''Array []''.
+
+
+
+------
+
+
+
+''4'' So the tiddler-like Object looks more like this:
+
+```
+
+{
+​​​​ title: &quot;test&quot;
+ created: Date Thu Oct 14 2021 11:24:29 GMT+0200 (Mitteleuropäische Sommerzeit)
+ ​​creator: &quot;Mario&quot;
+ tags: Array [ &quot;a&quot;, &quot;b&quot; ]
+ ​​text: &quot;some text&quot;
+}
+
+
+```
+
+As you can see, there are some ''values'', that are strings. `text, creator, title` ... AND ...
+
+There are also some other elements: `created and tags` that are different. `created` is a ''Date'' and `tags` is an ''Array []''.
+
+
+
+------
+
+</pre>
 </div>
 <div caption="How to create a new macro · Discussion #61 · buggyj/tiddlyclip-plugin" created="20220806221424465" creator="arunnbabu81" location="https://github.com/buggyj/tiddlyclip-plugin/discussions/61" modified="20220806221424465" modifier="arunnbabu81" title="How to create a new macro · Discussion #61 · buggyj/tiddlyclip-plugin" when="2022/8/7 03:44:24">
 <pre>https://github.com/buggyj/tiddlyclip-plugin/discussions/61
@@ -11092,13 +11186,13 @@ Click on the &quot;Make Image Tiddlers&quot; button, and a &quot;Image Tiddler&q
 
 </pre>
 </div>
-<div created="20160321173747019" creator="MAS" modified="20220810224623065" modifier="MAS" module-type="macro" tags="HTML2TW $:/tags/tiddlyclip" title="HTML2TW: Macro" tweaks="tiddlyclip" type="application/javascript">
+<div created="20160321173747019" creator="MAS" modified="20220812213653605" modifier="MAS" module-type="macro" tags="HTML2TW $:/tags/tiddlyclip" title="HTML2TW: Macro" tweaks="tiddlyclip" type="application/javascript">
 <pre>/*\
 title: $:/MAS/Macros/html2tw.js
 type: application/javascript
 module-type: macro
 author: MAS
-version: 0.0.8
+version: 0.0.9
 
 Macro to convert HTML text into TW5 markup. Source string
 can be provided directly as an argument or in TW5 variable
@@ -11111,6 +11205,7 @@ Revisions:
 2022-08-11 Change LF token to @LF@. Is this necessary?
 2022-08-11 0.0.7 Enhance specificity of image-in-anchor pattern
 2022-08-11 0.0.8  Ordered lists
+2022-08-12 0.0.9 Code blocks
 
 \*/
 (function(){
@@ -11141,8 +11236,33 @@ exports.run = function(text) {
 
     if (text) intext = text ;
 
-    /* Smooth out all the line feeds */
-    intext = intext.replace(/\n/g,&quot; &quot;) ;
+  /* Smooth out all non-code block line feeds */
+    intext = intext.replace(/\n/g,&quot;@LF@&quot;) ;
+
+/* Code blocks --
+   + They need to be handled before removing line feeds
+   + Line feeds restored at bottom 
+*/
+    //var pattern = new RegExp(&quot;&lt;code[^&gt;]*&gt;[^{]*?({.*})[^}]*?&lt;\/code&gt;&quot;,&quot;i&quot;) ;
+    var pattern = new RegExp(&quot;&lt;code[^&gt;]*?&gt;([^&gt;]*?)&lt;\/code&gt;&quot;,&quot;i&quot;) ;
+    var pattern2 = new RegExp(&quot;@LF@&quot;,&quot;gi&quot;) ;
+
+    var block = &quot;&quot; ;
+    while(intext.search(pattern) &gt; -1) { 
+        block = intext.match(pattern) ;
+        block = block[1] ;
+        if(block.search(pattern2) &gt; -1) {
+            block = block.replace(pattern2,&quot;@SLF@&quot;) ;
+            intext = intext.replace(pattern,&quot;@LF@```@LF@&quot;+block+&quot;@LF@```@LF@&quot;) ;
+        } else {
+            intext = intext.replace(pattern,&quot; `&quot;+block+&quot;` &quot;) ;
+       }
+    }
+
+ /* Smooth out all non-code block line feeds */
+    intext = intext.replace(&quot;@LF@&quot;,&quot; &quot;) ;
+
+  
 
     /* DIV */
     var pattern = new RegExp(&quot;&lt;div.*?&gt;(.*?)&lt;\/div&gt;&quot;,&quot;gi&quot;) ;
@@ -11297,7 +11417,7 @@ var test = intext ;
 
     /* Single line feed needed for tables and ?? */
     intext = intext.replace(/##/g,&quot;\n&quot;) ;
-
+    intext = intext.replace(/@SLF@/g,&quot;\n&quot;) ;
     //return test ;
     return intext.replace(/@LF@/g, &quot;\n\n&quot;)  ;  
 
@@ -11471,6 +11591,39 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 &lt;$transclude tiddler=ModalEditTemplate/&gt;
 &lt;/$tiddler&gt;
 </pre>
+</div>
+<div created="20220812171549703" modified="20220812172832027" tags="" title="Sample HTML code block">
+<pre>&lt;p dir=&quot;auto&quot;&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;br&gt;
+    So the tiddler-like Object looks more like this:&lt;/p&gt;
+&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot;&gt;
+    &lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;{
+​​​​  title: &quot;test&quot;
+  created: Date Thu Oct 14 2021 11:24:29 GMT+0200 (Mitteleuropäische Sommerzeit)
+  ​​creator: &quot;Mario&quot;
+  tags: Array [ &quot;a&quot;, &quot;b&quot; ]
+  ​​text: &quot;some text&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;div class=&quot;zeroclipboard-container position-absolute right-0 top-0&quot;&gt;
+        &lt;clipboard-copy aria-label=&quot;Copy&quot; class=&quot;ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay&quot; data-copy-feedback=&quot;Copied!&quot; data-tooltip-direction=&quot;w&quot; value=&quot;{
+​​​​  title: &amp;quot;test&amp;quot;
+  created: Date Thu Oct 14 2021 11:24:29 GMT+0200 (Mitteleuropäische Sommerzeit)
+  ​​creator: &amp;quot;Mario&amp;quot;
+  tags: Array [ &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot; ]
+  ​​text: &amp;quot;some text&amp;quot;
+}&quot; tabindex=&quot;0&quot; role=&quot;button&quot;&gt;
+            &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-copy js-clipboard-copy-icon m-2&quot;&gt;
+                &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z&quot;&gt;&lt;/path&gt;
+                &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z&quot;&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2&quot;&gt;
+                &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z&quot;&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+        &lt;/clipboard-copy&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;p dir=&quot;auto&quot;&gt;As you can see, there are some &lt;strong&gt;values&lt;/strong&gt;, that are strings. &lt;code class=&quot;notranslate&quot;&gt;text, creator, title&lt;/code&gt; ... AND ...&lt;br&gt;
+    There are also some other elements: &lt;code class=&quot;notranslate&quot;&gt;created and tags&lt;/code&gt; that are different. &lt;code class=&quot;notranslate&quot;&gt;created&lt;/code&gt; is a &lt;strong&gt;Date&lt;/strong&gt; and &lt;code class=&quot;notranslate&quot;&gt;tags&lt;/code&gt; is an &lt;strong&gt;Array []&lt;/strong&gt;.&lt;/p&gt;</pre>
 </div>
 <div caption="Shift margin" created="20190927200509572" creator="MAS" modified="20200301044337716" modifier="MAS" title="Shift margin">
 <pre>\define myactions()
