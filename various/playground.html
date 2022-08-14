@@ -235,11 +235,15 @@ Error message and password prompt
 
 <li>C</li>
 
+<li>Calendar not popping up in narrow Firefox sidebar using Eric's editlist macro - Discussion - Talk TW</li>
+
 <li>Character X converter for Esperanto</li>
 
 <li>child-on-swing-favicon-orig.png</li>
 
 <li>Colorize system tags - Discussion - Talk TW</li>
+
+<li>Colorize system tags - HTML</li>
 
 <li>ConvertDet</li>
 
@@ -10488,7 +10492,7 @@ Text -&gt; clipboard
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20220814221220966" list="[[HTML2TW: Macro]] [[Parameterised transclusions by Jermolene · Pull Request #6666 · Jermolene/TiddlyWiki5]] [[Table of Contents]]" modified="20220814222552012" title="$:/StoryList">
+<div created="20220814225538050" list="[[Parameterised transclusions by Jermolene · Pull Request #6666 · Jermolene/TiddlyWiki5]] [[Calendar not popping up in narrow Firefox sidebar using Eric's editlist macro - Discussion - Talk TW]] [[Colorize system tags - Discussion - Talk TW]] [[Table of Contents]]" modified="20220814234429102" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10600,8 +10604,8 @@ Text -&gt; clipboard
     }
 }</pre>
 </div>
-<div created="20220808230612519" modified="20220812211836321" title="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth">
-<pre>33.489947218211626vw</pre>
+<div created="20220808230612519" modified="20220814234509192" title="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth">
+<pre>38.21467120586127vw</pre>
 </div>
 <div created="20220808230607020" modified="20220808230607020" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
@@ -10620,6 +10624,31 @@ jharesbeitrag_kasko
 </div>
 <div created="20200228004301342" modified="20200228033632241" tags="[[Project Radio Tag]] refs" title="C">
 <pre></pre>
+</div>
+<div caption="Calendar not popping up in narrow Firefox sidebar using Eric's editlist macro - Discussion - Talk TW" created="20220814234357770" location="https://talk.tiddlywiki.org/t/calendar-not-popping-up-in-narrow-firefox-sidebar-using-erics-editlist-macro/1784/2" modified="20220814234357770" title="Calendar not popping up in narrow Firefox sidebar using Eric's editlist macro - Discussion - Talk TW" when="2022/8/14 16:43:57">
+<pre>https://talk.tiddlywiki.org/t/calendar-not-popping-up-in-narrow-firefox-sidebar-using-erics-editlist-macro/1784/2
+
+
+
+some notes:
+
+# When using `&lt;&lt;edit-list ... type:date&gt;&gt;` (or `&lt;&lt;edit-list ... type:calendar&gt;&gt;` without installing TiddlyTools/Time/Calendar), the macro uses a browser-dependent system-specific HTML `type=date` input field.
+
+# There is NO “focusPopup” handling for the HTML date input field. Rather, the field shows a built-in calendar icon on the right (inside the input field area). You must click the calendar icon to display the popup calendar
+
+# Using `&lt;&lt;edit-list tiddler:&quot;$:/temp/tiddler&quot; field:date type:date focusPopup:yes&gt;&gt;` in a tiddler tagged with `$:/tags/SideBarSegment` , I have not been able to reproduce the effect you describe.
+
+# An HTML date input field IS displayed and, if the sidebar width ( `$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth` ) is set to something narrow (e.g., `150px` ) , so that the HTML date input field does not fit, there is a horizontal scroll bar at the bottom of the sidebar area.
+
+# With the focus in the date input field and using right-arrow to scroll the sidebar so the calendar icon is visible, I can click on the the calendar icon to display the system-provided popup calendar and then select a date from the calendar.
+
+Note that I use the current version of Chrome in Windows10. If you are using a different browser or
+
+
+
+------
+
+</pre>
 </div>
 <div created="20200318174836588" creator="MAS" modified="20201005185306013" modifier="Unk" tags="Language" title="Character X converter for Esperanto">
 <pre>''Esperanto &quot;x&quot; Words:'' &lt;br/&gt;
@@ -10646,14 +10675,42 @@ width: 95%;
 <div created="20201231214214701" modified="20201231232550384" title="child-on-swing-favicon-orig.png" type="image/png">
 <pre>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</pre>
 </div>
-<div caption="Colorize system tags - Discussion - Talk TW" created="20220814030424216" location="https://talk.tiddlywiki.org/t/colorize-system-tags/4195/29" modified="20220814030424216" title="Colorize system tags - Discussion - Talk TW" when="2022/8/13 20:04:24">
-<pre>https://talk.tiddlywiki.org/t/colorize-system-tags/4195/29
+<div caption="Colorize system tags - Discussion - Talk TW" created="20220814225429018" location="https://talk.tiddlywiki.org/t/colorize-system-tags/4195/28" modified="20220814225429019" title="Colorize system tags - Discussion - Talk TW" when="2022/8/14 15:54:29">
+<pre>https://talk.tiddlywiki.org/t/colorize-system-tags/4195/28
 
-@html2tw(#readable)
+
+
+This will get you the red pills in the tag-picker menu, as long as the `hr` element is not removed.
+
+Put this code in a tiddler tagged with `$:/tags/Stylesheet` …
+
+```
+
+&lt;style&gt;
+.tc-edit-tags .tc-block-dropdown-wrapper hr + a .tc-tag-label,
+.tc-edit-tags .tc-block-dropdown-wrapper hr + a ~ a .tc-tag-label { background-color: red; color: white !important; }
+&lt;/style&gt;
+
+
+```
+
+[img[https://talk.tiddlywiki.org/uploads/default/original/2X/3/304fc944e6520790b6c18819a189c1181e521555.png]]
+
+
 
 ------
 
 </pre>
+</div>
+<div created="20220814223615024" modified="20220814224729179" tags="" title="Colorize system tags - HTML">
+<pre>&lt;p&gt;This will get you the red pills in the tag-picker menu, as long as the &lt;code&gt;hr&lt;/code&gt; element is not removed.&lt;/p&gt;
+&lt;p&gt;Put this code in a tiddler tagged with &lt;code&gt;$:/tags/Stylesheet&lt;/code&gt;…&lt;/p&gt;
+&lt;pre class=&quot;copy-codeblocks&quot;&gt;&lt;button class=&quot;btn nohighlight copy-cmd&quot;&gt;&lt;svg class=&quot;fa d-icon d-icon-copy svg-icon svg-string&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;use xlink:href=&quot;#copy&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/button&gt;&lt;code class=&quot;hljs xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;css&quot;&gt;
+&lt;span class=&quot;hljs-selector-class&quot;&gt;.tc-edit-tags&lt;/span&gt; &lt;span class=&quot;hljs-selector-class&quot;&gt;.tc-block-dropdown-wrapper&lt;/span&gt; hr + &lt;span class=&quot;hljs-selector-tag&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;hljs-selector-class&quot;&gt;.tc-tag-label&lt;/span&gt;,
+&lt;span class=&quot;hljs-selector-class&quot;&gt;.tc-edit-tags&lt;/span&gt; &lt;span class=&quot;hljs-selector-class&quot;&gt;.tc-block-dropdown-wrapper&lt;/span&gt; hr + &lt;span class=&quot;hljs-selector-tag&quot;&gt;a&lt;/span&gt; ~ &lt;span class=&quot;hljs-selector-tag&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;hljs-selector-class&quot;&gt;.tc-tag-label&lt;/span&gt; { &lt;span class=&quot;hljs-attribute&quot;&gt;background-color&lt;/span&gt;: red; &lt;span class=&quot;hljs-attribute&quot;&gt;color&lt;/span&gt;: white &lt;span class=&quot;hljs-meta&quot;&gt;!important&lt;/span&gt;; }
+&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://talk.tiddlywiki.org/uploads/default/original/2X/3/304fc944e6520790b6c18819a189c1181e521555.png&quot; alt=&quot;redPills&quot; data-base62-sha1=&quot;6TnRiQOac5D1vkaxj80illylaS1&quot; width=&quot;334&quot; height=&quot;482&quot; loading=&quot;lazy&quot;&gt;&lt;/p&gt;</pre>
 </div>
 <div created="20140624143451501" modified="20220806213129489" title="ConvertDet" tweaks="tiddlyclip" type="text/vnd.tiddlywiki">
 <pre>[
@@ -11406,13 +11463,13 @@ Click on the &quot;Make Image Tiddlers&quot; button, and a &quot;Image Tiddler&q
 <div created="20220814215358625" modified="20220814215528166" tags="" title="HTML2TW Tester">
 <pre>&lt;$macrocall $name=&quot;html2tw&quot; text={{ParametizedHTML}} /&gt;</pre>
 </div>
-<div created="20160321173747019" creator="MAS" modified="20220814222709249" modifier="MAS" module-type="macro" tags="HTML2TW $:/tags/tiddlyclip" title="HTML2TW: Macro" tweaks="tiddlyclip" type="application/javascript">
+<div created="20160321173747019" creator="MAS" modified="20220814225524656" modifier="MAS" module-type="macro" tags="HTML2TW $:/tags/tiddlyclip" title="HTML2TW: Macro" tweaks="tiddlyclip" type="application/javascript">
 <pre>/*\
 title: $:/MAS/Macros/html2tw.js
 type: application/javascript
 module-type: macro
 author: MAS
-version: 0.0.10
+version: 0.0.11
 
 Macro to convert HTML text into TW5 markup. Source string
 can be provided directly as an argument or in TW5 variable
@@ -11427,6 +11484,7 @@ Revisions:
 2022-08-11 0.0.8  Ordered lists
 2022-08-12 0.0.9 Code blocks
 2022-08-14 0.0.10 Convert HTML codes inside code blocks to symbols. Improve table rendering ?
+2022-08-14: Code blocks, again
 
 \*/
 (function(){
@@ -11470,9 +11528,12 @@ var htmlCodes = [
    + Line feeds restored at bottom 
 */
     //var pattern = new RegExp(&quot;&lt;code[^&gt;]*&gt;[^{]*?({.*})[^}]*?&lt;\/code&gt;&quot;,&quot;i&quot;) ;
-    var pattern = new RegExp(&quot;&lt;code[^&gt;]*?&gt;([^&gt;]*?)&lt;\/code&gt;&quot;,&quot;i&quot;) ;
+    //var pattern = new RegExp(&quot;&lt;code[^&gt;]*?&gt;([^&gt;]*?)&lt;\/code&gt;&quot;,&quot;i&quot;) ;
+    var pattern = new RegExp(&quot;&lt;code[^&gt;]*?&gt;(.*?)&lt;\/code&gt;&quot;,&quot;i&quot;) ;
+
     var pattern2 = new RegExp(&quot;@LF@&quot;,&quot;gi&quot;) ;
     
+console.log(&quot;SLUG: &quot; +intext);
 
     var block = &quot;&quot; ;
     while(intext.search(pattern) &gt; -1) { 
@@ -12057,48 +12118,12 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 * Everything is listed off to the side
 * Tons of people know what you're doing</pre>
 </div>
-<div caption="Parameterised transclusions by Jermolene · Pull Request #6666 · Jermolene/TiddlyWiki5" created="20220814221220950" location="https://github.com/Jermolene/TiddlyWiki5/pull/6666" modified="20220814221220950" title="Parameterised transclusions by Jermolene · Pull Request #6666 · Jermolene/TiddlyWiki5" when="2022/8/14 15:12:20">
+<div caption="Parameterised transclusions by Jermolene · Pull Request #6666 · Jermolene/TiddlyWiki5" created="20220814234429090" location="https://github.com/Jermolene/TiddlyWiki5/pull/6666" modified="20220814234429090" title="Parameterised transclusions by Jermolene · Pull Request #6666 · Jermolene/TiddlyWiki5" when="2022/8/14 16:44:29">
 <pre>https://github.com/Jermolene/TiddlyWiki5/pull/6666
 
 
 
- All reactions
-
- Sorry, something went wrong.
-
-[[Link|https://github.com/Jermolene/TiddlyWiki5/pull/6666/Jermolene]]
-
-[img[https://avatars.githubusercontent.com/u/174761?s=88&amp;amp;u=35a5e20b94115b82caf6cf6e990b5911b90fc323&amp;amp;v=4]]
-
-* [img[https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png]]
-
-* [img[https://github.githubassets.com/images/icons/emoji/unicode/1f44e.png]]
-
-* [img[https://github.githubassets.com/images/icons/emoji/unicode/1f604.png]]
-
-* [img[https://github.githubassets.com/images/icons/emoji/unicode/1f389.png]]
-
-* [img[https://github.githubassets.com/images/icons/emoji/unicode/1f615.png]]
-
-* [img[https://github.githubassets.com/images/icons/emoji/unicode/2764.png]]
-
-* [img[https://github.githubassets.com/images/icons/emoji/unicode/1f680.png]]
-
-* [img[https://github.githubassets.com/images/icons/emoji/unicode/1f440.png]]
-
- Sorry, something went wrong.
-
- Quote reply
-
- Owner
-
- Author
-
-!!!
-
- ''
-
- [[Jermolene|https://github.com/Jermolene/TiddlyWiki5/pull/6666/Jermolene]]
+!!!''[[Jermolene|https://github.com/Jermolene/TiddlyWiki5/pull/6666/Jermolene]]
 
  ''
 
@@ -12106,7 +12131,7 @@ tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerCl
 
  [[on Apr 27|https://github.com/Jermolene/TiddlyWiki5/pull/6666#issuecomment-1111192849]]
 
-| [[@Jermolene|https://github.com/Jermolene]], just for clarity and if I understand the doc correctly, the render of the Widget Syntax Invocation example quoted below misses a line and should read:Thanks [[@tw-FRed|https://github.com/tw-FRed]], fixed.*As it stands the explanation and names used are possibly too complex to average users to easily adopt. This is understandable at this stage of development. I would suggest allowing time and feedback from the community to help craft appropriate terms.Yes [[@AnthonyMuscio|https://github.com/AnthonyMuscio]], I think we do need to review all the associated terminology. I've had to invent some new terms and some of the old terms might no longer be such a good fit. For example, I'm no|
+| [[@Jermolene|https://github.com/Jermolene]], just for clarity and if I understand the doc correctly, the render of the Widget Syntax Invocation example quoted below misses a line and should read:Thanks [[@tw-FRed|https://github.com/tw-FRed]], fixed.*As it stands the explanation and names used are possibly too complex to average users to easily adopt. This is understandable at this stage of development. I would suggest allowing time and feedback from the community to help craft appropriate terms.Yes [[@AnthonyMuscio|https://github.com/AnthonyMuscio]], I think we do need to review all the associated terminology. I've had to invent some new terms and some of the old terms might no longer be such a good fit. For example, I'm not sure that &quot;macros&quot; makes sense now; we might consider &quot;function&quot;.|
 
 
 
